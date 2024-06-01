@@ -74,25 +74,25 @@ function Recovery() {
     <div id="noc-content" style="text-align: justify; padding: 0 2rem;">
   <div style="text-align: center;">
     <h2 style="font-size: 24px; font-weight: bold; color: black;">NOC(NO-OBJECTION-CERTIFICATE)</h2>
-    <h2 style="font-size: 24px; font-weight: bold; color: red; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Cropton Services</h2>
+    <h2 style="font-size: 24px; font-weight: bold; color: red; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Greenten Services</h2>
     <hr style="background-color: brown; height: 1px; width: 50%; margin: 0 auto;"/>
   </div>
   <p style="padding: 1rem 0;">Date: ${date}</p>
   <div style="padding: 1rem 0;">
     <p>
-      This is to certify that <span style="font-weight: bold;">Cropton Services</span>, located at block number: 23 Hanuman Nagar Ajmer Road S.O, Jaipur, 302006, has been engaged in data processing services with Cropton Services.
+      This is to certify that <span style="font-weight: bold;">Greenten Services</span>, located at block number: 23 Hanuman Nagar Ajmer Road S.O, Jaipur, 302006, has been engaged in data processing services with Greenten Services.
     </p>
     <br />
     <p>
-      <span style="font-weight: bold;">Cropton Services</span> is responsible for inputting provided data field-wise online, adhering to guidelines provided by <span style="font-weight: bold;">Cropton Service</span>, with data supply and preservation of the output file conducted in real-time. Compensation for form-filling services rendered is INR 38 per form, contingent upon achieving a cutoff above 450, with invoices raised by
+      <span style="font-weight: bold;">Greenten Services</span> is responsible for inputting provided data field-wise online, adhering to guidelines provided by <span style="font-weight: bold;">Greenten Service</span>, with data supply and preservation of the output file conducted in real-time. Compensation for form-filling services rendered is INR 38 per form, contingent upon achieving a cutoff above 450, with invoices raised by
     </p>
     <br />
     <p>
-      Cropton Services and QC reports provided within 72 hours. Cropton Services provides a workload of 480 forms over 5 days,
+      Greenten Services and QC reports provided within 72 hours. Greenten Services provides a workload of 480 forms over 5 days,
     </p>
     <br />
     <p>
-      Cropton Services has 5 days, including holidays, to complete the workload and submit it, with Cropton Enterprise furnishing an accuracy report within 72 hours. Data formats and necessary information are provided by Cropton Services at the time of data provision. Any applicable telecommunication costs are to be borne by the respective parties.
+      Greenten Services has 5 days, including holidays, to complete the workload and submit it, with Greenten Enterprise furnishing an accuracy report within 72 hours. Data formats and necessary information are provided by Greenten Services at the time of data provision. Any applicable telecommunication costs are to be borne by the respective parties.
     </p>
   </div>
   <hr style="background-color: brown; height: 1px; width: 50%; margin: 0 auto;"/>
@@ -125,7 +125,7 @@ function Recovery() {
     doc.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
 
     // Save PDF
-    doc.save("Cropton-NOC.pdf");
+    doc.save("Greenten-NOC.pdf");
   };
   const handleDelete = async (row) => {
     try {

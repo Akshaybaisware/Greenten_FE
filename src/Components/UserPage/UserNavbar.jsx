@@ -224,7 +224,7 @@ function UserNavbar() {
                 fontSize={["3rem"]}
                 color={"white"}
               >
-                Cropton Services
+                Greenten Services
               </Box>
               <Box>
                 <Menu>

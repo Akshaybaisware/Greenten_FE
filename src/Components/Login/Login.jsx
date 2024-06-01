@@ -150,7 +150,8 @@ function Login() {
     setLoader(true);
     try {
       const response = await axios.post(
-        "https://zemixbe.onrender.com/api/auth/adminsignin",
+        // "https://zemixbe.onrender.com/api/auth/adminsignin",
+        "http://localhost:5000/api/auth/adminsignin",
         user
       );
 
@@ -162,7 +163,7 @@ function Login() {
 
         toast({
           title: "Login Success",
-          description: "Welcome to Cropton Service",
+          description: "Welcome to Greenten Service",
           status: "success",
           duration: 3000,
           position: "top",

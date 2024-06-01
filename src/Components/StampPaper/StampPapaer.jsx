@@ -152,7 +152,7 @@ const StampPaper = () => {
             </p>
             <br />
             1. Main Purpose: The Original data will be available online on
-            website provided by Cropton Enterprise at the time of signup. You
+            website provided by Greenten Enterprise at the time of signup. You
             are required to feed the provided data field wise online as per the
             guidelines. Data supply and preservation of the output file is done
             online on real time basis.
@@ -358,7 +358,7 @@ const StampPaper = () => {
             accountable to all previous confidentiality agreements, policies and
             procedures of the company. I have read a copy of the Work from Home
             Policy. I understand all the rules & regulations which are mentioned
-            in agreement and I am ready to do work with Cropton Enterprise.
+            in agreement and I am ready to do work with Greenten Enterprise.
           </Text>
         </Box>
 
@@ -372,7 +372,7 @@ const StampPaper = () => {
             Employer : -
           </Text>
           <Text fontWeight={"500"} padding={["1rem", "3rem"]}>
-            Name : Cropton Service <br />
+            Name : Greenten Service <br />
             Email : helplinessrvice156@gmail.com <br />
             Address : block number: 23 Hanuman Nagar Ajmer Road
             S.O, Jaipur, 302006

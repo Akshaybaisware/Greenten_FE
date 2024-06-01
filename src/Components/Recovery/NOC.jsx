@@ -110,52 +110,52 @@ const NOC = () => {
   const generatePDF = async () => {
     const input = document.getElementById("noc-content");
     input.scrollIntoView(false);
-  
+
     // Debounce the function to prevent multiple calls
     const debouncedGeneratePDF = _.debounce(async () => {
         // Capture the full page using html2canvas
         const canvas = await html2canvas(input, { scale: 1 });
         const imgData = canvas.toDataURL("image/png");
-  
+
         // Create a new jsPDF instance
         const doc = new jsPDF();
-  
+
         // Get image properties
         const imgProps = doc.getImageProperties(imgData);
-  
+
         // Calculate PDF width and height
         const pdfWidth = doc.internal.pageSize.getWidth();
         const pdfHeight = doc.internal.pageSize.getHeight();
         const imgAspectRatio = imgProps.width / imgProps.height;
-  
+
         // Calculate required image height based on aspect ratio
         const imgHeight = pdfWidth / imgAspectRatio;
-  
+
         // Calculate number of pages based on content height
         const numPages = Math.ceil(imgHeight / pdfHeight);
-  
+
         // Add image data to each page
         for (let pageIndex = 0; pageIndex < numPages; pageIndex++) {
             // Calculate y-coordinate for each page
             const yOffset = -pageIndex * pdfHeight;
-  
+
             // Calculate new image width and height
             const newImgWidth = pdfWidth;
             const newImgHeight = imgHeight;
-  
+
             // Add image to the document at the appropriate position
             doc.addImage(imgData, "PNG", 0, yOffset, newImgWidth, newImgHeight);
-  
+
             // If not the last page, add a new page
             if (pageIndex < numPages - 1) {
                 doc.addPage();
             }
         }
-  
+
         // Save the PDF
         doc.save("noc.pdf");
     }, 500);
-  
+
     debouncedGeneratePDF();
 };
 
@@ -163,7 +163,7 @@ const NOC = () => {
   return (
     <>
       <Box id="noc-content" position="relative">
-      
+
         <Center>
           <Text
             marginTop={"10rem"}
@@ -184,7 +184,7 @@ const NOC = () => {
             color="red.500"
             textShadow="2px 2px 4px rgba(0, 0, 0, 0.5)"
           >
-            Cropton Services
+            Greenten Services
           </Text>
         </Center>
         <Box ml="1rem" bg="brown">
@@ -215,26 +215,26 @@ const NOC = () => {
         <Text mt={4}></Text>
         <Box fontSize="2xl" padding={"1rem"}>
           This is to certify that{" "}
-          <span style={{ fontWeight: "bold" }}>Cropton Services</span>, located
+          <span style={{ fontWeight: "bold" }}>Greenten Services</span>, located
           at block number: 23 Hanuman Nagar Ajmer Road S.O, Jaipur, 302006, has
-          been engaged in data processing services with Cropton Services. <br />
+          been engaged in data processing services with Greenten Services. <br />
           <br />
-          <span style={{ fontWeight: "bold" }}>Cropton Services</span> is
+          <span style={{ fontWeight: "bold" }}>Greenten Services</span> is
           responsible for inputting provided data field-wise online, adhering to
           guidelines provided by{" "}
-          <span style={{ fontWeight: "bold" }}>Cropton Service</span>, with data
+          <span style={{ fontWeight: "bold" }}>Greenten Service</span>, with data
           supply and preservation of the output file conducted in real-time.
           Compensation for form-filling services rendered is INR 38 per form,
           contingent upon achieving a cutoff above 450, with invoices raised by
           <br />
           <br />
-          Cropton Services and QC reports provided within 72 hours. Cropton
+          Greenten Services and QC reports provided within 72 hours. Greenten
           Services provides a workload of 480 forms over 5 days,
           <br />
-          Cropton Services has 5 days, including holidays, to complete the
-          workload and submit it, with Cropton Enterprise furnishing an accuracy
+          Greenten Services has 5 days, including holidays, to complete the
+          workload and submit it, with Greenten Enterprise furnishing an accuracy
           report within 72 hours. Data formats and necessary information are
-          provided by Cropton Servicesat the time of data provision. Any
+          provided by Greenten Servicesat the time of data provision. Any
           applicable telecommunication costs are to be borne by the respective
           parties.
         </Box>
@@ -274,7 +274,7 @@ const NOC = () => {
           Please let me know if you require any further information from my end.
           <br />
           <br />
-        
+
           <br />
           Sincerely,
           <br />
@@ -295,7 +295,7 @@ const NOC = () => {
         boxShadow="inset 0 0 10px rgba(0, 0, 0, 0.5)" // Apply shadow effect to the entire content
       >
         {/* <Text
-          id="cropton-logo"
+          id="Greenten-logo"
           fontSize={["10rem", "8rem"]}
           fontWeight="bold"
           color="#ccffe6"
@@ -306,10 +306,10 @@ const NOC = () => {
           left={["-35%", "20%"]} // Adjust positioning as needed
           zIndex="1000" // Ensure text is below other content
         >
-          Cropton
+          Greenten
         </Text> */}
       </Box>
-      <Button 
+      <Button
       m="2rem"
       color={"white"}
       bg={"green"}

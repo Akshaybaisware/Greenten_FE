@@ -34,15 +34,15 @@
 //   };
 
 //   return (
-// //     <Box 
-        
-          
+// //     <Box
+
+
 // //     //   ref={targetRef}
-    
+
 // //       >
 // //       <Box>
 // //         {/* <Box
-        
+
 // //         >
 // //           <Image src={frontpage} alt="Description of the image" />
 // //         </Box> */}
@@ -74,7 +74,7 @@
 // // </Text>
 // //           <br />
 // //           1. Main Purpose: The Original data will be available online on
-// //           website provided by Cropton Enterprise at the time of signup. You are
+// //           website provided by Greenten Enterprise at the time of signup. You are
 // //           required to feed the provided data field wise online as per the
 // //           guidelines. Data supply and preservation of the output file is done
 // //           online on real time basis.
@@ -206,22 +206,22 @@
 // //           of the project etc of each other's/Principals, clients etc. to any
 // //           other Third party and neither of us will approach each otherâ€™s
 // //           contracts as identified from time to time.
-      
-         
+
+
 // //         </Text>
 // //       </Box>
 
 // //       {/* Commencement Date and Term Section */}
 // //       <Box>
-// //         <Heading 
-        
+// //         <Heading
+
 // //         padding={["1rem" , "3rem"]} as="h2" mb={4}>
-       
+
 // //           PRIMARY NOTE
 // //         </Heading>
 // //         <Text>
-         
-       
+
+
 // //           (A) In the matter of fact failure, not submitted or succeed company
 // //           is entitled to receive amount by any cost. If you achieve the
 // //           accuracy which mentioned above, then Utility charges will be deduct
@@ -241,7 +241,7 @@
 
 // //       <Box>
 // //          <Heading>
-         
+
 // //           Required Accuracy by the company:
 // //         </Heading>
 // //         <Text>
@@ -258,8 +258,8 @@
 // //             Below cut off - you are not qualified for payment & id will be
 // //             terminating by server side.
 // //           </p>
-         
-     
+
+
 // //         </Text>
 // //       </Box>
 
@@ -287,7 +287,7 @@
 // //           accountable to all previous confidentiality agreements, policies and
 // //           procedures of the company. I have read a copy of the Work from Home
 // //           Policy. I understand all the rules & regulations which are mentioned
-// //           in agreement and I am ready to do work with Cropton Enterprise.
+// //           in agreement and I am ready to do work with Greenten Enterprise.
 // //         </Text>
 // //       </Box>
 
@@ -296,7 +296,7 @@
 // //           Employer : -
 // //         </Text>
 // //         <Text>
-// //           Name : Cropton Service <br />
+// //           Name : Greenten Service <br />
 // //           Email : helplinezxservicewww@gmail.comhelplinessrvice156@gmail.com <br />
 // //           Address :  block number: 23 Hanuman Nagar Ajmer Road S.O, Jaipur, 302006
 // //         </Text>
@@ -314,12 +314,12 @@
 // //       {/* <Box width={["200px", "400px"]}>
 // //         <Image src={sign} alt="Stamp" />
 // //       </Box>
-     
+
 
 // //         <Box>
-      
 
-// //           <Table 
+
+// //           <Table
 // //           bg="red"
 // //           mt={"1rem"}   w={["350px", "700px"]} >
 // //             <Tr>
@@ -347,8 +347,8 @@
 // //           </Table>
 // //         </Box> */}
 // //         <Button
-  
-                          
+
+
 // //   //    onClick={() => downloadPDF()}
 // //   // onClick={() => toPDF()}
 // //   onClick={downloadPDF}
@@ -360,16 +360,16 @@
 // //   >
 // //     Download
 // //   </Button>
-     
+
 // //       </Box>
 // <>
 // <Box>hi</Box>
 //         <Button
-  
-                          
- 
+
+
+
 //   onClick={downloadPDF}
-    
+
 //     colorScheme="teal"
 //     variant="solid"
 //     mt="4"
@@ -424,7 +424,7 @@ function Testing() {
 
   return (
     <div className="wrapper">
-   
+
       <div className="receipt-box">
 
           {/* actual receipt */}
@@ -463,7 +463,7 @@ function Testing() {
                 </a>
               </p>
               <p>01234567890</p>
-                  
+
               <p>
                 <a
                   href="https://www.youtube.com/@jsSolutions"
@@ -472,7 +472,7 @@ function Testing() {
                   https://www.youtube.com/@jsSolutions
                 </a>
               </p>
-                  
+
             </div>
 
             <div className="colored-row first">
@@ -615,18 +615,18 @@ ipsum dolor sit amet...'
                   <span>Download</span>
                 )}
 
-              </button> 
+              </button>
             </div>
           </div>
 
       </div>
       <div>
-        
+
       </div>
       <div>
-        
+
       </div>
-      
+
     </div>
   );
 }
