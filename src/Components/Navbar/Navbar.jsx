@@ -399,7 +399,8 @@ function Navbar() {
 
     try {
       const response = await axios.post(
-        "https://zemixbe.onrender.com/api/auth/adminforgetpassword",
+        // "https://zemixbe.onrender.com/api/auth/adminforgetpassword",
+        "http://localhost:5000/api/auth/adminforgetpassword",
         {
           newPassword: newPasswordValue,
           confirmPassword: confirmPasswordValue,
@@ -457,7 +458,8 @@ function Navbar() {
             align="center"
             justify="space-between"
             p="1rem"
-            bg="#E19898"
+              bg="#070303"
+            //  bgGradient="linear(to-r, #00BFFF, #FFA500)" // Gradient from blue to brown
             boxShadow="md"
             height={"100%"}
           >
@@ -465,11 +467,11 @@ function Navbar() {
               <Menu>
                 <MenuButton
                   as={Button}
-                  bg="#E19898"
+                   bg="#080808"
                   size="sm"
                   cursor="pointer"
-                  paddingRight="2rem"
-                  rightIcon={<ChevronDownIcon height={8} width={8} />}
+                  // paddingRight="2rem"
+                  //  rightIcon={<ChevronDownIcon height={8} width={8} />}
                 >
                   <Avatar
                     border="4px solid white"
@@ -487,19 +489,24 @@ function Navbar() {
                 </MenuList>
               </Menu>
             </Box>
-            <Box height={"100%"}>
-              <Menu>
+            <Box
+       
+            height={"100%"}>
+              <Menu      bg="black">
                 <MenuButton
+                
                   as={Button}
-                  bg="#E19898"
+                  // bg="#E19898"
                   size="sm"
                   cursor="pointer"
                   borderRadius={"30%"}
                 >
                   <HamburgerIcon height={6} width={6} />
                 </MenuButton>
-                <MenuList height={"300%"}>
-                  ``
+                <MenuList
+                     bg="black"
+                height={"300%"}>
+                  
                   <MenuItem as={RouterLink} to="/">
                     Dashboard
                   </MenuItem>
@@ -523,7 +530,12 @@ function Navbar() {
             </Box>
           </Flex>
         ) : (
-          <Box width="100%" height="5rem" bg="#E19898">
+          // <Box width="100%" height="5rem" bg="#E19898">
+          <Box
+      width="100%"
+      height="5rem"
+      bgGradient="linear(to-r, #00BFFF, #FFA500)" // Gradient from blue to brown
+    >
             <Box
               padding={"0.7rem"}
               display="flex"
@@ -536,7 +548,7 @@ function Navbar() {
             >
               <Menu>
                 <MenuButton
-                  bg="#E19898"
+                  // bg="#E19898"
                   size="sm"
                   cursor="pointer"
                   paddingRight="2rem"
@@ -564,7 +576,8 @@ function Navbar() {
         {!isMobileView && (
           <Box
             p="0.5rem"
-            bg="#A2678A"
+             bg="#060606"
+            // bgGradient="linear(to-r, #050702, white , #044213)" // Gradient from purple to white
             boxShadow="0 14px 60px rgba(0,10, 10, 0.1)"
           >
             <Flex
@@ -574,49 +587,61 @@ function Navbar() {
               paddingY="4"
             >
               <Link to="/">
-                <Box fontSize={["1.5rem"]}>Dashboard</Box>
+                <Box
+                color="white"
+                fontSize={["1.5rem"]}>Dashboard</Box>
               </Link>
            
 
               <Menu isOpen={isOpen} onOpen={toggleMenu} onClose={toggleMenu}>
-                <MenuButton as={Box} cursor="pointer" fontSize={["1.5rem"]}>
+                <MenuButton
+                  color="white"
+                as={Box} cursor="pointer" fontSize={["1.5rem"]}>
                   User Actions
                   <ChevronDownIcon height={8} width={8} />
                 </MenuButton>
                 <MenuList>
-                  <MenuItem as={RouterLink} to="/registeration">
+                  <MenuItem 
+                    color="black"
+                  as={RouterLink} to="/registeration">
                     Registration
                   </MenuItem>
-                  <MenuItem as={RouterLink} to="/pendingregisteration">
+                  <MenuItem 
+                    color="black"
+                  as={RouterLink} to="/pendingregisteration">
                     Pending Registration
                   </MenuItem>
-                  <MenuItem as={RouterLink} to="/cancelregisteration">
+                  <MenuItem 
+                    color="black"
+                  as={RouterLink} to="/cancelregisteration">
                     Cancel Registration
                   </MenuItem>
-                  <MenuItem as={RouterLink} to="/addpackage">
+                  <MenuItem 
+                    color="black"
+                  as={RouterLink} to="/addpackage">
                     Package
                   </MenuItem>
                 </MenuList>
               </Menu>
               <Link to="/blockusersss">
-                <Box fontSize={["1.5rem"]}>Deactivate User</Box>
+                <Box   color="white" fontSize={["1.5rem"]}>Deactivate User</Box>
               </Link>
 
               <Link to="/qcreport">
-                <Box fontSize={["1.5rem"]}>QC Report</Box>
+                <Box   color="white" fontSize={["1.5rem"]}>QC Report</Box>
               </Link>
 
               <Link to="/recovery">
-                <Box fontSize={["1.5rem"]}>Recovery</Box>
+                <Box   color="white" fontSize={["1.5rem"]}>Recovery</Box>
               </Link>
 
               <Link to="/employees">
-                <Box fontSize={["1.5rem"]}>Employee</Box>
+                <Box   color="white" fontSize={["1.5rem"]}>Employee</Box>
               </Link>
 
-              <Link to="/">
-                <Box fontSize={["1.5rem"]}>System Users</Box>
-              </Link>
+              {/* <Link to="/">
+                <Box   color="white" fontSize={["1.5rem"]}>System Users</Box>
+              </Link> */}
             </Flex>
 
             <Modal isOpen={showModal} onClose={() => setShowModal(false)}>

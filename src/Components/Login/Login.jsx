@@ -127,11 +127,14 @@ import {
   Box,
   Button,
   Center,
+  Flex,
   Image,
   Input,
   Spinner,
+  space,
   useToast,
 } from "@chakra-ui/react";
+import { ViewIcon } from "@chakra-ui/icons";
 
 import axios from "axios";
 
@@ -206,18 +209,31 @@ function Login() {
     </Center>
   ) : (
     <>
+    {/* <Center>Welcome to Greenten Servics</Center> */}
       <Box
-        bg={"whitesmoke"}
+        // bg={"whitesmoke"}
+        // bgGradient="linear(to-r, yellow.100, orange.400)" // Using Chakra UI color tokens
+        bgGradient="linear(to-r, green.500, orange.500)" // Gradient from green to blue
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
         minHeight="100vh" // Ensure the content takes up at least the full viewport height
       >
-        <Box width={["300px", "500px"]} padding={"2rem"} bg={"white"}>
-          <Center fontSize={"1.5rem"} fontWeight={"600"}>
-            ADMIN
+        <Box
+      width={["300px", "500px"]}
+      padding="2rem"
+      bg="lavender" // Example background color
+      boxShadow="0 40px 16px -1px rgba(31, 111, 31, 0.1), 0 2px 4px -31px rgba(0, 10, 0, 0.06)" // Example box shadow
+    >
+          <Center
+           boxShadow="0 4px 6px -1px rgba(128, 0, 128, 0.5), 0 2px 4px -1px rgba(165, 42, 42, 0.5)" // Purple and brown shadow
+           color={"#00ccff"}
+           fontSize="1.5rem"
+         fontWeight={"900"}>
+         Admin Panel of Greenten Services
           </Center>
+
 
           <Box
             display="flex"
@@ -235,15 +251,24 @@ function Login() {
               <Input ref={username} placeholder="UserName" />
             </Box>
             <Box width="100%" mb="20px">
+            {/* <Flex  justifyContent="space-between"> */}
               <Input type="password" ref={password} placeholder="Password" />
-              <button onClick={handleshow}>Show</button>
+            
+              <ViewIcon 
+
+
+               onClick={handleshow}
+              />
+              {/* </Flex> */}
             </Box>
             <Button
               height="3rem"
               width="100%"
               borderRadius="6px"
-              color="#fff"
-              background="teal"
+              color="#160606"
+              // background="teal"
+              bgGradient="linear(to-r, purple.100, red.400)" // Using Chakra UI color tokens
+              // bgGradient="linear(to-r, purple.500, brown.500)" // Gradient from purple to brown
               fontSize={["0.9rem", "1.3rem"]}
               fontWeight={700}
               fontFamily='"Poppins", sans-serif'
@@ -262,14 +287,15 @@ function Login() {
                 width="100%" // Take up 100% width
                 borderRadius="6px"
                 fontSize={["0.9rem", "1.3rem"]}
-                color="#fff"
-                background="teal"
+                color="#160606"
+                // background="teal"
+                bgGradient="linear(to-r, purple.100, red.400)" // Using Chakra UI color tokens
                 fontWeight={700}
                 fontFamily='"Poppins", sans-serif'
                 mb="20px" // Add margin-bottom
                 _hover={{ background: "FloralWhite", color: "black" }}
               >
-                System Users Login From Hear
+                System Users Login
               </Button>
             </NavLink>
             <NavLink
@@ -281,8 +307,9 @@ function Login() {
                 width="100%" // Take up 100% width
                 borderRadius="6px"
                 fontSize={["0.9rem", "1.3rem"]}
-                color="#fff"
-                background="teal"
+                color="#160606"
+                //  background="red"
+                 bgGradient="linear(to-r, purple.100, blue.400)" // Using Chakra UI color tokens
                 fontWeight={700}
                 fontFamily='"Poppins", sans-serif'
                 mb="20px" // Add margin-bottom

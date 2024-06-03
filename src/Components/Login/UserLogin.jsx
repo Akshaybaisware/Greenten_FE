@@ -6,6 +6,7 @@ import { Box, Button, Center, Image, Input, Spinner } from "@chakra-ui/react";
 import axios from "axios";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 function UserLogin() {
   const username = useRef();
@@ -90,21 +91,27 @@ if (endDate.getTime() < currentDate.getTime()) {
   ) : (
     <>
       <Box
-        bg={"lightgray"}
+      bgGradient="linear(to-r, green.500, blue.500)" // Gradient from green to blue
+      boxShadow="0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)" // Adding box shadow
         display="flex"
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
         minHeight="100vh" // Ensure the content takes up at least the full viewport height
       >
+              <SunIcon
+              marginBottom={"1rem"}
+              color="blue" boxSize={8} mr={4} />
+
         <Box width={["300px", "500px"]} padding={"2rem"} bg={"white"}>
-          <Center
-            textAlign={"center"}
-            color={"purple"}
-            fontSize={"1.2rem"}
-            fontWeight={"700"}
-          >
-            Welcome back ! Log in to your account to Complete Your work
+        <Center
+      textAlign="center"
+      color="brown"
+      fontSize="1.2rem"
+      fontWeight="800"
+      boxShadow="0 2px 4px rgba(193, 163, 163, 0.1)" // Example box shadow
+    >
+            Greenten Service Welcome You! Log in to your account to Complete Your work
           </Center>
 
           <Box
@@ -126,7 +133,7 @@ if (endDate.getTime() < currentDate.getTime()) {
               width="40%"
               borderRadius="16px"
               color="white"
-              background="#FF00FF"
+              background="#00e600"
               fontSize={["0.9rem", "1.3rem"]}
               fontWeight={700}
               fontFamily='"Poppins", sans-serif'
@@ -142,6 +149,9 @@ if (endDate.getTime() < currentDate.getTime()) {
             ></NavLink>
           </Box>
         </Box>
+        <MoonIcon 
+         mt={"1rem"}
+        color="yellow" boxSize={8} ml={4} />
       </Box>
     </>
   );

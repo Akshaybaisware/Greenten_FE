@@ -425,7 +425,7 @@ function Registeraion() {
     <>
       <Flex mt={"2rem"} justifyContent="flex-end">
         <Button
-          colorScheme="blue"
+          bg={"#33d6ff"}
           leftIcon={<FaDownload />}
           onClick={exportToExcel}
         >
@@ -449,7 +449,7 @@ function Registeraion() {
         </Text>
 
         <Link to="/addclient">
-          <Button fontSize={["md", "xl"]} bg={"#33ff99"}>
+          <Button fontSize={["md", "xl"]} bg={"#ff9900"}>
             +Add Registration
           </Button>
         </Link>

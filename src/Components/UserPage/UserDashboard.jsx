@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { Card, Text, useToast } from "@chakra-ui/react";
+import { Card, Icon, Text, useToast } from "@chakra-ui/react";
 
 import TotalCumstmer from "../../../public/totalCust.svg";
 import TodaysFollowup from "../../../public/todays.svg";
@@ -14,6 +14,7 @@ import nextDay from "../../../public/nextDay.svg";
 import filter from "../../../public/filter.svg";
 import upcomingImage from "../../../public/upcoming.svg";
 import lostLeadsIcon from "../../../public/lostLeads.svg";
+import { FaUser, FaSpinner , FaUserCheck , FaUserTimes , FaUserPlus , FaSave, FaPaperPlane, FaCalendarAlt, FaListUl } from 'react-icons/fa'; // You can import a different user icon from another icon library
 
 function UserDashboard() {
   const [data, setData] = useState(0);
@@ -138,189 +139,7 @@ function UserDashboard() {
 
   return (
     <>
-      {/* <Flex
-        ml={["2rem"]}
-        //  justifyContent={"center"}
-        width={"100%"}
-        direction={{ base: "column", md: "row" }}
-      >
-        <Flex
-          justifyContent={["flex-startr", "space-around"]}
-          width={["100%", "50%"]}
-          direction={{ md: "column" }}
-          // justifyContent="center"
-          marginTop="30px"
-          align="center"
-        >
-          <Link to={{ pathname: "/" }}>
-            <Card
-              as="flex"
-              minWidth={["350%", "170%"]}
-              maxWidth="170%"
-              minHeight="10rem"
-              maxHeight="10rem"
-              textAlign="center"
-              bg="white"
-              borderRadius="12px"
-              boxShadow="md"
-              p="2"
-              display="flex"
-              direction={{ base: "column", md: "row", lg: "row" }}
-              justifyContent={{ base: "center", md: "space-around" }}
-              alignItems="center"
-              gap="20px"
-            >
-              <img src={TotalCumstmer} alt="Total Customers" />
-              <Text
-                fontSize={{ base: "0.7rem", md: "1.2rem" }}
-                fontWeight="bold"
-              >
-                Total Number Form
-              </Text>
-              <Text
-                fontSize={{ base: "0.7rem", md: "1.2rem" }}
-                fontWeight="bold"
-              >
-                {toatalasignment}
-              </Text>
-            </Card>
-          </Link>
-        </Flex>
-        <Flex
-          direction={{ md: "column" }}
-          gap="25px"
-          justifyContent={["flex-start", "center"]}
-          marginTop="30px"
-          align="center"
-        >
-          <Link to={{ pathname: "/" }}>
-            <Card
-              ml={["-1rem", ""]}
-              as="flex"
-              minWidth={["700%", "230%"]}
-              maxWidth="150%"
-              minHeight="10rem"
-              maxHeight="10rem"
-              textAlign="center"
-              bg="#65D088"
-              borderRadius="12px"
-              boxShadow="md"
-              p="2"
-              display="flex"
-              direction={{ base: "column", md: "row", lg: "row" }}
-              justifyContent={{ base: "center", md: "space-around" }}
-              alignItems="center"
-              gap="20px"
-            >
-              <img src={TotalCumstmer} alt="Total Customers" />
-              <Text
-                fontSize={{ base: "0.7rem", md: "1.2rem" }}
-                fontWeight="bold"
-              >
-                Saved Form
-              </Text>
-              <Text
-                fontSize={{ base: "0.7rem", md: "1.2rem" }}
-                fontWeight="bold"
-              >
-                {submitedassignment}
-              </Text>
-            </Card>
-          </Link>
-        </Flex>
-      </Flex>
-
-      <Flex
-        // justifyContent={"space-around"}
-
-        width={"100%"}
-        direction={{ base: "column", md: "row" }}
-        gap="25px"
-      >
-        <Flex
-          direction={{ md: "column" }}
-          gap="25px"
-          width={["100%", "50%"]}
-          justifyContent={["flex-start", "space-around"]}
-          marginTop="30px"
-          align="center"
-        >
-          <Link to={{ pathname: "/" }}>
-            <Card
-              as="flex"
-              minWidth={["550%", "220%"]}
-              maxWidth="150%"
-              minHeight="10rem"
-              maxHeight="10rem"
-              textAlign="center"
-              bg="#FFBB44"
-              borderRadius="12px"
-              boxShadow="md"
-              p="2"
-              display="flex"
-              direction={{ base: "column", md: "row", lg: "row" }}
-              justifyContent={{ base: "center", md: "space-around" }}
-              alignItems="center"
-              gap="20px"
-            >
-              <img src={TotalCumstmer} alt="Total Customers" />
-              <Text
-                fontSize={{ base: "0.7rem", md: "1.2rem" }}
-                fontWeight="bold"
-              >
-                Submit Form
-              </Text>
-              <Text
-                fontSize={{ base: "0.7rem", md: "1.2rem" }}
-                fontWeight="bold"
-              >
-                {submitedassignment}
-              </Text>
-            </Card>
-          </Link>
-        </Flex>
-        <Flex
-          direction={{ md: "column" }}
-          gap="25px"
-          justifyContent={["flex-start", "center"]}
-          marginTop="30px"
-          align="center"
-        >
-          <Link to={{ pathname: "/" }}>
-            <Card
-              as="flex"
-              minWidth={["700%", "235%"]}
-              maxWidth="150%"
-              minHeight="10rem"
-              maxHeight="10rem"
-              textAlign="center"
-              bg="#F32F53"
-              borderRadius="12px"
-              boxShadow="md"
-              p="2"
-              display="flex"
-              direction={{ base: "column", md: "row", lg: "row" }}
-              justifyContent={{ base: "center", md: "space-around" }}
-              alignItems="center"
-              gap="20px"
-            >
-              <img src={TotalCumstmer} alt="Total Customers" />
-              <Text
-                fontSize={{ base: "0.7rem", md: "1.2rem" }}
-                fontWeight="bold"
-              >
-                End Date
-              </Text>
-              <Text
-                fontSize={{ base: "0.7rem", md: "1.2rem" }}
-                fontWeight="bold"
-              >
-                {dates?.slice(0, 10)}
-              </Text>
-            </Card>
-          </Link>
-        </Flex>
-      </Flex> */}
+     
 
       <Box
         width="100%"
@@ -334,7 +153,7 @@ function UserDashboard() {
               minWidth="100%"
               minHeight="10rem"
               textAlign="center"
-              bg="white"
+              bg="linear-gradient(to right, #288cba,  #248f24, #85b185 , #00ffcc)"
               borderRadius="12px"
               boxShadow="md"
               p="2"
@@ -343,16 +162,18 @@ function UserDashboard() {
               alignItems="center"
               gap="20px"
             >
-              <img src={TotalCumstmer} alt="Total Customers" />
+             <Icon as={FaListUl} boxSize={6} />
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}
                 fontWeight="bold"
+                color={"white"}
               >
                 Total Number Form
               </Text>
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}
                 fontWeight="bold"
+                color={"white"}
               >
                 {toatalasignment}
               </Text>
@@ -367,7 +188,7 @@ function UserDashboard() {
               minWidth="100%"
               minHeight="10rem"
               textAlign="center"
-              bg="#65D088"
+              bg="linear-gradient(to right, #095375,  #d2c143, #882222 , #9c1cd3)"
               borderRadius="12px"
               boxShadow="md"
               p="2"
@@ -376,16 +197,18 @@ function UserDashboard() {
               alignItems="center"
               gap="20px"
             >
-              <img src={TotalCumstmer} alt="Total Customers" />
+          <Icon as={FaSave} boxSize={6} />
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}
                 fontWeight="bold"
+                color={"white"}
               >
                 Saved Form
               </Text>
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}
                 fontWeight="bold"
+                color={"white"}
               >
                 {submitedassignment}
               </Text>
@@ -406,7 +229,7 @@ function UserDashboard() {
               minWidth="100%"
               minHeight="10rem"
               textAlign="center"
-              bg="white"
+              bg="linear-gradient(to left,  #e6e6ff,  #3333ff,  #49499c , #ff80ff)"
               borderRadius="12px"
               boxShadow="md"
               p="2"
@@ -415,16 +238,18 @@ function UserDashboard() {
               alignItems="center"
               gap="20px"
             >
-              <img src={TotalCumstmer} alt="Total Customers" />
+        <Icon as={FaPaperPlane} boxSize={6} />
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}
                 fontWeight="bold"
+                color={"white"}
               >
                 Submit Form
               </Text>
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}
                 fontWeight="bold"
+                color={"white"}
               >
                 {submitedassignment}
               </Text>
@@ -439,7 +264,7 @@ function UserDashboard() {
               minWidth="100%"
               minHeight="10rem"
               textAlign="center"
-              bg="#65D088"
+              bg="linear-gradient(to right, #ffcccc,    #ff0000, #800000 )"
               borderRadius="12px"
               boxShadow="md"
               p="2"
@@ -448,16 +273,18 @@ function UserDashboard() {
               alignItems="center"
               gap="20px"
             >
-              <img src={TotalCumstmer} alt="Total Customers" />
+             <Icon as={FaCalendarAlt} boxSize={6} />
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}
                 fontWeight="bold"
+                color={"white"}
               >
                 End Date
               </Text>
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}
                 fontWeight="bold"
+                color={"white"}
               >
                 {dates?.slice(0, 10)}
               </Text>

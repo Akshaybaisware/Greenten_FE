@@ -143,7 +143,7 @@ function UserNavbar() {
             align="center"
             justify="space-between"
             p="1rem"
-            bg="#183D3D"
+            bg="#020b0b"
             boxShadow="md"
             height={"100%"}
           >
@@ -151,7 +151,7 @@ function UserNavbar() {
               <Menu>
                 <MenuButton
                   // as={Button}
-                  bg="#183D3D"
+                  bg="#060808"
                   size="sm"
                   cursor="pointer"
                   paddingRight="2rem"
@@ -185,7 +185,7 @@ function UserNavbar() {
                   <HamburgerIcon height={6} width={6} />
                 </MenuButton>
                 <MenuList height={"300%"}>
-                  ``
+                
                   <MenuItem as={Link} to="/">
                     Dashboard
                   </MenuItem>
@@ -207,7 +207,7 @@ function UserNavbar() {
             </Box>
           </Flex>
         ) : (
-          <Box width="100%" height="5rem" bg="#183D3D">
+          <Box width="100%" height="5rem" bg="#060808">
             <Box
               display="flex"
               alignItems="center"
@@ -229,7 +229,7 @@ function UserNavbar() {
               <Box>
                 <Menu>
                   <MenuButton
-                    bg="#183D3D"
+                    bg="#020404"
                     size="sm"
                     cursor="pointer"
                     paddingRight="2rem"
