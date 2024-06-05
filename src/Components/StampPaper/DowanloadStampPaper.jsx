@@ -178,7 +178,7 @@ const StampPaperView = () => {
     try {
       const response = await axios.post(
         // "http://localhost:5000/api/user/getuserdetailsbymail",
-        `https://zemixbe.onrender.com/api/user/getuserdetailsbymail`,
+        `https://greentenbe-production.up.railway.app/api/user/getuserdetailsbymail`,
 
         {
           email: emailid,
@@ -202,7 +202,7 @@ const StampPaperView = () => {
       console.log(emailid, "id");
       try {
         const response = await axios.post(
-          `https://zemixbe.onrender.com/api/aggriment/getaggrimentdetails`,
+          `https://greentenbe-production.up.railway.app/api/aggriment/getaggrimentdetails`,
           {
             email: emailid,
           }

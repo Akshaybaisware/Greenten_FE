@@ -28,7 +28,7 @@ function PendingRegisteration() {
     try {
       console.log(id, "asdasdasd");
       const reponse = await axios.post(
-        "https://zemixbe.onrender.com/api/user/senduserinfo",
+        "https://greentenbe-production.up.railway.app/api/user/senduserinfo",
         {
           userID: id,
         }
@@ -57,7 +57,7 @@ function PendingRegisteration() {
   const deleteclientinfo = async (id) => {
     try {
       const response = await axios.post(
-        "https://zemixbe.onrender.com/api/user/deleteclient",
+        "https://greentenbe-production.up.railway.app/api/user/deleteclient",
         {
           id: id,
         }
@@ -173,7 +173,7 @@ function PendingRegisteration() {
       sortable: true,
   },
 
-  
+
     {
       name: "Action",
       cell: (row) => (
@@ -226,7 +226,7 @@ function PendingRegisteration() {
     setLoading(true);
     try {
       const response = await axios.get(
-        "https://zemixbe.onrender.com/api/user/getallpending"
+        "https://greentenbe-production.up.railway.app/api/user/getallpending"
       );
 
       console.log(response.data.users, "pending list ");

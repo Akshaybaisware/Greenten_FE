@@ -27,7 +27,7 @@ function AddPackage() {
         days.current.value
       );
       const response = await fetch(
-        "https://zemixbe.onrender.com/api/package/addpackage",
+        "https://greentenbe-production.up.railway.app/api/package/addpackage",
         {
           method: "POST",
           headers: {

@@ -15,7 +15,7 @@ function BlockedUserTable() {
   const getallfreezuser = async () => {
     try {
       const response = await fetch(
-        "https://zemixbe.onrender.com/api/user/getallfreez",
+        "https://greentenbe-production.up.railway.app/api/user/getallfreez",
         {
           method: "GET",
           headers: { token: localStorage.token },
@@ -90,7 +90,7 @@ function BlockedUserTable() {
   ];
 
   return (
-    <Box 
+    <Box
 
     m={"1rem"}
     mt={"3rem"}>

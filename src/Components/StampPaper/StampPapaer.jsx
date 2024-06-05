@@ -82,7 +82,7 @@ const StampPaper = () => {
 
       const config = {
         method: "post",
-        url: `https://zemixbe.onrender.com/api/user/add_terms`,
+        url: `https://greentenbe-production.up.railway.app/api/user/add_terms`,
         data: formData,
       };
 

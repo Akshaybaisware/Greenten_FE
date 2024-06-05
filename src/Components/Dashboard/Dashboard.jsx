@@ -37,7 +37,7 @@ function Dashboard() {
   const getallcancel = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/getallcancel`
+        `https://greentenbe-production.up.railway.app/api/user/getallcancel`
       );
       console.log(response, "cancel");
       setCancelUsers(response.data.users.length);
@@ -49,7 +49,7 @@ function Dashboard() {
   const totalragisterations = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/getallclient`
+        `https://greentenbe-production.up.railway.app/api/user/getallclient`
         //getallregistered`
       );
       console.log(response, "registerations");
@@ -63,7 +63,7 @@ function Dashboard() {
   const totlalActiveUser = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/getallactive`
+        `https://greentenbe-production.up.railway.app/api/user/getallactive`
       );
 
       console.log(response, "active");
@@ -76,7 +76,7 @@ function Dashboard() {
   const totlalPendingUser = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/getallpending`
+        `https://greentenbe-production.up.railway.app/api/user/getallpending`
       );
       console.log(response, "pending");
       setPendingUsers(response.data.users.length);
@@ -88,7 +88,7 @@ function Dashboard() {
   const gettodaysregisterations = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/gettodaysregisterations`
+        `https://greentenbe-production.up.railway.app/api/user/gettodaysregisterations`
       );
       console.log(response, "todays");
     } catch (error) {
@@ -99,7 +99,7 @@ function Dashboard() {
   const totlalFrezzUser = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/getallfreez`
+        `https://greentenbe-production.up.railway.app/api/user/getallfreez`
       );
 
       console.log(response, "frezz");
@@ -292,7 +292,7 @@ function Dashboard() {
               <Box  color={"black"}>
               <Icon as={FaUser} boxSize={8} />
               {/* <img
-                             
+
               src={TotalCumstmer} alt="Total Customers" /> */}
               </Box>
               <Text

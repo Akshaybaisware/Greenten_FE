@@ -18,7 +18,7 @@ function Recovery() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://zemixbe.onrender.com/api/user/getallclient"
+        "https://greentenbe-production.up.railway.app/api/user/getallclient"
       );
       // Initialize each user data with a selectedDate property
       const usersWithDate = response?.data?.data.map((user) => ({
@@ -131,7 +131,7 @@ function Recovery() {
     try {
       const id = row._id;
       const res = await axios.post(
-        "https://zemixbe.onrender.com/api/user/deleteuser",
+        "https://greentenbe-production.up.railway.app/api/user/deleteuser",
         // "http://localhost:5000/api/user/deleteuser",
         {
           userId: id,

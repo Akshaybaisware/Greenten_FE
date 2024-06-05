@@ -82,7 +82,7 @@ function QcReport() {
 
   //   try {
   //     const response = await axios.post(
-  //       // "https://zemixbe.onrender.com/api/assignment/getassignments",
+  //       // "https://greentenbe-production.up.railway.app/api/assignment/getassignments",
   //       `http://localhost:5000/api/user/getreportbyid`,
   //       // `http://localhost:5000/api/assignment/getassignments`,
 
@@ -202,13 +202,13 @@ const downloadReport = async (data) => {
 
   try {
     const userResponse = await axios.post(
-      `https://zemixbe.onrender.com/api/user/getreportbyid`,
+      `https://greentenbe-production.up.railway.app/api/user/getreportbyid`,
       { id: data._id }
     );
     console.log(userResponse.data, "User Report data");
 
     const allAssignmentsResponse = await axios.get(
-      "https://zemixbe.onrender.com/api/assignment/getallassignments"
+      "https://greentenbe-production.up.railway.app/api/assignment/getallassignments"
     );
     console.log(allAssignmentsResponse.data, "All Assignments data");
 
@@ -346,7 +346,7 @@ const downloadReport = async (data) => {
   const qcdata = async () => {
     try {
       const response = await axios.get(
-        "https://zemixbe.onrender.com/api/user/getallclient"
+        "https://greentenbe-production.up.railway.app/api/user/getallclient"
         // `http://localhost:5000/user/getreportbyid`,{
           //  userId: userId
         // }
@@ -373,8 +373,8 @@ const downloadReport = async (data) => {
   const qcreportdata = async () => {
     try {
       const reposne = await axios.post(
-        // "https://zemixbe.onrender.com/api/assignment/getassignments",
-        `https://zemixbe.onrender.com/api/user/getreportbyid`,
+        // "https://greentenbe-production.up.railway.app/api/assignment/getassignments",
+        `https://greentenbe-production.up.railway.app/api/user/getreportbyid`,
         { id : userId }
       );
       console.log(reposne, "jasdbasjkdbaksjb");
@@ -393,7 +393,7 @@ const downloadReport = async (data) => {
     try {
       const id = row._id;
       const res = await axios.post(
-        "https://zemixbe.onrender.com/api/user/deleteuser",
+        "https://greentenbe-production.up.railway.app/api/user/deleteuser",
         // "http://localhost:5000/api/user/deleteuser",
         {
           userId: id,

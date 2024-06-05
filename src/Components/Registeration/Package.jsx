@@ -33,7 +33,7 @@ function Package() {
   const getallpackages = async () => {
     try {
       const response = await fetch(
-        "https://zemixbe.onrender.com/api/package/getallpackages",
+        "https://greentenbe-production.up.railway.app/api/package/getallpackages",
         {
           method: "GET",
           headers: {

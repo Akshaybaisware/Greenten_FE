@@ -89,7 +89,7 @@ function UserNavbar() {
 
     try {
       const response = await axios.post(
-        "https://zemixbe.onrender.com/api/user/forgetpassword",
+        "https://greentenbe-production.up.railway.app/api/user/forgetpassword",
         {
           newPassword: newPasswordValue,
           confirmPassword: confirmPasswordValue,
@@ -185,7 +185,7 @@ function UserNavbar() {
                   <HamburgerIcon height={6} width={6} />
                 </MenuButton>
                 <MenuList height={"300%"}>
-                
+
                   <MenuItem as={Link} to="/">
                     Dashboard
                   </MenuItem>

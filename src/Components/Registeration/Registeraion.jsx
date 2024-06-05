@@ -40,7 +40,7 @@ function Registeraion() {
     const getdata = async () => {
       try {
         const response = await axios.get(
-          "https://zemixbe.onrender.com/api/user/getallclient"
+          "https://greentenbe-production.up.railway.app/api/user/getallclient"
         );
         console.log(response.data.data, "asdasd");
         setFilter(response.data.data);
@@ -68,7 +68,7 @@ function Registeraion() {
   const deletaggrimet = async (email) => {
     try {
       const res = await axios.post(
-        "https://zemixbe.onrender.com/api/aggriment/deleteaggriment",
+        "https://greentenbe-production.up.railway.app/api/aggriment/deleteaggriment",
         {
           email: email,
         }
@@ -82,7 +82,7 @@ function Registeraion() {
   const deleteclientinfo = async (id) => {
     try {
       const response = await axios.post(
-        "https://zemixbe.onrender.com/api/user/deleteclient",
+        "https://greentenbe-production.up.railway.app/api/user/deleteclient",
         {
           id: id,
         }
@@ -138,7 +138,7 @@ function Registeraion() {
     try {
       console.log("email function");
       const response = await axios.post(
-        "https://zemixbe.onrender.com/api/user/sendconfirmmail",
+        "https://greentenbe-production.up.railway.app/api/user/sendconfirmmail",
         {
           email: email,
         }
@@ -396,7 +396,7 @@ function Registeraion() {
   const gettodaysassignmentcount = async () => {
     try {
       const response = await axios.get(
-        "https://zemixbe.onrender.com/api/user/gettodaysregister"
+        "https://greentenbe-production.up.railway.app/api/user/gettodaysregister"
       );
       console.log(response, "todats registertions");
       settodaysassignmentcount(response.data.users.length);
@@ -408,7 +408,7 @@ function Registeraion() {
   const gettodaysdoneassignment = async () => {
     try {
       const reposne = await axios.get(
-        "https://zemixbe.onrender.com/api/user/gettodaysdone"
+        "https://greentenbe-production.up.railway.app/api/user/gettodaysdone"
       );
       console.log(reposne.data.users, "todyas doen");
       settodaysassignment(reposne.data.users.length);

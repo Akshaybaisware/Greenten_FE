@@ -399,7 +399,7 @@ function Navbar() {
 
     try {
       const response = await axios.post(
-        // "https://zemixbe.onrender.com/api/auth/adminforgetpassword",
+        // "https://greentenbe-production.up.railway.app/api/auth/adminforgetpassword",
         "http://localhost:5000/api/auth/adminforgetpassword",
         {
           newPassword: newPasswordValue,
@@ -490,11 +490,11 @@ function Navbar() {
               </Menu>
             </Box>
             <Box
-       
+
             height={"100%"}>
               <Menu      bg="black">
                 <MenuButton
-                
+
                   as={Button}
                   // bg="#E19898"
                   size="sm"
@@ -506,7 +506,7 @@ function Navbar() {
                 <MenuList
                      bg="black"
                 height={"300%"}>
-                  
+
                   <MenuItem as={RouterLink} to="/">
                     Dashboard
                   </MenuItem>
@@ -591,7 +591,7 @@ function Navbar() {
                 color="white"
                 fontSize={["1.5rem"]}>Dashboard</Box>
               </Link>
-           
+
 
               <Menu isOpen={isOpen} onOpen={toggleMenu} onClose={toggleMenu}>
                 <MenuButton
@@ -601,22 +601,22 @@ function Navbar() {
                   <ChevronDownIcon height={8} width={8} />
                 </MenuButton>
                 <MenuList>
-                  <MenuItem 
+                  <MenuItem
                     color="black"
                   as={RouterLink} to="/registeration">
                     Registration
                   </MenuItem>
-                  <MenuItem 
+                  <MenuItem
                     color="black"
                   as={RouterLink} to="/pendingregisteration">
                     Pending Registration
                   </MenuItem>
-                  <MenuItem 
+                  <MenuItem
                     color="black"
                   as={RouterLink} to="/cancelregisteration">
                     Cancel Registration
                   </MenuItem>
-                  <MenuItem 
+                  <MenuItem
                     color="black"
                   as={RouterLink} to="/addpackage">
                     Package

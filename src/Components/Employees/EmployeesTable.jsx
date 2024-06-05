@@ -98,7 +98,7 @@ function EmployeesTable() {
   const handeleEmployee = async (id) => {
     try {
       const response = await axios.post(
-        "https://zemixbe.onrender.com/api/employee/deleteemployee",
+        "https://greentenbe-production.up.railway.app/api/employee/deleteemployee",
         {
           employeeId: id,
         }
@@ -165,7 +165,7 @@ function EmployeesTable() {
     setloading(true);
     try {
       const response = await fetch(
-        "https://zemixbe.onrender.com/api/employee/getallemployee",
+        "https://greentenbe-production.up.railway.app/api/employee/getallemployee",
         {
           method: "GET",
           headers: {

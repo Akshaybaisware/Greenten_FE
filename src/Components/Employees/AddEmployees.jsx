@@ -38,7 +38,7 @@
 //   const handleSubmitemployee = async (e) => {
 //     try {
 //       const response = await fetch(
-//         "https://zemixbe.onrender.com/api/employee/addemployee",
+//         "https://greentenbe-production.up.railway.app/api/employee/addemployee",
 //         {
 //           method: "POST",
 //           headers: {
@@ -281,7 +281,7 @@ function AddEmployees() {
   const handleSubmitemployee = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://zemixbe.onrender.com/api/employee/addemployee", {
+      const response = await fetch("https://greentenbe-production.up.railway.app/api/employee/addemployee", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

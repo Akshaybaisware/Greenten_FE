@@ -23,7 +23,7 @@ function AddClient() {
     try {
       console.log(email, id);
       const response = await axios.post(
-        "https://zemixbe.onrender.com/api/user/sendconfirmmail",
+        "https://greentenbe-production.up.railway.app/api/user/sendconfirmmail",
         {
           email: email,
         }
@@ -46,7 +46,7 @@ function AddClient() {
     try {
       console.log(data);
       const response = await fetch(
-        "https://zemixbe.onrender.com/api/user/addclient",
+        "https://greentenbe-production.up.railway.app/api/user/addclient",
         {
           method: "POST",
           headers: {

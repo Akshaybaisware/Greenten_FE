@@ -89,7 +89,7 @@ function ViewDetails() {
   const qcreportdata = async () => {
     try {
       const reposne = await axios.post(
-        "https://zemixbe.onrender.com/api/assignment/getassignments",
+        "https://greentenbe-production.up.railway.app/api/assignment/getassignments",
         { userId: userId }
       );
       console.log(reposne, "jasdbasjkdbaksjb");

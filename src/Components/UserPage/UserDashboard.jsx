@@ -42,7 +42,7 @@ function UserDashboard() {
   const getallcancel = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/getallcancel`
+        `https://greentenbe-production.up.railway.app/api/user/getallcancel`
       );
       console.log(response, "cancel");
       setCancelUsers(response.data.users.length);
@@ -54,7 +54,7 @@ function UserDashboard() {
   const totalragisterations = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/getallregistered`
+        `https://greentenbe-production.up.railway.app/api/user/getallregistered`
       );
       console.log(response, "registerations");
       setRegisterUsers(response.data.users.length);
@@ -66,7 +66,7 @@ function UserDashboard() {
   const getuserdeeatilsbyid = async () => {
     try {
       const response = await axios.post(
-        "https://zemixbe.onrender.com/api/user/getuserbyid",
+        "https://greentenbe-production.up.railway.app/api/user/getuserbyid",
         {
           userId: userId,
         }
@@ -91,7 +91,7 @@ function UserDashboard() {
   const totlalActiveUser = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/getallactive`
+        `https://greentenbe-production.up.railway.app/api/user/getallactive`
       );
 
       console.log(response, "active");
@@ -104,7 +104,7 @@ function UserDashboard() {
   const totlalPendingUser = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/getallpending`
+        `https://greentenbe-production.up.railway.app/api/user/getallpending`
       );
       console.log(response, "pending");
       setPendingUsers(response.data.users.length);
@@ -116,7 +116,7 @@ function UserDashboard() {
   const gettodaysregisterations = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/gettodaysregisterations`
+        `https://greentenbe-production.up.railway.app/api/user/gettodaysregisterations`
       );
       console.log(response, "todays");
     } catch (error) {
@@ -127,7 +127,7 @@ function UserDashboard() {
   const totlalFrezzUser = async () => {
     try {
       const response = await axios.get(
-        `https://zemixbe.onrender.com/api/user/getallfreez`
+        `https://greentenbe-production.up.railway.app/api/user/getallfreez`
       );
 
       console.log(response, "frezz");
@@ -139,7 +139,7 @@ function UserDashboard() {
 
   return (
     <>
-     
+
 
       <Box
         width="100%"

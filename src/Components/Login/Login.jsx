@@ -153,7 +153,7 @@ function Login() {
     setLoader(true);
     try {
       const response = await axios.post(
-        // "https://zemixbe.onrender.com/api/auth/adminsignin",
+        // "https://greentenbe-production.up.railway.app/api/auth/adminsignin",
         "http://localhost:5000/api/auth/adminsignin",
         user
       );
@@ -253,8 +253,8 @@ function Login() {
             <Box width="100%" mb="20px">
             {/* <Flex  justifyContent="space-between"> */}
               <Input type="password" ref={password} placeholder="Password" />
-            
-              <ViewIcon 
+
+              <ViewIcon
 
 
                onClick={handleshow}
