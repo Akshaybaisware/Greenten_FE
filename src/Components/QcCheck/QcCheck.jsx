@@ -133,6 +133,11 @@ function QcCheck() {
           fontSize : "1.5rem",
           padding : "1rem"
         }}>QC Report - {correctPercentage.toFixed(2)}% Accuracy</Center>
+        <Center>
+          Name : {localStorage.getItem("username")}
+          Mobile No : {localStorage.getItem("usermobilenumber")}
+          Email : {localStorage.getItem("useremail")}
+        </Center>
 
         <Center>
           <ResponsiveContainer width="80%" height={400}>

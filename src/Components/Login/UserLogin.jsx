@@ -31,11 +31,15 @@ function UserLogin() {
       console.log(response.data , "Userlogin response");
       console.log(response)
 
+
       const endDate = new Date(response.data.user.endDate);
 const currentDate = new Date();
 console.log(endDate.getTime(), currentDate.getTime(), "dates");
 if (endDate.getTime() < currentDate.getTime()) {
   console.log("in the redirect");
+  localStorage.setItem("useremail" , response.data.email);
+      localStorage.setItem("usermobilenumber" , response.data.user.mobile);
+      localStorage.setItem("username", response.data.user.name );
   navigate("/qccheck", {
     state: response.data
   });
