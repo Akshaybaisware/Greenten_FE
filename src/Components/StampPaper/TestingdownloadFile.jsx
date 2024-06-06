@@ -238,7 +238,7 @@
 //               submission.
 //               <br />
 //               <br />
-//               3. Payouts: Client will provide workload of 480 FORMS 5 Days. This
+//               3. Payouts: Client will provide workload of 400 FORMS 5 Days. This
 //               MOU has been signed for 1 system.
 //               <br />
 //               <br />
@@ -391,7 +391,7 @@
 //               Required Accuracy by the company:
 //             </h1>
 //             <p>
-//               You must have to provide 90% accuracy in form filling work (480
+//               You must have to provide 90% accuracy in form filling work (400
 //               Forms) in 5 Days. if you are fail to provide 90% accuracy, you must
 //               have to pay registration amount
 //               <br />

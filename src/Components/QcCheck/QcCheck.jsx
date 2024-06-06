@@ -16,7 +16,7 @@ function QcCheck() {
   const[ifnotFilledanyFrom , setIfnotFilledAnyfform] = useState(false);
   const statecorrect = state.user.correctAssignmentCount;
   const stateincorrrect = state.user.incorrectAssignmentCount;
-  const totalForms = 480;
+  const totalForms = 400;
 
   // Calculate percentage for correct assignments
   const correctPercentage = (statecorrect / totalForms) * 100;

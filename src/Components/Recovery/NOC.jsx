@@ -229,7 +229,7 @@ const NOC = () => {
           <br />
           <br />
           Greenten Services and QC reports provided within 72 hours. Greenten
-          Services provides a workload of 480 forms over 5 days,
+          Services provides a workload of 400 forms over 5 days,
           <br />
           Greenten Services has 5 days, including holidays, to complete the
           workload and submit it, with Greenten Enterprise furnishing an accuracy

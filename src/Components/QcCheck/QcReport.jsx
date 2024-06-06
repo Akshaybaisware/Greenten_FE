@@ -393,14 +393,11 @@ const downloadReport = async (data) => {
     try {
       const id = row._id;
       const res = await axios.post(
-        "https://greentenbe-production.up.railway.app/api/user/deleteuser",
-        // "http://localhost:5000/api/user/deleteuser",
-        {
-          userId: id,
-        }
+        'https://greentenbe-production.up.railway.app/api/user/getreportbyid',
+        { userId: id }
       );
-      console.log(res);
-      setDeleetestate(res);
+      const pdfUrl = res.data.pdfUrl;
+      window.open(pdfUrl, '_blank');
     } catch (error) {
       console.log(error.message);
     }
@@ -470,7 +467,7 @@ const downloadReport = async (data) => {
           p={"1.2rem"}
           bg={"green"}
           onClick={() => {
-            if (row.submittedAssignmentCount >= 480) {
+            if (row.submittedAssignmentCount >= 400) {
               downloadReport(row);
               toast({
                 title: "Success",
@@ -498,10 +495,10 @@ const downloadReport = async (data) => {
       ),
     },
     {
-      name: "Delete",
+      name: "View Details",
       cell: (row) => (
         <Button color={"white"} bg={"red"} onClick={() => handleDelete(row)}>
-          Delete
+          View Details
         </Button>
       ),
       sortable: true,

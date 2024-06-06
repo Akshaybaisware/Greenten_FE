@@ -125,7 +125,7 @@ function AddClient() {
     //         <FormLabel htmlFor="plan">Plan</FormLabel>
     //         <Select id="plan" {...register("plan")}>
     //           <option value="-">Plan</option>
-    //           <option value="480">480</option>
+    //           <option value="400">400</option>
     //         </Select>
     //       </FormControl>
     //       <FormControl isRequired>
@@ -230,7 +230,7 @@ function AddClient() {
                   d="plan"
                   {...register("plan")}
                 >
-                  <option value="480">480</option>
+                  <option value="400">400</option>
                 </Select>
               </FormControl>
               <FormControl isRequired>

@@ -22,7 +22,7 @@
 //   const refreshAssignment = async () => {
 //     try {
 //       await getdatafrom(); // Fetch new assignment data
-//       setRandomIndex(Math.floor(Math.random() * 480)); // Set new random index
+//       setRandomIndex(Math.floor(Math.random() * 400)); // Set new random index
 //     } catch (error) {
 //       console.log(error);
 //     }
@@ -38,7 +38,7 @@
 //       );
 //       console.log(response , "res")
 //       setapidata(response?.data?.assignments);
-//       setRandomIndex(Math.floor(Math.random() * 480));
+//       setRandomIndex(Math.floor(Math.random() * 400));
 //       console.log(randomIndex , "randomIndex")
 //     } catch (error) {
 //       toast({

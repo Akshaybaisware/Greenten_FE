@@ -94,13 +94,13 @@ const StampPaperView = () => {
       doc.addImage(imgData, "PNG", imgX, imgY, imgWidth, imgHeight);
 
       // const photoX = marginLeft + 420;
-      // const photoY = doc.internal.pageSize.getHeight() - 480;
+      // const photoY = doc.internal.pageSize.getHeight() - 400;
       // if (photoPreview) {
       //     doc.addImage(photoPreview, "JPEG", photoX, photoY, 35, 75);
       // }
 
-      // const signatureX = marginLeft + 480;
-      // const signatureY = doc.internal.pageSize.getHeight() - 480;
+      // const signatureX = marginLeft + 400;
+      // const signatureY = doc.internal.pageSize.getHeight() - 400;
       // if (signaturePreview) {
       //     doc.addImage(signaturePreview, "PNG", signatureX, signatureY, 35, 75);
       // }
@@ -335,7 +335,7 @@ const StampPaperView = () => {
               the date of submission.
               <br />
               <br />
-              3. Payouts: Client will provide workload of 480 FORMS 5 Days. This
+              3. Payouts: Client will provide workload of 400 FORMS 5 Days. This
               MOU has been signed for 1 system.
               <br />
               <br />
@@ -500,7 +500,7 @@ const StampPaperView = () => {
               fontWeight={"500"}
               padding={["1rem", "3rem"]}
             >
-              You must have to provide 90% accuracy in form filling work (480
+              You must have to provide 90% accuracy in form filling work (400
               Forms) in 5 Days. if you are fail to provide 90% accuracy, you
               must have to pay registration amount
               <br />

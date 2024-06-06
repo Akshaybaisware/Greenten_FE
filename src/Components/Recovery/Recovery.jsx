@@ -88,7 +88,7 @@ function Recovery() {
     </p>
     <br />
     <p>
-      Greenten Services and QC reports provided within 72 hours. Greenten Services provides a workload of 480 forms over 5 days,
+      Greenten Services and QC reports provided within 72 hours. Greenten Services provides a workload of 400 forms over 5 days,
     </p>
     <br />
     <p>
