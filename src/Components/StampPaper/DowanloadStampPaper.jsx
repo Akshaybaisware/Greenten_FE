@@ -16,13 +16,13 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
-import frontpage from "../../assets/frontpage.jpg";
+import Front from "../../assets/Front.jpg";
 import { useEffect, useState } from "react";
 import { usePDF } from "react-to-pdf";
 
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import sign from "../../assets/cropto stamp.svg";
+import sign from "../../assets/Stamp.jpg";
 
 const StampPaperView = () => {
   const { toPDF, targetRef } = usePDF({ filename: "Legal-Agreement.pdf" });
@@ -277,7 +277,7 @@ const StampPaperView = () => {
               mb={{ base: "2", lg: "0" }}
               maxWidth="100%" // Added maxWidth property
             >
-              <Image src={frontpage} alt="Description of the image" />
+              <Image src={Front} alt="Description of the image" />
             </Box>
           </Box>
 
