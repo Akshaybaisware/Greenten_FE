@@ -275,6 +275,7 @@ const StampPaperView = () => {
               boxSize={{ base: "100%", md: "auto" }} // Adjusted to "auto" for non-base screen sizes
               objectFit="contain"
               mb={{ base: "2", lg: "0" }}
+              bg={"red"}
               maxWidth="100%" // Added maxWidth property
             >
               <Image src={Front} alt="Description of the image" />
