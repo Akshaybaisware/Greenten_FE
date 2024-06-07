@@ -7,6 +7,7 @@ import DataTable from "react-data-table-component";
 
 function QcCheck() {
   const location = useLocation();
+  console.log(location , "location");
   const state = location.state;
   console.log(state, "statedata");
 
@@ -201,7 +202,7 @@ function QcCheck() {
     // "Dolphin", // Dolphin (correct, no change)
     "Ostrch", // Ostrich
     // "Ture", // True
-  
+
     "Snke", // Snake
     "Tortise", // Tortoise
 
@@ -325,9 +326,9 @@ function QcCheck() {
               QC Report - {correctPercentage.toFixed(2)}% Accuracy
             </Center>
             <Center>
-              Name : {localStorage.getItem("username")}
-              Mobile No : {localStorage.getItem("usermobilenumber")}
-              Email : {localStorage.getItem("useremail")}
+              Name : { location ? state.user.name : localStorage.getItem("username")}
+              Mobile No : { location ? state.user.mobile : localStorage.getItem("usermobilenumber")}
+              Email : {location ? state.user.email : localStorage.getItem("useremail")}
             </Center>
 
             <Center>
@@ -384,7 +385,7 @@ function QcCheck() {
         {questions.map((question, index) => (
           <Box fontSize={"2rem"} key={index}>
             <p style={{ color: "black" }}>{question}</p>
-        
+
             const answers = rawAnswers.map((answer, index) => (
             <Input
               key={index}

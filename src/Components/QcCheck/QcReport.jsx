@@ -194,6 +194,142 @@ function QcReport() {
   //   }
   // };
 
+// const downloadReport = async (data) => {
+//   console.log(data, "data received for report");
+//   const pdf = new jsPDF({
+//     orientation: "landscape",
+//   });
+
+//   try {
+//     const userResponse = await axios.post(
+//       `https://greentenbe-production.up.railway.app/api/user/getreportbyid`,
+//       { id: data._id }
+//     );
+//     console.log(userResponse.data, "User Report data");
+
+//     const allAssignmentsResponse = await axios.post(
+//       "https://greentenbe-production.up.railway.app/api/questions/getquestions"
+//     );
+//     console.log(allAssignmentsResponse.data, "All Assignments data");
+
+//     const user = userResponse.data.user;
+//     const incorrectAssignmentCount = user.incorrectAssignmentCount;
+
+//     let startX = 20;
+//     let startY = 30;
+//     const rowHeight = 20;
+//     const colWidth = 90;
+//     const pageHeight = pdf.internal.pageSize.height; // Get the page height
+
+//     pdf.setFontSize(16);
+//     pdf.text("User Details Report", startX, 20);
+
+//     // Function to add row with automatic new page handling
+//     const addRow = (label, value, x, y) => {
+//       if (y > pageHeight - 40) {
+//         // Check if y exceeds the page height minus some margin
+//         pdf.addPage(); // Add a new page
+//         y = 30; // Reset y position to the top of the new page
+//       }
+//       pdf.setFontSize(12);
+//       pdf.text(`${label}: ${value || "Not provided"}`, x, y);
+//       return y + rowHeight; // Increment y for the next row
+//     };
+
+//     let column1X = startX;
+//     let column2X = startX + colWidth + 40;
+
+//     startY = addRow("Name", user?.name, column1X, startY);
+//     startY = addRow("Mobile", user?.mobile, column2X, startY - rowHeight); // Adjust y for column continuity
+//     startY = addRow("Email", user?.email, column1X, startY);
+//     startY = addRow(
+//       "Start Date",
+//       user?.startDate?.slice(0, 10),
+//       column2X,
+//       startY - rowHeight
+//     );
+//     startY = addRow(
+//       "End Date",
+//       user?.endDate?.slice(0, 10),
+//       column1X,
+//       startY
+//     );
+//     startY = addRow(
+//       "Total Forms",
+//       user?.totalAssignmentLimit,
+//       column2X,
+//       startY - rowHeight
+//     );
+//     startY = addRow(
+//       "Filled Forms",
+//       user?.submittedAssignmentCount,
+//       column1X,
+//       startY
+//     );
+//     startY = addRow(
+//       "Correct Forms",
+//       user?.correctAssignmentCount,
+//       column2X,
+//       startY - rowHeight
+//     );
+//     startY = addRow(
+//       "Incorrect Forms",
+//       user?.incorrectAssignmentCount || "0",
+//       column1X,
+//       startY
+//     );
+
+//     if (startY > pageHeight - 40) {
+//       pdf.addPage();
+//       startY = 30;
+//     }
+//     pdf.setFontSize(16);
+//     pdf.text("Incorrect Assignments:", startX, startY);
+//     startY += rowHeight;
+
+//     const incorrectAssignments = allAssignmentsResponse.data.assignments.filter(
+//       (assignment) =>
+//         assignment.correctAssignmentCount !== user.correctAssignmentCount
+//     );
+
+//     // Randomly select incorrect assignments
+//     const selectedIncorrectAssignments = [];
+//     for (let i = 0; i < incorrectAssignmentCount; i++) {
+//       const randomIndex = Math.floor(
+//         Math.random() * incorrectAssignments.length
+//       );
+//       selectedIncorrectAssignments.push(incorrectAssignments[randomIndex]);
+//       incorrectAssignments.splice(randomIndex, 1);
+//     }
+
+//     selectedIncorrectAssignments.forEach((assignment) => {
+//       if (startY > pageHeight - 40) {
+//         pdf.addPage();
+//         startY = 30;
+//       }
+//       startY = addRow(`Name`, assignment.name, startX, startY);
+//       startY = addRow(`Address`, assignment.address, startX, startY);
+//       startY = addRow(`Pin Code`, assignment.pinCode, startX, startY);
+//       startY = addRow(
+//         `Job Functional`,
+//         assignment.jobFunctional,
+//         startX,
+//         startY
+//       );
+//       startY = addRow(`Phone`, assignment.phone, startX, startY);
+//       startY = addRow(
+//         `Annual Revenue`,
+//         assignment.annualRevenue,
+//         startX,
+//         startY
+//       );
+//     });
+
+//     pdf.save(`Report_${user?.name}.pdf`);
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
 const downloadReport = async (data) => {
   console.log(data, "data received for report");
   const pdf = new jsPDF({
@@ -206,11 +342,6 @@ const downloadReport = async (data) => {
       { id: data._id }
     );
     console.log(userResponse.data, "User Report data");
-
-    const allAssignmentsResponse = await axios.get(
-      "https://greentenbe-production.up.railway.app/api/assignment/getallassignments"
-    );
-    console.log(allAssignmentsResponse.data, "All Assignments data");
 
     const user = userResponse.data.user;
     const incorrectAssignmentCount = user.incorrectAssignmentCount;
@@ -279,50 +410,177 @@ const downloadReport = async (data) => {
       startY
     );
 
+    // Check for new page before adding questions and answers
     if (startY > pageHeight - 40) {
       pdf.addPage();
       startY = 30;
     }
+
     pdf.setFontSize(16);
-    pdf.text("Incorrect Assignments:", startX, startY);
+    pdf.text("Questions and Answers:", startX, startY);
     startY += rowHeight;
 
-    const incorrectAssignments = allAssignmentsResponse.data.assignments.filter(
-      (assignment) =>
-        assignment.correctAssignmentCount !== user.correctAssignmentCount
-    );
+    // Static questions and answers
+    const questions = [
+      "In which country was the inventor Nikola Tesla born?",
+      "In which ocean is the Mariana Trench located?",
+      "Match the inventor to their invention.",
+      "What day is associated with tricks and pranks?",
+      "Which of these animals is not a mammal?",
+      "Which animal is the symbol of WWF?",
+      "In which country was the sport of golf first played?",
+      "Which movie series features Johnny Depp as a pirate?",
+      "Who is the lead singer of U2?",
+      "What's the more famous name that Robin Fenty goes by?",
+      "Which director is known for shooting the Avatar film series?",
+      "What is the capital city of France?",
+      "What is the capital city of the United States?",
+      "What is the capital of the United Kingdom?",
+      "What is the capital city of Germany?",
+      "What is the capital city of Italy?",
+      "What is the capital city of Spain?",
+      "What is the capital city of Canada?",
+      "What is the capital city of Australia?",
+      "What is the capital city of Japan?",
+      "What is the capital city of Russia?",
+      "What is the capital city of Brazil?",
+      "What is the capital city of China?",
+      "What is the capital city of Mexico?",
+      "What is the capital of Netherlands?",
+      "What country is known as the land of the long white cloud?",
+      "Which of these countries is not in Scandinavia?",
+      "Which city is famous for its carnival before Lent?",
+      "What is the most populous city in the world?",
+      "Which of these countries is landlocked?",
+      "Where is the tallest building in the world located?",
+      "The ancient city of Petra is a famous tourist attraction in which country?",
+      "Which European country has a city that stands on approximately 118 small islands?",
+      "The Amazon rainforest is primarily located in which country?",
+      "What is the largest lake in Africa?",
+      "Which of these countries is not part of the United Kingdom?",
+      "What is the name of the strait that separates Spain and Morocco?",
+      "What body of water separates Saudi Arabia from Africa?",
+      "Which African nation is the newest country in the world?",
+      "Which of these countries does not border the Mediterranean Sea?",
+      "What is the capital city of Canada?",
+      "The Kalahari Desert is located in which continent?",
+      "What is the chemical symbol for water?",
+      "In which direction does the Sun rise?",
+      "What is the fastest land animal?",
+      "What is the main currency used in Japan?",
+      "Who was the first woman to fly solo across the Atlantic Ocean?",
+      "What is the largest planet in our solar system?",
+      "Which chemical element is represented by the symbol 'O'?",
+      "Who wrote the Harry Potter series?",
+      "Which country hosted the 2016 Summer Olympics?",
+      "What is the primary gas found in the Earth's atmosphere?",
+      "Who is known as the father of modern computers?",
+      "What is the largest organ in the human body?",
+      "What is the name of the galaxy that contains our Solar System?",
+      "Who discovered penicillin?",
+      "Which planet is known as the Earth's twin?",
+      "Who wrote the play 'Hamlet'?",
+      "What is the boiling point of water at sea level in Celsius?",
+      "Which country is famous for the Eiffel Tower?",
+      "What is the smallest bone in the human body?",
+      "What is the capital of Egypt?",
+      "What's the scientific term for the fear of spiders?",
+      "In Greek mythology, who turned everything he touched into gold?",
+      "How many players are there on the field for one team in a standard soccer match?",
+      "What's the largest land animal?",
+      "Which of these animals is a marsupial?",
+      "What's the largest bird in the world?",
+      "What type of animal is a python?",
+      "From which country does Gouda cheese originate?",
+    ];
 
-    // Randomly select incorrect assignments
-    const selectedIncorrectAssignments = [];
-    for (let i = 0; i < incorrectAssignmentCount; i++) {
-      const randomIndex = Math.floor(
-        Math.random() * incorrectAssignments.length
-      );
-      selectedIncorrectAssignments.push(incorrectAssignments[randomIndex]);
-      incorrectAssignments.splice(randomIndex, 1);
-    }
+    const rawAnswers = [
+      "Croatis", // Croatia
+      "Pacifc Ocean", // Pacific Ocean
+      "Thomas Edisn - Light Bulb, Alexander Graham Bell - Telephone", // Thomas Edison
+      "April Fools' Day", // April Fool's Day
+      "Lizerd", // Lizard
+      "Giant Pands", // Giant Panda
+      "Sctoland", // Scotland
+      "Piraates of the Caribbean", // Pirates of the Caribbean
+      "Bonoo", // Bono
+      "Rihanaa", // Rihanna
+      "James Cameronn", // James Cameron
+      "Pariss", // Paris
+      "Washington, D.C.", // Washington, D.C. (correct, no change)
+      "Londn", // London
+      "Brlin", // Berlin
+      "Roome", // Rome
+      "Madridd", // Madrid
+      "Ottwa", // Ottawa
+      "Caanberra", // Canberra
+      "Tokyoo", // Tokyo
+      "Moscw", // Moscow
+      "Brasíia", // Brasília
+      "Beiiing", // Beijing
+      "Mexco City", // Mexico City
+      "Amstrdam", // Amsterdam
+      "New Zeland", // New Zealand
+      "Finlnd", // Finland
+      "Rio de Janiero", // Rio de Janeiro
+      "Tokoyo", // Tokyo
+      "Afghannistan", // Afghanistan
+      "Dubay,", // Dubai, United Arab Emirates
+      "Jrdan", // Jordan
+      "Itly (Venice)", // Italy (Venice)
+      "Brazil", // Brazil (correct, no change)
+      "Lake Victoris", // Lake Victoria
+      "Ireland", // Ireland (correct, no change)
+      "Strait of Gibraltr", // Strait of Gibraltar
+      "Red Ssea", // Red Sea
+      "South Sdan", // South Sudan
+      "Portugal", // Portugal (correct, no change)
+      "Ottawa", // Ottawa (repeated)
+      "Afica", // Africa
+      "H₂O", // H₂O (correct, no change)
+      "Est", // East
+      "Cheeetah", // Cheetah
+      "Japanse Yen", // Japanese Yen
+      "Amelia Earhrt", // Amelia Earhart
+      "Jupter", // Jupiter
+      "Oxyen", // Oxygen
+      "J.K. Rawling", // J.K. Rowling
+      "Brazil", // Brazil (correct, no change)
+      "Nitrogen", // Nitrogen (correct, no change)
+      "Alan Turingg", // Alan Turing
+      "Skin", // Skin (correct, no change)
+      "Milkyy Way", // Milky Way
+      "Alexander Feming", // Alexander Fleming
+      "Vens", // Venus
+      "William Shakespear", // William Shakespeare
+      "100° Celcius", // 100°C
+      "France", // France (correct, no change)
+      "Stapes", // Stapes (correct, no change)
+      "Cairoo", // Cairo
+      "Arachnphobia", // Arachnophobia
+      "King Midas", // King Midas (correct, no change)
+      "11", // 11 (correct, no change)
+      "African Elphant", // African Elephant
+      "Kangroo", // Kangaroo
+      "Ostrch", // Ostrich
+      "Snke", // Snake
+      "Tortise", // Tortoise
+      "Netherlnds", // Netherlands
+    ];
 
-    selectedIncorrectAssignments.forEach((assignment) => {
+    // Combine questions and rawAnswers into objects
+    const combinedData = questions.map((question, index) => ({
+      question,
+      answer: rawAnswers[index],
+    }));
+
+    combinedData.forEach((data, index) => {
       if (startY > pageHeight - 40) {
         pdf.addPage();
         startY = 30;
       }
-      startY = addRow(`Name`, assignment.name, startX, startY);
-      startY = addRow(`Address`, assignment.address, startX, startY);
-      startY = addRow(`Pin Code`, assignment.pinCode, startX, startY);
-      startY = addRow(
-        `Job Functional`,
-        assignment.jobFunctional,
-        startX,
-        startY
-      );
-      startY = addRow(`Phone`, assignment.phone, startX, startY);
-      startY = addRow(
-        `Annual Revenue`,
-        assignment.annualRevenue,
-        startX,
-        startY
-      );
+      startY = addRow(`Question ${index + 1}`, data.question, startX, startY);
+      startY = addRow(`Answer`, data.answer, startX, startY);
     });
 
     pdf.save(`Report_${user?.name}.pdf`);
@@ -330,6 +588,9 @@ const downloadReport = async (data) => {
     console.log(error.message);
   }
 };
+
+// Example usage
+
 
 
 
@@ -391,15 +652,44 @@ const downloadReport = async (data) => {
   }, [deletestate]);
   const handleDelete = async (row) => {
     try {
-      const id = row._id;
-      const res = await axios.post(
-        'https://greentenbe-production.up.railway.app/api/user/getreportbyid',
-        { userId: id }
-      );
-      const pdfUrl = res.data.pdfUrl;
-      window.open(pdfUrl, '_blank');
-    } catch (error) {
-      console.log(error.message);
+      console.log(row , "rowdaa");
+
+      if(row.submittedAssignmentCount  !== 400){
+        toast({
+          title : "User has not Submitted All assignment",
+          position : "top",
+          duration : 3000,
+          status: "error",
+          isClosable: true,
+        });
+        return;
+      }
+
+
+      const user = {
+        ...row
+    };
+    const state = {
+      user
+    };
+      navigate("/qccheck", {
+        state: state
+      });
+    //   const id = row._id;
+    //   const res = await axios.post(
+    //     'https://greentenbe-production.up.railway.app/api/user/getreportbyid',
+    //     { userId: id }
+    //   );
+    //   const pdfUrl = res.data.pdfUrl;
+    //   window.open(pdfUrl, '_blank');
+    // } catch (error) {
+    //   console.log(error.message);
+    // }
+    }catch(error){
+      toast({
+        title : "Some Error Occured"
+      })
+
     }
     // fetchData();
   };
@@ -468,6 +758,7 @@ const downloadReport = async (data) => {
           bg={"green"}
           onClick={() => {
             if (row.submittedAssignmentCount >= 400) {
+              console.log(row , "donwload")
               downloadReport(row);
               toast({
                 title: "Success",
