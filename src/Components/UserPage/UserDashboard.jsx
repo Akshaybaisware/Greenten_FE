@@ -168,7 +168,7 @@ function UserDashboard() {
                 fontWeight="bold"
                 color={"white"}
               >
-                Total Number Form
+                Total Question
               </Text>
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}
@@ -203,7 +203,7 @@ function UserDashboard() {
                 fontWeight="bold"
                 color={"white"}
               >
-                Saved Form
+                Saved Question
               </Text>
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}
@@ -244,7 +244,7 @@ function UserDashboard() {
                 fontWeight="bold"
                 color={"white"}
               >
-                Submit Form
+                Submit Question
               </Text>
               <Text
                 fontSize={{ base: "0.7rem", md: "1.2rem" }}

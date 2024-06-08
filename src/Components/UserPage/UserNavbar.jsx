@@ -193,14 +193,14 @@ function UserNavbar() {
                     Current Work Load
                   </MenuItem>
                   <MenuItem as={Link} to="/">
-                    All Forms
+                    All question
                   </MenuItem>
                   <MenuItem as={Link} to="/">
-                    Saved Form
+                    Saved Question
                   </MenuItem>
                   <MenuItem as={RouterLink} to="/">
                     {" "}
-                    Submit Form
+                    Submit Question
                   </MenuItem>
                 </MenuList>
               </Menu>
@@ -305,12 +305,12 @@ function UserNavbar() {
                     Current Work Load
                   </MenuItem>
                   <MenuItem as={Link} to="/">
-                    All Forms
+                    All questions
                   </MenuItem>
                   <MenuItem as={Link} to="/">
-                    Saved Forms
+                    Saved Question
                   </MenuItem>
-                  <MenuItem>Submit Forms</MenuItem>
+                  <MenuItem>Submit Questions</MenuItem>
                 </MenuList>
               </Menu>
             </Flex>

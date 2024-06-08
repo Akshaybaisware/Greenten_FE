@@ -22,8 +22,8 @@ import { usePDF } from "react-to-pdf";
 
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import sign from "../../assets/Stamp.jpg";
-
+// import sign from "../../assets/Stamp.jpg";
+import stamplogo from "../../assets/stamplogo.svg"
 const StampPaperView = () => {
   const { toPDF, targetRef } = usePDF({ filename: "Legal-Agreement.pdf" });
   const locationdata = useLocation();
@@ -568,7 +568,7 @@ const StampPaperView = () => {
               Employer : -
             </Text>
             <Text
-              w={["200px", "700px"]}
+              w={["400px", "700px"]}
               mt={["-1rem", "-5rem"]}
               fontWeight={"500"}
               padding={["1rem", "3rem"]}
@@ -651,7 +651,7 @@ const StampPaperView = () => {
           </Box> */}
           <Box display="flex" justifyContent="center" mt="1rem">
             <Box ml="2rem" w={["255%", "105%"]} h={["0%", "20%"]} mr="1rem">
-              <Image src={sign} alt="Stamp" />
+              <Image src={stamplogo} alt="Stamp" />
             </Box>
             <Box display="flex" flexDirection="row">
               <Box onChange={handleSignatureChange}>
@@ -661,7 +661,7 @@ const StampPaperView = () => {
                   <Image
                     src={signaturePreview}
                     alt="Signature Preview"
-                    w="25%"
+                    w="45%"
                   />
                 )}
               </Box>

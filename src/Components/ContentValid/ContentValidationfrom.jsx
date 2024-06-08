@@ -477,7 +477,7 @@ function ContentValidationForm() {
 
   async function fetchQuestions() {
     try {
-      const response = await fetch('http://localhost:5000/api/questions/getquestions', {
+      const response = await fetch('https://greentenbe-production.up.railway.app/api/questions/getquestions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -518,7 +518,7 @@ function ContentValidationForm() {
   const handleSubmit = async (index, questionId) => {
     try {
       await axios.post(
-        "http://localhost:5000/api/questions/addassignment",
+        "https://greentenbe-production.up.railway.app/api/questions/addassignment",
         {
           userId: userId,
           questionId: questionId, // Include the _id of the question
@@ -558,7 +558,11 @@ function ContentValidationForm() {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
+        <style>
+         @import
+       url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Whisper&display=swap')
+      </style>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh'  , marginTop:"5%"}}>
         <iframe
           src={currentVideoUrl}
           width="800"
@@ -567,24 +571,46 @@ function ContentValidationForm() {
           style={{ border: 'none' }}
         ></iframe>
       </div>
-      <div style={{ padding: '20px' }}>
+      <div style={{ padding: '20px'  , justifyContent:"center" , alignItems:"center"}}>
         {currentQuestions.map((question, index) => (
-          <div key={index} style={{ marginBottom: '20px' }}>
-            <p>{question.question}</p>
+          <div key={index} style={{ marginBottom: '20px', fontFamily: "'Dancing Script', cursive" , fontWeight:"1000" }}
+          >
+            <p style={{fontSize:"1.2rem"}} >{question.question}</p>
             <input
+            height={"1.2rem"}
+             style={{ border: "1px solid green" ,  height:"2rem" }}
               type="text"
               value={responses[indexOfFirstQuestion + index]}
               onChange={(e) => handleResponseChange(indexOfFirstQuestion + index, e.target.value)}
             />
-            <button onClick={() => handleSubmit(indexOfFirstQuestion + index, question._id)}>Submit</button>
+            <button
+            
+            style={{
+              color:"white",
+              marginLeft: "1rem",
+              backgroundColor: "#21a34e",  // Light background color
+              borderRadius: "10px",  // Border radius
+              padding: "0.5rem 1rem",  // Padding for better appearance
+              border: "1px solid #ccc"  // Optional border for better contrast
+            }}
+            onClick={() => handleSubmit(indexOfFirstQuestion + index, question._id)}>Submit</button>
           </div>
         ))}
-        <div style={{ marginTop: '20px' }}>
+        <div style={{ marginTop: '20px' , display:"flex" , alignContent:"center" , justifyContent:"center" }}>
           {questions.length > questionsPerPage && (
-            <div>
-              <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
+            <div  style={{
+              color:"white",
+              // marginLeft: "1rem",
+              backgroundColor: "#4a4ec6",  // Light background color
+              borderRadius: "10px",  // Border radius
+              padding: "0.5rem 1rem",  // Padding for better appearance
+              border: "1px solid #ccc"  // Optional border for better contrast
+            }}>
+              <button  onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
               <span style={{ margin: '0 10px' }}>Page {currentPage}</span>
-              <button onClick={() => handlePageChange(currentPage + 1)} disabled={indexOfLastQuestion >= questions.length}>Next</button>
+              <button 
+              
+              onClick={() => handlePageChange(currentPage + 1)} disabled={indexOfLastQuestion >= questions.length}>Next</button>
             </div>
           )}
         </div>

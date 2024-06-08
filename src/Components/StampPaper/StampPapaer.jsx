@@ -15,9 +15,10 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { Spinner } from "@chakra-ui/react";
-
-import frontpage from "../../assets/frontpage.jpg";
-import sign from "../../assets/cropto stamp.svg";
+import Front from "../../assets/Front.jpg";
+// import frontpage from "../../assets/frontpage.jpg";
+// import sign from "../../assets/cropto stamp.svg";
+import stamplogo from "../../assets/stamplogo.svg"
 // import image from "./SVG STAM.svg";
 
 import { useState } from "react";
@@ -126,7 +127,7 @@ const StampPaper = () => {
             mb={{ base: "2", lg: "0" }}
             maxWidth="100%" // Added maxWidth property
           >
-            <Image src={frontpage} alt="Description of the image" />
+            <Image src={Front} alt="Description of the image" />
           </Box>
         </Box>
 
@@ -380,7 +381,7 @@ const StampPaper = () => {
         </Box>
 
         <Box width={["200px", "400px"]}>
-          <Image src={sign} alt="Stamp" />
+          <Image src={stamplogo} alt="Stamp" />
         </Box>
         {/* <FormControl w={["350px", "400px"]}>
           <FormLabel>Name</FormLabel>
