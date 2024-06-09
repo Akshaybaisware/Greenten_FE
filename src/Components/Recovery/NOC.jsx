@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Box, Text, Center, Image, Button } from "@chakra-ui/react";
-import sign from "../../assets/cropto stamp.svg";
+// import sign from "../../assets/cropto stamp.svg";
+import stamplogo from "../../assets/stamplogo.svg"
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { useLocation } from "react-router-dom";
@@ -282,7 +283,7 @@ const NOC = () => {
           Thanking You
           <br />
         </Text>
-        <Image width={["50%", "35%"]} src={sign} />
+        <Image width={["50%", "35%"]} src={stamplogo} />
       </Box>
       <Box
         position="absolute"

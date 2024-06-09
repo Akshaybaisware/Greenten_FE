@@ -1258,10 +1258,12 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             </Text>
             
             <Text
+            color={"red"}
               fontSize={["0.8rem", "1.5rem"]}
               mt={["-1rem", "-5rem"]}
             fontWeight={"500"}
               padding={["1rem", "3rem"]}
+           
             
             >
        
@@ -1305,7 +1307,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
               <Text fontSize="md">Name: {username}</Text>
             </FormControl>
 
-            <FormControl w={["200px", "300px"]}>
+            <FormControl w={["260px", "300px"]}>
               <Text fontSize="md">Email: {inputField.email}</Text>
             </FormControl>
             <FormControl w={["200px", "300px"]}>
@@ -1374,7 +1376,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
                   <Image
                     src={signaturePreview}
                     alt="Signature Preview"
-                    w="25%"
+                    w="30%"
                   />
                 )}
               </Box>
@@ -1393,11 +1395,13 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             ml={["3rem", "7rem"]}
             onClick={() => toPDF()}
             //downlodePDF(photoPreview, signaturePreview)}
-            colorScheme="teal"
+            bg={"purple"}
             variant="solid"
             mt="4"
             mb="1rem"
+            color={"white"}
           >
+
             Download
           </Button>
         </Box>

@@ -411,7 +411,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             
             <Text
               fontSize={["0.8rem", "1.5rem"]}
-           
+              color={"red"}
             fontWeight={"500"}
               padding={["1rem", "3rem"]}
             
@@ -425,14 +425,16 @@ Client and the Client will be liable to pay the maintenance Amount to the client
 
         <Box>
           <Text
-            padding={["1rem", "3rem"]}
-            fontWeight={"800"}
+           ml={["1rem" , "3rem"]}
+
             fontSize={"1.5rem"}
             mt="4"
           >
             Employer : -
           </Text>
-          <Text fontWeight={"500"} padding={["1rem", "3rem"]}>
+          <Text 
+          ml={["1rem" , "3rem"]}
+          fontWeight={"500"} >
             Name : Greenten Service <br />
             Email : helplinessrvice156@gmail.com <br />
             Address : block number: 23 Hanuman Nagar Ajmer Road
@@ -440,7 +442,9 @@ Client and the Client will be liable to pay the maintenance Amount to the client
           </Text>
         </Box>
 
-        <Box width={["200px", "400px"]}>
+        <Box 
+        ml={["0.5rem" , "2rem"]}
+        width={["200px", "400px"]}>
           <Image src={stamplogo} alt="Stamp" />
         </Box>
         {/* <FormControl w={["350px", "400px"]}>
@@ -453,7 +457,9 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             _hover={{ borderColor: "teal.500" }}
           />
         </FormControl> */}
-        <FormControl w={["350px", "400px"]}>
+        <FormControl 
+        ml={["1rem" , "2rem"]}
+        w={["320px", "400px"]}>
           <FormLabel>Email</FormLabel>
           <Input
             value={email}
@@ -463,7 +469,9 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             _hover={{ borderColor: "teal.500" }}
           />
         </FormControl>
-        <FormControl w={["350px", "400px"]}>
+        <FormControl 
+          ml={["1rem" , "2rem"]}
+        w={["320px", "400px"]}>
           <FormLabel>Start-Date</FormLabel>
           <Input
             value={date}
