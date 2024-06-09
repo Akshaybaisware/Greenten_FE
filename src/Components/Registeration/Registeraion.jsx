@@ -341,13 +341,13 @@ function Registeraion() {
                     // background: index === 3 ? "green" : "green",
                     backgroundColor:
                       index === 4
-                        ? "lightgray" // Red for delete, gray for other
+                        ? "rgb(79, 163, 185)" // Red for delete, gray for other
                         : index === 1
-                        ? " #99ebff" // Yellow for refresh
+                        ? " #c515a2" // Yellow for refresh
                         : index === 0
-                        ? "#ffb3ff" // Blue for edit
+                        ? "#38b048" // Blue for edit
                         : index === 2
-                        ? " #c6ffb3"
+                        ? " #1d2919"
                         : "white", // White for other
                     color:
                       index === 4
@@ -376,13 +376,13 @@ function Registeraion() {
                     // background: index === 3 ? "green" : "green",
                     backgroundColor:
                       index === 4
-                        ? "lightgray" // Red for delete, gray for other
+                        ? " #824308" // Red for delete, gray for other
                         : index === 1
-                        ? " #99ebff" // Yellow for refresh
+                        ? " #c515a2" // Yellow for refresh
                         : index === 0
-                        ? "#ffb3ff"
+                        ? "#38b048"
                         : index === 2
-                        ? " #c6ffb3" // Blue for edit
+                        ? " #1d2919" // Blue for edit
                         : "white", // White for other
                     // color : index === 3 ? "red" : "red", // Delete icon is red
                   }}

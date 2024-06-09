@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Box, Center, Input, VStack } from "@chakra-ui/react";
+import { Box, Center, Input, VStack ,Text, Button } from "@chakra-ui/react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import axios from "axios";
 import DataTable from "react-data-table-component";
@@ -32,7 +32,7 @@ function QcCheck() {
     { name: "Incorrect Assignment", value: stateincorrrect },
   ];
 
-  const COLORS = ["green", "red"];
+  const COLORS = ["#0ad65c", "#c46a1b"];
 
   const columns = [
     { name: "Name", selector: (row) => row.name, sortable: true },
@@ -293,43 +293,59 @@ function QcCheck() {
           fontSize: "2rem",
           textAlign: "center",
           fontWeight: "700",
-          color: "blue",
+       
           margin: "1rem",
         }}
       >
         <Center
           style={{
-            color: "teal",
-            background: "#e6e6ff",
+           
             display: "inline",
             padding: "5px",
             margin: "5px",
           }}
         >
-          Greenten Services and Enterprises
+        <span style={{color:"red"}}> Greenten</span> Services and Enterprises
+        <u/>
         </Center>
         {ifnotFilledanyFrom ? (
           <>
             <Center style={{ color: "black" }}>
-              Sorry You have not Filled any From
+              Sorry You have not Filled All Question
             </Center>
             <Center style={{ color: "red" }}>Sorry Your QC is Failed!</Center>
           </>
         ) : (
           <>
-            <Center
+            <Button
               style={{
-                fontSize: "1.5rem",
+                background:"#b4d080",
+                color:"#410207",
+                fontSize: "1.2rem",
                 padding: "1rem",
               }}
             >
               QC Report - {correctPercentage.toFixed(2)}% Accuracy
-            </Center>
-            <Center>
+            </Button>
+            <Text   style={{
+              fontSize:"1rem",
+                color:"#859c0f",}}>
               Name : { location ? state.user.name : localStorage.getItem("username")}
+            
+            </Text>
+            <Text  style={{
+                 fontSize:"1rem",
+                 color:"#859c0f",}}>
+          
               Mobile No : { location ? state.user.mobile : localStorage.getItem("usermobilenumber")}
+            
+            </Text>
+            <Text  style={{
+                 fontSize:"1rem",
+                color:"#859c0f",}}>
+           
               Email : {location ? state.user.email : localStorage.getItem("useremail")}
-            </Center>
+            </Text>
 
             <Center>
               <ResponsiveContainer width="80%" height={400}>
@@ -357,11 +373,11 @@ function QcCheck() {
               </ResponsiveContainer>
             </Center>
 
-            <Center style={{ color: "red" }}>Sorry Your QC is Failed!</Center>
+            <Center fontSize={["1.3rem"]} style={{ color: "red"  }}>Sorry Your QC is Failed!</Center>
             <hr
               style={{ backgroundColor: "gray", height: "2px", margin: "5px" }}
             />
-            <Center>Incorrect question: {stateincorrrect}</Center>
+            <Center fontSize={["1.3rem"]} >Incorrect question: {stateincorrrect}</Center>
 
             {/* <div style={{ margin: "20px" }}>
         <DataTable
@@ -400,7 +416,7 @@ function QcCheck() {
       </VStack> */}
       <VStack spacing={4} align="stretch" p={4}>
   {questions.map((question, index) => (
-    <Box fontSize={"2rem"} key={index}>
+    <Box fontSize={"1.2rem"} key={index}>
       <p style={{ color: "black" }}>{question}</p>
       <Input
         width={["250px", "300px"]}
