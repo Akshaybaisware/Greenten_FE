@@ -972,7 +972,7 @@ const StampPaperView = () => {
               boxSize={{ base: "100%", md: "auto" }} // Adjusted to "auto" for non-base screen sizes
               objectFit="contain"
               mb={{ base: "2", lg: "0" }}
-              bg={"red"}
+            
               maxWidth="100%" // Added maxWidth property
             >
               <Image src={Front} alt="Description of the image" />
@@ -992,7 +992,7 @@ const StampPaperView = () => {
               THIS GENERAL GREENTEN SERVICE AGREEMENT (THE AGREEMENT) DATED THIS AS OF GOVERNMENT FOR 2023 To 2024.
               <br />
               <br />
-           THE FIRST PART OF THIS AGREEMENT IS Greenten SERVICE. THAT REGISTERED AT SHOP NO 168-169 SHAMBHAJI COMPLEX RING ROAD NASHIK MAHARASTRA 422101
+           THE FIRST PART OF THIS AGREEMENT IS Greenten SERVICE. THAT REGISTERED AT SHOP NO 168-169 SHAMBHAJI COMPLEX RING ROAD BIKANER RAJASTHAN 334007
               <br />
               <br />
               THE SECOND PART OF THIS AGREEMENT IS PRANAV ULHAS CHAUDHRARY THAT LIVE AT AS
@@ -1023,7 +1023,7 @@ B)	The contractor is agreeable to provide such service to the client on the term
               1.	Job title and description<br/>
 1.1	The job duties, the client will be accepted to perform will be consisting of filling the forms as perthe data given by the online portal.<br/>
 1.2	The client will perform any duties as requested by the contractor that are reasonable and thatare customarily performed by a person held in a similar position like this business.<br/>
-1.3	The client agrees to abide by the contractor's rules and regulations, policies including thoseconcerning work schedules.<br/>
+1.3	The client agrees to abide by the contractor's rules and regulations,<br/>
 
               <br />
               <br />
@@ -1045,7 +1045,7 @@ B)	The contractor is agreeable to provide such service to the client on the term
             </Text>
             <Text
               fontSize={["0.8rem", "1.5rem"]}
-              mt={["-4rem", "-7rem"]}
+              mt={["-4rem", "-8rem"]}
             
               padding={["1rem", "3rem"]}
             >
@@ -1053,7 +1053,11 @@ B)	The contractor is agreeable to provide such service to the client on the term
               <br />
               3.	Conflict of interest
               <br />
-              <br />3.1	Application Fee(S): The Registration Amount of 4900/- INR. Will be deducted from the salary ifgenerated, and if the salary is not generated i.e If the client fails to complete the work. then he/she is liable to pay the same registration amount on their own. The client has to pay within 3 working days after The Q.C. Report. The client must start & complete his/her Work of form - filling Assigned to then by the contractor, the date of starting the project (selected by the client as per his/her convenience). In case of failure in starting of the work number of forms detected or incomplete submission of work is defined by the contractor then the Application fee(s), and NOC invoice needs to be cleared by the client. AS the contractor will have to face the Economic crisis in the business in case of failure of this project in any of the per this agreement
+             
+              
+              <br />3.1	Application Fee(S): The Registration Amount of 4900/- INR. Will be deducted from the salary ifgenerated, and if the salary is not generated
+              <br/><br/>
+              3.1.1If the client fails to complete the work. then he/she is liable to pay the same registration amount on their own. The client has to pay within 3 working days after The Q.C. Report. The client must start & complete his/her Work of form - filling Assigned to then by the contractor, the date of starting the project (selected by the client as per his/her convenience). In case of failure in starting of the work number of forms detected or incomplete submission of work is defined by the contractor then the Application fee(s), and NOC invoice needs to be cleared by the client. AS the contractor will have to face the Economic crisis in the business in case of failure of this project in any of the per this agreement
               <br />
               <br />3.2	ID ALLOCATION: - - Client will get a single ID to work on and the client can work 24*7 on this
 ID. If the software portal or the server of the company detects that there are multiple login
@@ -1074,7 +1078,9 @@ New Work and Second Party Has to Send It To First Party Shall Give An Accuracy R
               3.6	Client will Execute The data Processing Work provided by the contractor through experiencedpersons in such a manner to carry out the work efficiently at a minimum of 90% for our files.
               <br />
               <br />
-              3.7	This Agreement Represent The business agreement and operation understanding between theparties and shall remain in effect for six months for the date of execution hereof the Contractor's Specification in terms of quality and other parameters that shall be issued by the Contractor. This
+              3.7	This Agreement Represent The business agreement and operation understanding between theparties and shall remain in effect for six months for the date of execution hereof 
+              <br/><br/><br/>
+              The Contractor's Specification in terms of quality and other parameters that shall be issued by the Contractor. This
 General Greenten SERVICE Agreement Stands and is valid for 11 months, if the client or contractor
 
             
@@ -1114,13 +1120,13 @@ Client and the Client will be liable to pay the maintenance Amount to the client
            
             <Text
              fontSize={["1rem" , "1.8rem"]}
-              mt={["-1rem", "-5rem"]}
+              mt={["-1rem", "-6rem"]}
            
               padding={["1rem", "3rem"]}
             >
          5.	Non - Solicitation
               <br />
-              <br />
+              
               
               <p >
               5.1	The client understands and agreement that any attempt on the part of the client to induceanother client or contractor to leave the contractor employee, or any effort by the client to interfere with the contractor's relation with it other client and contractor would be harmful and damaging to the contractor.
@@ -1132,8 +1138,8 @@ Client and the Client will be liable to pay the maintenance Amount to the client
            
             <Text
               fontSize={["0.8rem", "1.5rem"]}
-              mt={["-1rem", "-5rem"]}
-           
+              mt={["-1rem", "2rem"]}
+         
               padding={["1rem", "3rem"]}
             >
             5.2	The client will not in any way, Directly or Indirectly: -
@@ -1209,7 +1215,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             </Text>
             <Text
               fontSize={["0.8rem", "1.5rem"]}
-              mt={["-1rem", "-5rem"]}
+              mt={["-1rem", "-6rem"]}
               
               padding={["1rem", "3rem"]}
              
@@ -1228,7 +1234,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             </Text>
             <Text
              fontSize={["1rem" , "1.8rem"]}
-              mt={["-2rem", "-7rem"]}
+              mt={["-2rem", "1rem"]}
            
               padding={["1rem", "3rem"]}
             
@@ -1244,7 +1250,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             
             >
        
-       7.3	Dispute resolution & jurisdiction: in the event of any dispute or difference arising between theparties hereto relating to or arising out of this agreement including the implementation, Execution, India, rights, obligations or liabilities of the parties hereto, the same will be adjudicated and determined by arbitration & conciliation Act, 1996 or any statutory amendment or re-enactment thereof in force in India, shall govern the reference. both parties shall appoint their respective arbitrator, and both arbitrators thus appointed should appoint the third arbitrator echo shall function as the presiding arbitrator. the venue of arbitration shall be NASHIK MAHARASTRA 422101
+       7.3	Dispute resolution & jurisdiction: in the event of any dispute or difference arising between theparties hereto relating to or arising out of this agreement including the implementation, Execution, India, rights, obligations or liabilities of the parties hereto, the same will be adjudicated and determined by arbitration & conciliation Act, 1996 or any statutory amendment or re-enactment thereof in force in India, shall govern the reference. both parties shall appoint their respective arbitrator, and both arbitrators thus appointed should appoint the third arbitrator echo shall function as the presiding arbitrator. the venue of arbitration shall be Bikanerr Rajasthan 334007
             </Text>
             <Text
               fontSize={["0.8rem", "1.5rem"]}
@@ -1254,7 +1260,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             
             >
        
-       7.4	Both the Parties hereby Agree Neither to circumvent nor disclose the identities, information aswell as the Essence Of the project Etc. IN WITNESS WHEREOF the Parties hereto Have Executed These Presents on The Data Herein Before WrittenA. Contractor: -
+            7.4	Both the Parties hereby Agree Neither to circumvent nor disclose the identities, information aswell as the Essence Of the project Etc. IN WITNESS WHEREOF the Parties hereto Have Executed These Presents on The Data Herein Before WrittenA. Contractor: -
             </Text>
             
             <Text
@@ -1273,7 +1279,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             
           </Box>
 
-          <Box>
+          <Box mt={["1rem" , "-4rem"]}>
             <Text
            
               padding={["1rem", "3rem"]}
@@ -1376,7 +1382,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
                   <Image
                     src={signaturePreview}
                     alt="Signature Preview"
-                    w="30%"
+                    w="25%"
                   />
                 )}
               </Box>
