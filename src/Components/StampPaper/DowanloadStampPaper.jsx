@@ -1374,7 +1374,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
                   <Image
                     src={signaturePreview}
                     alt="Signature Preview"
-                    w="45%"
+                    w="25%"
                   />
                 )}
               </Box>
