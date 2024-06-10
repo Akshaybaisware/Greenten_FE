@@ -962,6 +962,7 @@ const StampPaperView = () => {
       <Box>
         <Box minWidth="100%" ref={targetRef}>
           <Box
+       
             display="flex"
             flexDirection="column"
             textAlign="center"
@@ -981,6 +982,7 @@ const StampPaperView = () => {
 
           <Box>
             <Text
+          
               fontSize={["0.8rem", "1.5rem"]}
               mt={["rem", "-1rem"]}
               padding={["1rem", "3rem"]}
