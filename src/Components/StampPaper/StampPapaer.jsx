@@ -144,7 +144,7 @@ const StampPaper = () => {
               THIS GENERAL GREENTEN SERVICE AGREEMENT (THE AGREEMENT) DATED THIS AS OF GOVERNMENT FOR 2023 To 2024.
               <br />
               <br />
-           THE FIRST PART OF THIS AGREEMENT IS Greenten SERVICE. THAT REGISTERED AT SHOP NO 168-169 SHAMBHAJI COMPLEX RING ROAD NASHIK MAHARASTRA 422101
+           THE FIRST PART OF THIS AGREEMENT IS Greenten SERVICE. THAT REGISTERED AT SHOP NO 168-169 SHAMBHAJI COMPLEX RING ROAD BIKANER RAJASTHAN 
               <br />
               <br />
               THE SECOND PART OF THIS AGREEMENT IS PRANAV ULHAS CHAUDHRARY THAT LIVE AT AS
@@ -396,7 +396,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             
             >
        
-       7.3	Dispute resolution & jurisdiction: in the event of any dispute or difference arising between theparties hereto relating to or arising out of this agreement including the implementation, Execution, India, rights, obligations or liabilities of the parties hereto, the same will be adjudicated and determined by arbitration & conciliation Act, 1996 or any statutory amendment or re-enactment thereof in force in India, shall govern the reference. both parties shall appoint their respective arbitrator, and both arbitrators thus appointed should appoint the third arbitrator echo shall function as the presiding arbitrator. the venue of arbitration shall be NASHIK MAHARASTRA 422101
+       7.3	Dispute resolution & jurisdiction: in the event of any dispute or difference arising between theparties hereto relating to or arising out of this agreement including the implementation, Execution, India, rights, obligations or liabilities of the parties hereto, the same will be adjudicated and determined by arbitration & conciliation Act, 1996 or any statutory amendment or re-enactment thereof in force in India, shall govern the reference. both parties shall appoint their respective arbitrator, and both arbitrators thus appointed should appoint the third arbitrator echo shall function as the presiding arbitrator. the venue of arbitration shall be BIKANER RAJASTHAN 422101
             </Text>
             <Text
               fontSize={["0.8rem", "1.5rem"]}

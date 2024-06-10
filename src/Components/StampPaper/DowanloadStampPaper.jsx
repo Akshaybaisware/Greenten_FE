@@ -1058,8 +1058,8 @@ B)	The contractor is agreeable to provide such service to the client on the term
              
               
               <br />3.1	Application Fee(S): The Registration Amount of 4900/- INR. Will be deducted from the salary ifgenerated, and if the salary is not generated
-              <br/><br/>
-              3.1.1If the client fails to complete the work. then he/she is liable to pay the same registration amount on their own. The client has to pay within 3 working days after The Q.C. Report. The client must start & complete his/her Work of form - filling Assigned to then by the contractor, the date of starting the project (selected by the client as per his/her convenience). In case of failure in starting of the work number of forms detected or incomplete submission of work is defined by the contractor then the Application fee(s), and NOC invoice needs to be cleared by the client. AS the contractor will have to face the Economic crisis in the business in case of failure of this project in any of the per this agreement
+              <br/>
+              3.1.1If the client fails to complete the work. then he/she is liable to pay <br/><br/><br/>3.1.2The same registration amount on their own. The client has to pay within 3 working days after The Q.C. Report. The client must start & complete his/her Work of form - filling Assigned to then by the contractor, the date of starting the project (selected by the client as per his/her convenience). In case of failure in starting of the work number of forms detected or incomplete submission of work is defined by the contractor then the Application fee(s), and NOC invoice needs to be cleared by the client. AS the contractor will have to face the Economic crisis in the business in case of failure of this project in any of the per this agreement
               <br />
               <br />3.2	ID ALLOCATION: - - Client will get a single ID to work on and the client can work 24*7 on this
 ID. If the software portal or the server of the company detects that there are multiple login
