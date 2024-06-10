@@ -1109,9 +1109,9 @@ Greenten Service freelancing services will not be responsible for any future dat
 Client and the Client will be liable to pay the maintenance Amount to the client as mentioned in "clause-3.1" In this agreement and client will also be liable to pay contractors expenses for a legal proceeding. Where there is just cause for termination, the Contractor may terminate the client's employment without notice as permitted by law.
 
               <br />
-              <br />
+            
               4.2	No modification of the term of this AGREEMENT shall be valid unless it is in writing and signedby both parties.
-              <br />
+             
               <br />4.3	Force majeure: If the rendition of the form filling services is humoured.63 due to Earthquake,flood, Tempest, Civil Riots or Act of God then the Business Associate shall be absolved of its obligation hereunder till normally is restored after the cessation of the aforementioned
             <br/>   contingencies. the client solves likewise be absolved if a rendition of the services is hampered due to a strike called by the data entry operators engaged by the client, violence or political turbulence or for any other reasons of a similar nature, which is beyond the control of the client. If you want to terminate your agreement after your first work, you need to pay 6(4900*6) times the agreement amount as per company policies.
               <br />
@@ -1177,7 +1177,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             </Text>
             <Text
               fontSize={["0.8rem", "1.5rem"]}
-              mt={["-2rem", "-5rem"]}
+              mt={["-2rem", "-8rem"]}
             
               padding={["1rem", "3rem"]}
             
