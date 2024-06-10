@@ -713,7 +713,8 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
-import Front from "../../assets/Front.jpg";
+import Front from "../../assets/Front.png";
+import LOGO from "../../assets/New_Stamp.svg"
 import { useEffect, useState } from "react";
 import { usePDF } from "react-to-pdf";
 
@@ -1036,7 +1037,7 @@ B)	The contractor is agreeable to provide such service to the client on the term
               <br /> 2.2	Billing: - - contractor will provide a workload of Question Forms which the client shall complete thework within 4 days under the given criteria of this agreement. This Agreement has been signed for one system. The contractor will make the payment for the billing within 1 INTERNATIONAL<br/><br/> WORKING DAY from the date of raising the project subject to the quality check report.
               <br />
               <br />
-              2.3	Accuracy: - contractor will provide Adequate feedback within 4 Working Days for the date andon completion of quality check shall issue a Quality report. Both parties agree to assure the highest Quality of End service. Following Cycle for accuracy will be followed. cut off forms - 43 (in total) Above 90% @40/- INR perform. if below cut off or id is terminated then the client is supposed to clear the Registration Amount (6800/-) to the company.
+              2.3	Accuracy: - contractor will provide Adequate feedback within 4 Working Days for the date andon completion of quality check shall issue a Quality report. Both parties agree to assure the highest Quality of End service. Following Cycle for accuracy will be followed. cut off  - 43 (in total) Above 90% @50/- INR perform. if below cut off or id is terminated then the client is supposed to clear the Registration Amount (6800/-) to the company.
               <br />
               <br />
               2.4	The Q.C. Department will Check the forms Randomly by the server. Until the submitted Slot isrejected above the cut-off criteria if the client makes any mistake, (Which includes but is not limited to spelling, Punctuation, Extra/Missing space, Extra/ Missing Line, skip by time etc. ) in a form that form will be rejected, Likewise Client has to maintain cut off or accuracy.
@@ -1057,13 +1058,13 @@ B)	The contractor is agreeable to provide such service to the client on the term
               <br />
              
               
-              <br />3.1	Application Fee(S): The Registration Amount of 4900/- INR. Will be deducted from the salary ifgenerated, and if the salary is not generated
+              <br />3.1	Application Fee(S): The Registration Amount of 6800/- INR. Will be deducted from the salary ifgenerated, and if the salary is not generated
               <br/>
               3.1.1If the client fails to complete the work. then he/she is liable to pay <br/><br/><br/>3.1.2The same registration amount on their own. The client has to pay within 3 working days after The Q.C. Report. The client must start & complete his/her Work of form - filling Assigned to then by the contractor, the date of starting the project (selected by the client as per his/her convenience). In case of failure in starting of the work number of forms detected or incomplete submission of work is defined by the contractor then the Application fee(s), and NOC invoice needs to be cleared by the client. AS the contractor will have to face the Economic crisis in the business in case of failure of this project in any of the per this agreement
               <br />
               <br />3.2	ID ALLOCATION: - - Client will get a single ID to work on and the client can work 24*7 on this
 ID. If the software portal or the server of the company detects that there are multiple login
-Attempts/multiple IP Addresses of the account Modules .and The ID will get Terminated Without Any Intimation and the client needs to clear the server maintenance charge up to 6799/- INR. (Refundable Amount After Successfully done the work**) For That Particular Project As Per This Agreement.
+Attempts/multiple IP Addresses of the account Modules .and The ID will get Terminated Without Any Intimation and the client needs to clear the server maintenance charge up to 6800/- INR. (Refundable Amount After Successfully done the work**) For That Particular Project As Per This Agreement.
 
               <br />
               <br />3.3	TAT (Turn Around Time): The Second Party Has 4 Days (Including Holidays) To Complete the
@@ -1264,11 +1265,22 @@ Client and the Client will be liable to pay the maintenance Amount to the client
        
             7.4	Both the Parties hereby Agree Neither to circumvent nor disclose the identities, information aswell as the Essence Of the project Etc. IN WITNESS WHEREOF the Parties hereto Have Executed These Presents on The Data Herein Before WrittenA. Contractor: -
             </Text>
+            <Text
+        
+              fontSize={["0.8rem", "1.5rem"]}
+              mt={["-2rem", "-6rem"]}
+            fontWeight={"500"}
+              padding={["1rem", "3rem"]}
+           
             
+            >
+       
+            Note  :Extension will be Provided But u Have to Pay the Extension Amount 8100/ Correction amount 8100
+            </Text>
             <Text
             color={"red"}
               fontSize={["0.8rem", "1.5rem"]}
-              mt={["-1rem", "-5rem"]}
+              mt={["-1rem", "-6rem"]}
             fontWeight={"500"}
               padding={["1rem", "3rem"]}
            
@@ -1281,7 +1293,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             
           </Box>
 
-          <Box mt={["1rem" , "-4rem"]}>
+          <Box mt={["1rem" , "-5rem"]}>
             <Text
            
               padding={["1rem", "3rem"]}
@@ -1310,6 +1322,9 @@ Client and the Client will be liable to pay the maintenance Amount to the client
           >
             Employee : -
           </Text>
+          <Box
+       
+          display={"flex"} >
           <Box mt={["-1rem", "-5rem"]} padding={["1rem", "3rem"]}>
             <FormControl w={["200px", "300px"]}>
               <Text fontSize="md">Name: {username}</Text>
@@ -1336,7 +1351,10 @@ Client and the Client will be liable to pay the maintenance Amount to the client
               </Text>
             </FormControl>
           </Box>
-
+          <Box   marginTop={["3rem" , "-5rem"]} marginLeft={["0rem","9rem"]}>
+          <Image src={LOGO} alt="Description of the image" />
+          </Box>
+          </Box>
           {/* <Box width={["200px", "400px"]}>
   <Image src={sign} alt="Stamp" />
 </Box>
