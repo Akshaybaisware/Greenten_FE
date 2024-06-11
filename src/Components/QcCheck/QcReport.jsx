@@ -373,41 +373,43 @@ const downloadReport = async (data) => {
     startY = addRow("Name", user?.name, column1X, startY);
     startY = addRow("Mobile", user?.mobile, column2X, startY - rowHeight); // Adjust y for column continuity
     startY = addRow("Email", user?.email, column1X, startY);
+    startY = addRow("Address" , user?.address , column2X ,startY - rowHeight );
     startY = addRow(
       "Start Date",
       user?.startDate?.slice(0, 10),
-      column2X,
-      startY - rowHeight
+     column1X,
+      startY
     );
     startY = addRow(
       "End Date",
       user?.endDate?.slice(0, 10),
-      column1X,
-      startY
+
+      column2X,
+      startY - rowHeight
     );
     startY = addRow(
       "Total Forms",
       user?.totalAssignmentLimit,
-      column2X,
-      startY - rowHeight
+     column1X,
+      startY
     );
     startY = addRow(
       "Filled Forms",
       user?.submittedAssignmentCount,
-      column1X,
-      startY
-    );
-    startY = addRow(
-      "Correct Forms",
-      user?.correctAssignmentCount,
       column2X,
       startY - rowHeight
     );
     startY = addRow(
-      "Incorrect Forms",
-      user?.incorrectAssignmentCount || "0",
+      "Correct Forms",
+      user?.correctAssignmentCount,
       column1X,
       startY
+    );
+    startY = addRow(
+      "Incorrect Forms",
+      user?.incorrectAssignmentCount || "0",
+      column2X,
+      startY - rowHeight
     );
 
     // Check for new page before adding questions and answers
@@ -607,10 +609,11 @@ const downloadReport = async (data) => {
   const qcdata = async () => {
     try {
       const response = await axios.get(
-        "https://greentenbe-production.up.railway.app/api/user/getallclient"
+        // "https://greentenbe-production.up.railway.app/api/user/getallclient"
         // `http://localhost:5000/user/getreportbyid`,{
           //  userId: userId
         // }
+        "http://localhost:5000/api/user/getallclient"
       );
       console.log(response, "response");
 
@@ -631,14 +634,19 @@ const downloadReport = async (data) => {
     }
   };
 
-  const qcreportdata = async () => {
+  const qcreportdata = async (row) => {
     try {
+      console.log(row, "www");
+
+      if(row._id || userId){
       const reposne = await axios.post(
         // "https://greentenbe-production.up.railway.app/api/assignment/getassignments",
-        `https://greentenbe-production.up.railway.app/api/user/getreportbyid`,
-        { id : userId }
+        // `https://greentenbe-production.up.railway.app/api/user/getreportbyid`,
+        "http://localhost:5000/api/user/getreportbyid",
+        { id : row?._id ? row?._id : userId }
       );
-      console.log(reposne, "jasdbasjkdbaksjb");
+      console.log(  reposne, "jasdbasjkdbaksjb" , row);
+    }
     } catch (error) {
       console.log(error);
     }
@@ -649,7 +657,7 @@ const downloadReport = async (data) => {
   useLayoutEffect(() => {
     qcdata();
     qcreportdata();
-  }, [deletestate]);
+  }, [deletestate ]);
   const handleDelete = async (row) => {
     try {
       console.log(row , "rowdaa");
@@ -741,13 +749,24 @@ const downloadReport = async (data) => {
     {
       name: "Wrong Forms",
       cell: (row) =>
-        row?.incorrectAssignmentCount ? row?.incorrectAssignmentCount : 0,
+        // row?.submittedAssignmentCount ? 85 : 0
+      // {const wrongForms = Math.floor(Math.random() * (100 - 85 + 1)) + 85;
+      // row.wrongForms = wrongForms; // Store the wrongForms value in the row for later use
+      // return wrongForms;
+      // }
+      row?.incorrectAssignmentCount ? row?.incorrectAssignmentCount : (qcreportdata(row)),
     },
     {
       name: "Right Forms",
       selector: (row) =>
-        row?.correctAssignmentCount ? row?.correctAssignmentCount : 0,
-      sortable: true,
+      //   row?.correctAssignmentCount ? row?.correctAssignmentCount : 0,
+      // sortable: true,
+    //   cell : (row) => {
+    //     const rightForms = 400 - (row.wrongForms || 0);
+    // return rightForms;
+      // }
+        row?.correctAssignmentCount ? row?.correctAssignmentCount : qcreportdata(row),
+
     },
     {
       name: "Action",
@@ -797,6 +816,40 @@ const downloadReport = async (data) => {
   ];
 
   // Function to handle text and date filtering
+  // const handleSearch = () => {
+  //   let filteredData = allusersdata;
+
+  //   // Filter by text
+  //   if (searchText) {
+  //     filteredData = filteredData.filter((item) =>
+  //       Object.keys(item).some(
+  //         (key) =>
+  //           item[key] &&
+  //           item[key]
+  //             .toString()
+  //             .toLowerCase()
+  //             .includes(searchText.toLowerCase())
+  //       )
+  //     );
+  //   }
+
+  //   // Start and end date filter with end date one day back
+  //   if (startDate && endDate) {
+  //     const start = new Date(startDate);
+  //     const end = new Date(endDate);
+  //     end.setDate(end.getDate() - 1); // Subtract one day from the end date
+  //     end.setHours(23, 59, 59, 999); // Set the time to the last millisecond of the day
+
+  //     filteredData = filteredData.filter((item) => {
+  //       const itemStartDate = new Date(item.startDate);
+  //       const itemEndDate = new Date(item.endDate);
+  //       return itemStartDate >= start && itemEndDate <= end;
+  //     });
+  //   }
+
+  //   setTableData(filteredData);
+  // };
+
   const handleSearch = () => {
     let filteredData = allusersdata;
 
@@ -814,24 +867,12 @@ const downloadReport = async (data) => {
       );
     }
 
-    // start and end date filter
+    // Start and end date filter with end date one day back
     if (startDate && endDate) {
       const start = new Date(startDate);
       const end = new Date(endDate);
-      end.setHours(23, 59, 59, 999); // Include the entire end day
-
-      filteredData = filteredData.filter((item) => {
-        const itemStartDate = new Date(item.startDate);
-        const itemEndDate = new Date(item.endDate);
-        return itemStartDate >= start && itemEndDate <= end;
-      });
-    }
-
-    // Filter by date range
-    if (startDate && endDate) {
-      const start = new Date(startDate);
-      const end = new Date(endDate);
-      end.setHours(23, 59, 59, 999); // Include the entire end day
+      end.setDate(end.getDate() - 1); // Subtract one day from the end date
+      end.setHours(23, 59, 59, 999); // Include the entire previous day
 
       filteredData = filteredData.filter((item) => {
         const itemStartDate = new Date(item.startDate);
@@ -843,9 +884,86 @@ const downloadReport = async (data) => {
     setTableData(filteredData);
   };
 
+
+  // const handleSearch = () => {
+  //   let filteredData = allusersdata;
+
+  //   // Filter by text
+  //   if (searchText) {
+  //     filteredData = filteredData.filter((item) =>
+  //       Object.keys(item).some(
+  //         (key) =>
+  //           item[key] &&
+  //           item[key]
+  //             .toString()
+  //             .toLowerCase()
+  //             .includes(searchText.toLowerCase())
+  //       )
+  //     );
+  //   }
+
+  //   // Filter by start and end date
+  //   if (startDate && endDate) {
+  //     const start = new Date(startDate);
+  //     const end = new Date(endDate);
+  //     end.setHours(23, 59, 59, 999); // Include the entire end day
+
+  //     // Decrease the end date by 1 day
+  //     end.setDate(end.getDate() - 1);
+
+  //     filteredData = filteredData.filter((item) => {
+  //       const itemStartDate = new Date(item.startDate);
+  //       const itemEndDate = new Date(item.endDate);
+  //       return itemStartDate >= start && itemEndDate <= end;
+  //     });
+  //   }
+
+  //   setTableData(filteredData);
+  // };
+
+
+
+  // const handleSearch = () => {
+  //   let filteredData = allusersdata;
+
+  //   // Filter by text
+  //   if (searchText) {
+  //     filteredData = filteredData.filter((item) =>
+  //       Object.keys(item).some(
+  //         (key) =>
+  //           item[key] &&
+  //           item[key]
+  //             .toString()
+  //             .toLowerCase()
+  //             .includes(searchText.toLowerCase())
+  //       )
+  //     );
+  //   }
+
+  //   // Start and end date filter with end date one day back
+  //   if (startDate && endDate) {
+  //     const start = new Date(startDate);
+  //     const end = new Date(endDate);
+  //     end.setDate(end.getDate() - 1); // Subtract one day from the end date
+  //     end.setHours(23, 59, 59, 999); // Include the entire previous day
+
+  //     filteredData = filteredData.filter((item) => {
+  //       const itemStartDate = new Date(item.startDate);
+  //       const itemEndDate = new Date(item.endDate);
+  //       return itemStartDate >= start && itemEndDate <= end;
+  //     });
+  //   }
+
+  //   setTableData(filteredData);
+  // };
+
+
+
+
   useEffect(() => {
+    // qcdata();
     handleSearch(); // Call handleSearch to apply initial filters on component mount
-  }, [searchText, startDate, endDate, allusersdata]);
+  }, [searchText, startDate, endDate, allusersdata , window.location.pathname]);
 
   return (
     <>

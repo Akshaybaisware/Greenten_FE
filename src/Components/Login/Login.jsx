@@ -158,7 +158,7 @@ function Login() {
         user
       );
 
-      console.log(response);
+      console.log(response , "responsedata123");
       if (response.status === 200) {
         localStorage.setItem("user", JSON.stringify(response.data));
         localStorage.setItem("token", response.data.token);

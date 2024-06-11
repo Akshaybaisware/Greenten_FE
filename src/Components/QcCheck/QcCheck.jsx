@@ -293,13 +293,13 @@ function QcCheck() {
           fontSize: "2rem",
           textAlign: "center",
           fontWeight: "700",
-       
+
           margin: "1rem",
         }}
       >
         <Center
           style={{
-           
+
             display: "inline",
             padding: "5px",
             margin: "5px",
@@ -331,20 +331,27 @@ function QcCheck() {
               fontSize:"1rem",
                 color:"#859c0f",}}>
               Name : { location ? state.user.name : localStorage.getItem("username")}
-            
+
             </Text>
             <Text  style={{
                  fontSize:"1rem",
                  color:"#859c0f",}}>
-          
+
               Mobile No : { location ? state.user.mobile : localStorage.getItem("usermobilenumber")}
-            
+
             </Text>
             <Text  style={{
                  fontSize:"1rem",
                 color:"#859c0f",}}>
-           
+
               Email : {location ? state.user.email : localStorage.getItem("useremail")}
+            </Text>
+
+            <Text  style={{
+                 fontSize:"1rem",
+                color:"#859c0f",}}>
+
+              Address : {location ? state.user.address : localStorage.getItem("useraddress")}
             </Text>
 
             <Center>

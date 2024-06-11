@@ -399,12 +399,12 @@ function Navbar() {
 
     try {
       const response = await axios.post(
-        // "https://greentenbe-production.up.railway.app/api/auth/adminforgetpassword",
-        "http://localhost:5000/api/auth/adminforgetpassword",
+        "https://greentenbe-production.up.railway.app/api/auth/adminforgetpassword",
+        // "http://localhost:5000/api/auth/adminforgetpassword",
         {
           newPassword: newPasswordValue,
           confirmPassword: confirmPasswordValue,
-          userEmail: user.email,
+          userEmail: user.email ? user.email : "",
         }
       );
 

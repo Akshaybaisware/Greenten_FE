@@ -40,6 +40,7 @@ if (endDate.getTime() < currentDate.getTime()) {
       localStorage.setItem("useremail" , response.data.email);
       localStorage.setItem("usermobilenumber" , response.data.user.mobile);
       localStorage.setItem("username", response.data.user.name );
+      localStorage.setItem("useraddress" , response.data.address);
   navigate("/qccheck", {
     state: response.data
   });
