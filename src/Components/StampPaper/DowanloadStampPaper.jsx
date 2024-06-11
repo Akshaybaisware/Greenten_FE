@@ -713,7 +713,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
-import Front from "../../assets/Front.png";
+import Front from "../../assets/Frontnew.jpg";
 import LOGO from "../../assets/New_Stamp.svg"
 import { useEffect, useState } from "react";
 import { usePDF } from "react-to-pdf";

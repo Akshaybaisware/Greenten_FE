@@ -15,7 +15,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { Spinner } from "@chakra-ui/react";
-import Front from "../../assets/Front.png";
+import Front from "../../assets/Frontnew.jpg";
 // import frontpage from "../../assets/frontpage.jpg";
 // import sign from "../../assets/cropto stamp.svg";
 import stamplogo from "../../assets/stamplogo.svg";
