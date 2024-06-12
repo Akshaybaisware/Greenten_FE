@@ -717,6 +717,11 @@ const downloadReport = async (data) => {
       sortable: true,
     },
     {
+      name: "Address",
+      selector: (row) => row?.address,
+      sortable: true,
+    },
+    {
       name: "Email",
       selector: (row) => row?.email,
       sortable: true,
