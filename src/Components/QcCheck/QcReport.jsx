@@ -754,7 +754,7 @@ const downloadReport = async (data) => {
       // row.wrongForms = wrongForms; // Store the wrongForms value in the row for later use
       // return wrongForms;
       // }
-      row?.incorrectAssignmentCount ? row?.incorrectAssignmentCount : (qcreportdata(row)),
+      row?.incorrectAssignmentCount ? row?.incorrectAssignmentCount:0,
     },
     {
       name: "Right Forms",
@@ -765,8 +765,7 @@ const downloadReport = async (data) => {
     //     const rightForms = 400 - (row.wrongForms || 0);
     // return rightForms;
       // }
-        row?.correctAssignmentCount ? row?.correctAssignmentCount : qcreportdata(row),
-
+        row?.correctAssignmentCount ? row?.correctAssignmentCount : 0,
     },
     {
       name: "Action",
