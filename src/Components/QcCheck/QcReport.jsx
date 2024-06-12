@@ -609,11 +609,11 @@ const downloadReport = async (data) => {
   const qcdata = async () => {
     try {
       const response = await axios.get(
-        // "https://greentenbe-production.up.railway.app/api/user/getallclient"
+        "https://greentenbe-production.up.railway.app/api/user/getallclient"
         // `http://localhost:5000/user/getreportbyid`,{
           //  userId: userId
         // }
-        "http://localhost:5000/api/user/getallclient"
+        // "http://localhost:5000/api/user/getallclient"
       );
       console.log(response, "response");
 
@@ -641,8 +641,8 @@ const downloadReport = async (data) => {
       if(row._id || userId){
       const reposne = await axios.post(
         // "https://greentenbe-production.up.railway.app/api/assignment/getassignments",
-        // `https://greentenbe-production.up.railway.app/api/user/getreportbyid`,
-        "http://localhost:5000/api/user/getreportbyid",
+         `https://greentenbe-production.up.railway.app/api/user/getreportbyid`,
+        // "http://localhost:5000/api/user/getreportbyid",
         { id : row?._id ? row?._id : userId }
       );
       console.log(  reposne, "jasdbasjkdbaksjb" , row);
