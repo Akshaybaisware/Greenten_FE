@@ -1309,7 +1309,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
               padding={["1rem", "3rem"]}
             >
               Name : Greenten Service <br />
-              Email : helplinessrvice156@gmail.com <br />
+              Email :greenhelplineservice19@gmail.com <br />
               Address : block number: 23 Hanuman Nagar Ajmer Road
               S.O, Jaipur, 302006
             </Text>
