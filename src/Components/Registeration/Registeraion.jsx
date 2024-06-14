@@ -36,6 +36,7 @@ function Registeraion() {
   const navigate = useNavigate();
 
   const toast = useToast();
+
   useEffect(() => {
     const getdata = async () => {
       try {

@@ -16,6 +16,7 @@ import { DownloadIcon } from "@chakra-ui/icons";
 import axios from "axios";
 import jsPDF from "jspdf";
 
+
 function QcReport() {
   const icons = [FaPencilAlt, FaEye, FaRupeeSign];
   const navigate = useNavigate();
@@ -23,43 +24,7 @@ function QcReport() {
   const toast = useToast();
   const [incorrectAssignments, setIncorrectAssignments] = useState({});
 
-  const handleIconClick = (rowData, iconIndex) => {
-    // Perform actions based on rowData and iconIndex
-    console.log("Clicked on icon:", iconIndex);
-    console.log("Row data:", rowData);
-    console.log(rowData, "filteredData");
 
-    if (true) {
-      switch (iconIndex) {
-        case 0:
-          navigate("/editclient", {
-            state: { data: rowData },
-          });
-          break;
-        case 1:
-          navigate("/downloadreport", {
-            state: { data: rowData },
-          });
-
-          break;
-        case 2:
-          //handledownload(rowData._id);
-          emailsending(rowData?.email);
-          break;
-        case 3:
-          navigate("/downloadreport", {
-            state: { data: rowData },
-          });
-          break;
-        case 4:
-          deleteclientinfo(rowData?._id);
-          break;
-        default:
-          // Handle default case
-          break;
-      }
-    }
-  };
 
   // const handleviewdetails = (rowdata) => {
   //   console.log(rowdata, "rowdata");
@@ -603,6 +568,7 @@ const downloadReport = async (data) => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [deletestate, setDeleetestate] = useState();
+  const [filter, setFilter] = useState([]);
 
   const userId = localStorage.getItem("userId");
 
@@ -705,6 +671,16 @@ const downloadReport = async (data) => {
   //getincorrectassignments();
   //}, []);
 
+
+
+  const handleIconClick = (rowData) => {
+
+    navigate("/editclient", {
+            state: { data: rowData },
+          });
+
+};
+
   const columns = [
     {
       name: "Name",
@@ -736,9 +712,17 @@ const downloadReport = async (data) => {
       selector: (row) => row?.endDate?.slice(0, 10),
       sortable: true,
     },
+    // qcreportdata
     {
       name: "Total Forms",
-      selector: (row) => row?.totalAssignmentLimit,
+      selector: (row) => {
+        if (row?.totalAssignmentLimit === 400) {
+          // Call the function if the condition is met
+          console.log(row, "www 1")
+          qcreportdata(row);
+        }
+        return row?.totalAssignmentLimit;
+      },
       sortable: true,
     },
     {
@@ -771,6 +755,12 @@ const downloadReport = async (data) => {
     // return rightForms;
       // }
         row?.correctAssignmentCount ? row?.correctAssignmentCount : 0,
+    },
+
+    {
+      name: "Edit",
+      selector: (row) => <FaPencilAlt onClick={()=>handleIconClick(row)} />,
+      sortable: true,
     },
     {
       name: "Action",
@@ -854,79 +844,6 @@ const downloadReport = async (data) => {
   //   setTableData(filteredData);
   // };
 
-  const handleSearch = () => {
-    let filteredData = allusersdata;
-
-    // Filter by text
-    if (searchText) {
-      filteredData = filteredData.filter((item) =>
-        Object.keys(item).some(
-          (key) =>
-            item[key] &&
-            item[key]
-              .toString()
-              .toLowerCase()
-              .includes(searchText.toLowerCase())
-        )
-      );
-    }
-
-    // Start and end date filter with end date one day back
-    if (startDate && endDate) {
-      const start = new Date(startDate);
-      const end = new Date(endDate);
-      end.setDate(end.getDate() - 1); // Subtract one day from the end date
-      end.setHours(23, 59, 59, 999); // Include the entire previous day
-
-      filteredData = filteredData.filter((item) => {
-        const itemStartDate = new Date(item.startDate);
-        const itemEndDate = new Date(item.endDate);
-        return itemStartDate >= start && itemEndDate <= end;
-      });
-    }
-
-    setTableData(filteredData);
-  };
-
-
-  // const handleSearch = () => {
-  //   let filteredData = allusersdata;
-
-  //   // Filter by text
-  //   if (searchText) {
-  //     filteredData = filteredData.filter((item) =>
-  //       Object.keys(item).some(
-  //         (key) =>
-  //           item[key] &&
-  //           item[key]
-  //             .toString()
-  //             .toLowerCase()
-  //             .includes(searchText.toLowerCase())
-  //       )
-  //     );
-  //   }
-
-  //   // Filter by start and end date
-  //   if (startDate && endDate) {
-  //     const start = new Date(startDate);
-  //     const end = new Date(endDate);
-  //     end.setHours(23, 59, 59, 999); // Include the entire end day
-
-  //     // Decrease the end date by 1 day
-  //     end.setDate(end.getDate() - 1);
-
-  //     filteredData = filteredData.filter((item) => {
-  //       const itemStartDate = new Date(item.startDate);
-  //       const itemEndDate = new Date(item.endDate);
-  //       return itemStartDate >= start && itemEndDate <= end;
-  //     });
-  //   }
-
-  //   setTableData(filteredData);
-  // };
-
-
-
   // const handleSearch = () => {
   //   let filteredData = allusersdata;
 
@@ -962,12 +879,62 @@ const downloadReport = async (data) => {
   // };
 
 
+  const handleSearch = () => {
+    let filteredData = allusersdata;
+
+    // Filter by text
+    if (searchText) {
+      filteredData = filteredData.filter((item) =>
+        Object.keys(item).some(
+          (key) =>
+            item[key] &&
+            item[key]
+              .toString()
+              .toLowerCase()
+              .includes(searchText.toLowerCase())
+        )
+      );
+    }
+
+    // Start and end date filter
+    if (startDate && endDate) {
+      const start = new Date(startDate);
+      const end = new Date(endDate);
+      end.setDate(end.getDate() + 1); // Include the entire end date
+      end.setHours(23, 59, 59, 999); // Include the entire end date
+
+      // Debugging logs
+      console.log("Start Date:", start);
+      console.log("End Date:", end);
+
+      filteredData = filteredData.filter((item) => {
+        const itemStartDate = new Date(item.startDate);
+        const itemEndDate = new Date(item.endDate);
+
+
+        console.log("Item Start Date:", itemStartDate);
+        console.log("Item End Date:", itemEndDate);
+
+        return itemStartDate >= start && itemEndDate <= end;
+      });
+    }
+
+    setTableData(filteredData);
+  };
+
+
+
+
 
 
   useEffect(() => {
     // qcdata();
     handleSearch(); // Call handleSearch to apply initial filters on component mount
   }, [searchText, startDate, endDate, allusersdata , window.location.pathname]);
+
+
+
+
 
   return (
     <>
