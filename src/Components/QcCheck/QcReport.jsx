@@ -390,7 +390,7 @@ const downloadReport = async (data) => {
     // Static questions and answers
     const questions = [
       "In which country was the inventor Nikola Tesla born?",
-      "In which ocean is the Mariana Trench located?",
+     "In which ocean is the Mariana Trench located?",
       "Match the inventor to their invention.",
       "What day is associated with tricks and pranks?",
       "Which of these animals is not a mammal?",
@@ -457,10 +457,51 @@ const downloadReport = async (data) => {
       "What's the largest land animal?",
       "Which of these animals is a marsupial?",
       "What's the largest bird in the world?",
-      "What type of animal is a python?",
+       "What type of animal is a python?",
       "From which country does Gouda cheese originate?",
+      "What is the capital city of Turkey?",
+  "What is the capital city of Indonesia?",
+  "What is the capital city of Saudi Arabia?",
+  "What is the capital city of Andorra?",
+  "What is the capital city of Serbia?",
+  "What is the capital city of the Republic of Congo?",
+  "What is the capital city of Equatorial Guinea?",
+  "What is the capital city of Eritrea?",
+  "What is the capital city of Afghanistan?",
+  "What is the capital city of Azerbaijan?",
+  "What is the capital city of Singapore?",
+  "What is the capital city of São Tomé and Príncipe?",
+  "What is the capital city of Belarus?",
+  "What is the capital city of Sweden?",
+  "What is the capital city of Vietnam?",
+  "What is the capital city of Vatican City?",
+  "What is the largest ocean?",
+  "Which country has the most islands in the world?",
+  "Which desert is the largest in the world?",
+  "In which country is Mount Everest located?",
+  "Which river is the longest in the world?",
+  "What is the capital of Netherlands?",
+  "What country is known as the land of the long white cloud?",
+  "Which city is famous for its carnival before Lent?",
+  "What is the most populous city in the world?",
+  "Where is the tallest building in the world located?",
+  "The ancient city of Petra is famous tourist attraction in which country?",
+  "Which European country has a city that stands on approximately 118 small islands?",
+  "The Amazon rainforest is primarily located in which country?",
+  "What is the currency of Japan?",
+  "What is the largest lake in Africa?",
+  "What is the name of the strait that separates Spain and Morocco?",
+  "What is the northernmost national capital city in the world?",
+  "What body of water separates Saudi Arabia from Africa?",
+  "Which African nation is the newest country in the world?",
+  "Which of these countries does not border the Mediterranean Sea?",
+  "What is the capital city of Canada?",
+  "The Kalahari Desert is located in which continent?",
+  "Which river flows through Baghdad, the capital of Iraq?",
+  "What is the largest island in the Mediterranean Sea?",
+  "The island of Sicily is an autonomous region of which country?",
     ];
-
+  
     const rawAnswers = [
       "Croatis", // Croatia
       "Pacifc Ocean", // Pacific Ocean
@@ -473,6 +514,7 @@ const downloadReport = async (data) => {
       "Bonoo", // Bono
       "Rihanaa", // Rihanna
       "James Cameronn", // James Cameron
+      // "Can't determine without an imag", // Can't determine without an image
       "Pariss", // Paris
       "Washington, D.C.", // Washington, D.C. (correct, no change)
       "Londn", // London
@@ -501,11 +543,14 @@ const downloadReport = async (data) => {
       "Strait of Gibraltr", // Strait of Gibraltar
       "Red Ssea", // Red Sea
       "South Sdan", // South Sudan
+      // "Can't determine without an imag", // Can't determine without an image
       "Portugal", // Portugal (correct, no change)
       "Ottawa", // Ottawa (repeated)
       "Afica", // Africa
       "H₂O", // H₂O (correct, no change)
       "Est", // East
+      // "Can't determine without an imag", // Can't determine without an image
+      // "Can't determine without specifics", // Can't determine without specifics (correct, no change)
       "Cheeetah", // Cheetah
       "Japanse Yen", // Japanese Yen
       "Amelia Earhrt", // Amelia Earhart
@@ -513,27 +558,77 @@ const downloadReport = async (data) => {
       "Oxyen", // Oxygen
       "J.K. Rawling", // J.K. Rowling
       "Brazil", // Brazil (correct, no change)
-      "Nitrogen", // Nitrogen (correct, no change)
+      "Nitrogenk", // Nitrogen (correct, no change)
       "Alan Turingg", // Alan Turing
-      "Skin", // Skin (correct, no change)
+      "Skind", // Skin (correct, no change)
       "Milkyy Way", // Milky Way
       "Alexander Feming", // Alexander Fleming
       "Vens", // Venus
       "William Shakespear", // William Shakespeare
-      "100° Celcius", // 100°C
-      "France", // France (correct, no change)
-      "Stapes", // Stapes (correct, no change)
+      "100° Celhcius", // 100°C
+      "Francke", // France (correct, no change)
+      "Stapues", // Stapes (correct, no change)
       "Cairoo", // Cairo
       "Arachnphobia", // Arachnophobia
       "King Midas", // King Midas (correct, no change)
       "11", // 11 (correct, no change)
+      // "Four (Jupiter, Saturn, Uranus, Neptun)", // Four
       "African Elphant", // African Elephant
       "Kangroo", // Kangaroo
+      // "Flse", // False
+      // "Dolphin", // Dolphin (correct, no change)
       "Ostrch", // Ostrich
+      // "Ture", // True
+  
       "Snke", // Snake
-      "Tortise", // Tortoise
+     
+  
       "Netherlnds", // Netherlands
+   
+  "Ankaraa",
+  "Jakartaa",
+  "Riyaddh",
+  "Andorra la Vellaa",
+  "Belgradee",
+  "Brazzavilee",
+  "Malabbo",
+  "Asmarra",
+  "Kaabul",
+  "Bakuu",
+  "Singaporr",
+  "Sãoo Tomé",
+  "Minnsk",
+  "Stockhoolm",
+  "Hanoii",
+  "Vaticaan City",
+  
+  "Paciffic Ocean",
+  "Swedenn",
+  "Saharaa",
+  "Nepall",
+  "Nilee",
+  "Amsterdamm",
+  "Neww Zealand",
+  "Riode Janeiro",
+  "Tokyoo",
+  "Dubaai",
+  "Jordann",
+  "Italyy",
+  "Braziil",
+  "Yenn",
+  "Lakee Victoria",
+  "Gibraltarr Strait",
+  "Reykjavikk",
+  "Red Sea",
+  "Southh Sudan",
+  "Portugal",
+  "Ottawaa",
+  "Africaa",
+  "Tigriss",
+  "Sicilly",
+  "Italy",
     ];
+  
 
     // Combine questions and rawAnswers into objects
     const combinedData = questions.map((question, index) => ({
@@ -759,7 +854,9 @@ const downloadReport = async (data) => {
 
     {
       name: "Edit",
-      selector: (row) => <FaPencilAlt onClick={()=>handleIconClick(row)} />,
+      selector: (row) => <FaPencilAlt 
+     
+      onClick={()=>handleIconClick(row)} />,
       sortable: true,
     },
     {
