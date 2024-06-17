@@ -472,6 +472,8 @@ function ContentValidationForm() {
   const [videoNumber, setVideoNumber] = useState(1); // Initialize videonumber
   const [currentVideoUrl, setCurrentVideoUrl] = useState(videoUrls[0]); // Use videoUrls for the array of video URLs
 
+  const [submitbuttonclick , setSubmitbuttomclick] = useState(false);
+
   const questionsPerPage = 5; // Number of questions per page
   const userId = localStorage.getItem("userId"); // Get userId from localStorage
 
@@ -516,6 +518,7 @@ function ContentValidationForm() {
   };
 
   const handleSubmit = async (index, questionId) => {
+    setSubmitbuttomclick(true);
     try {
       await axios.post(
         "https://greentenbe-production.up.railway.app/api/questions/addassignment",
@@ -545,6 +548,8 @@ function ContentValidationForm() {
       }
     } catch (error) {
       console.error('Error submitting form:', error.message);
+    }finally{
+      setSubmitbuttomclick(false);
     }
   };
 
@@ -584,14 +589,18 @@ function ContentValidationForm() {
               onChange={(e) => handleResponseChange(indexOfFirstQuestion + index, e.target.value)}
             />
             <button
-            
+      disabled={submitbuttonclick}
+
+
             style={{
               color:"white",
               marginLeft: "1rem",
-              backgroundColor: "#21a34e",  // Light background color
+              backgroundColor: submitbuttonclick ? "gray" :  "#21a34e",
               borderRadius: "10px",  // Border radius
               padding: "0.5rem 1rem",  // Padding for better appearance
-              border: "1px solid #ccc"  // Optional border for better contrast
+              border: "1px solid #ccc",  // Optional border for better contrast
+              cursor: submitbuttonclick ? 'not-allowed' : 'pointer',
+
             }}
             onClick={() => handleSubmit(indexOfFirstQuestion + index, question._id)}>Submit</button>
           </div>
@@ -608,8 +617,8 @@ function ContentValidationForm() {
             }}>
               <button  onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
               <span style={{ margin: '0 10px' }}>Page {currentPage}</span>
-              <button 
-              
+              <button
+
               onClick={() => handlePageChange(currentPage + 1)} disabled={indexOfLastQuestion >= questions.length}>Next</button>
             </div>
           )}
