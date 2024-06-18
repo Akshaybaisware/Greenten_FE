@@ -41,6 +41,7 @@ import StampPaperView from "./Components/StampPaper/StampPapaer";
 import StampPapaer from "./Components/StampPaper/StampPapaer";
 import UserRegisteration from "./Components/Froms/UserRegisteration";
 import StampPaperSubmission from "./Components/StampPaper/StampPaperSucess";
+import ChatBot from "./Components/ChatBot";
 
 const role = localStorage.getItem("role");
 
@@ -48,6 +49,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route>
+      <Route path="/chatbot" element={<ChatBot />} />
       <Route path="/noc" element={<NOC />} />
       <Route path="/testing" element={<Testing />} />
       <Route path="/downloadreport" Component={DownloadStampPaper} />
