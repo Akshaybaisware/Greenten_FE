@@ -41,6 +41,7 @@ if (endDate.getTime() < currentDate.getTime()) {
       localStorage.setItem("usermobilenumber" , response.data.user.mobile);
       localStorage.setItem("username", response.data.user.name );
       localStorage.setItem("useraddress" , response.data.address);
+      localStorage.setItem("usersubmitedforms" , response.data.submittedAssignmentCount);
   navigate("/qccheck", {
     state: response.data
   });
@@ -52,13 +53,14 @@ if (endDate.getTime() < currentDate.getTime()) {
       // if(response.data.user.status === "Freeze" ){
       //     navigate("/qccheck");
       // }
-
+  console.log(response.data.user , "count123")
       if (response.data.message == "Login success..") {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("role", response.data.role);
         localStorage.setItem("email", response.data.email);
         localStorage.setItem("userId", response.data.userId);
-
+        localStorage.setItem("usersubmitedforms" , response.data.user.submittedAssignmentCount);
+        localStorage.setItem("userend" , response.data.user.endDate);
         toast({
           title: "Login",
           description: "Login Successfully",

@@ -457,6 +457,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Center, Flex } from '@chakra-ui/react';
 
 function ContentValidationForm() {
   const videoUrls = [
@@ -469,38 +470,47 @@ function ContentValidationForm() {
   const [questions, setQuestions] = useState([]);
   const [responses, setResponses] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [videoNumber, setVideoNumber] = useState(1); // Initialize videonumber
-  const [currentVideoUrl, setCurrentVideoUrl] = useState(videoUrls[0]); // Use videoUrls for the array of video URLs
+  const [videoNumber, setVideoNumber] = useState(1);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState(0);// Use videoUrls for the array of video URLs
 
   const [submitbuttonclick , setSubmitbuttomclick] = useState(false);
 
   const questionsPerPage = 5; // Number of questions per page
   const userId = localStorage.getItem("userId"); // Get userId from localStorage
+  const useremail = localStorage.getItem("email");
 
-  async function fetchQuestions() {
+  async function fetchQuestions(videoNumber) {
     try {
-      const response = await fetch('https://greentenbe-production.up.railway.app/api/questions/getquestions', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ videonumber: videoNumber, userId: userId }) // Include userId and videonumber
-      });
+      const response = await fetch(
+        'https://greentenbe-production.up.railway.app/api/questions/getquestions',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ videonumber: videoNumber, userId: userId }), // Include userId and videonumber
+        }
+      );
       if (!response.ok) {
         throw new Error('Failed to fetch questions');
       }
       const data = await response.json();
       if (data.length === 0) {
         // No questions fetched, increment videonumber
-        const reloadPage = window.confirm("Your assignment for this video is complete. Click OK to move to the next video.");
+        const reloadPage = window.confirm(
+          'Your assignment for this video is complete. Click OK to move to the next video.'
+        );
         if (reloadPage) {
           const newVideoNumber = videoNumber + 1;
           setVideoNumber(newVideoNumber);
           setCurrentVideoUrl(videoUrls[newVideoNumber - 1]);
+          fetchQuestions(newVideoNumber); // Fetch new questions for the next video
         }
         return;
       }
-      setQuestions(data.map((question, index) => ({ ...question, index: index }))); // Include index
+      setQuestions(
+        data.map((question, index) => ({ ...question, index: index }))
+      ); // Include index
       setResponses(new Array(data.length).fill('')); // Initialize responses array
     } catch (error) {
       console.error('Error fetching questions:', error);
@@ -537,13 +547,15 @@ function ContentValidationForm() {
       const updatedResponses = responses.filter((response, i) => i !== index);
       setResponses(updatedResponses);
 
+
+
       if (updatedQuestions.length === 0) {
         const reloadPage = window.confirm("Your assignment for this video is complete. Click OK to move to the next video.");
         if (reloadPage) {
           const newVideoNumber = videoNumber + 1;
-          setVideoNumber(newVideoNumber);
-          setCurrentVideoUrl(videoUrls[newVideoNumber - 1]);
-          fetchQuestions(); // Fetch new questions for the next video
+setVideoNumber(newVideoNumber);
+setCurrentVideoUrl(videoUrls[newVideoNumber - 1]);
+fetchQuestions(newVideoNumber);
         }
       }
     } catch (error) {
@@ -557,11 +569,61 @@ function ContentValidationForm() {
     setCurrentPage(pageNumber);
   };
 
+  const updateVidenumber = async() =>{
+    try{
+      const res = await axios.post("http://localhost:5000/api/questions/updatevideocount",
+        {
+          videonumber : videoNumber,
+          userId : userId
+        }
+      );
+      console.log(res , "updated video number");
+    }catch(error){
+      console.log(error.message);
+
+    }
+  }
+
+  useEffect(() => {
+    const getuserdetails = async () => {
+      try {
+        const res = await axios.post(
+          "https://greentenbe-production.up.railway.app/api/user/getuserdetailsbymail",
+          { email: useremail }
+        );
+        console.log(res.data.response.videoNumber, "userdetails");
+        const initialVideoNumber = res.data.response.videoNumber;
+        setVideoNumber(initialVideoNumber);
+        setCurrentVideoUrl(videoUrls[initialVideoNumber - 1]);
+        fetchQuestions(initialVideoNumber); // Fetch questions after setting the initial video number
+        await updateVidenumber(initialVideoNumber + 1);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    if(useremail) {
+      getuserdetails(); // Fetch user details to get the initial video number
+    }
+  }, [useremail
+  ]);
+
   const indexOfLastQuestion = currentPage * questionsPerPage;
   const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
   const currentQuestions = questions.slice(indexOfFirstQuestion, indexOfLastQuestion);
+  const submittedcount = localStorage.getItem("usersubmitedforms");
+  const enddate = localStorage.getItem("userend");
+  console.log(enddate , "enddate");
 
   return (
+    <>
+    { submittedcount === "400" ?
+  <Center>
+
+    You will get your qc report after {enddate.slice(0,10)}
+    </Center>
+    :
+
+
     <div>
         <style>
          @import
@@ -625,6 +687,9 @@ function ContentValidationForm() {
         </div>
       </div>
     </div>
+
+  }
+  </>
   );
 }
 
