@@ -15,7 +15,7 @@ function RootLayout() {
   //     mt={["16%" , "10%"]}
   //     bg="lightgray" flexBasis={{ base: "100%", md: "100%" }} overflowY="auto">
   //       <Outlet />
-  //     </Box>
+  //     </Box>d
   //   </Flex>
   // </Flex>
 <>
