@@ -1,6 +1,6 @@
 import { Box, Flex, Center } from "@chakra-ui/layout";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Card, Icon, Text, useToast } from "@chakra-ui/react";
@@ -15,6 +15,207 @@ import filter from "../../../public/filter.svg";
 import upcomingImage from "../../../public/upcoming.svg";
 import lostLeadsIcon from "../../../public/lostLeads.svg";
 import { FaUser, FaSpinner , FaUserCheck , FaUserTimes , FaUserPlus , FaSave, FaPaperPlane, FaCalendarAlt, FaListUl } from 'react-icons/fa'; // You can import a different user icon from another icon library
+
+import ChatBot from "react-simple-chatbot";
+import { Segment } from "semantic-ui-react";
+import styled, { keyframes } from "styled-components";
+import "semantic-ui-css/semantic.min.css";
+
+// import ChatbotImage from "../assets/chatbot.webp"; // Replace with the correct path to your image
+// import image from "../assets/chatbot.webp";
+// Define the blinking keyframes for the logo
+import chatbotimage from "../../assets/chatbot.webp"
+const blink = keyframes`
+  50% {
+    opacity: 0;
+  }
+`;
+
+// Create a styled component for the blinking logo
+const BlinkingImage = styled.img`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  animation: ${blink} 1s step-end infinite;
+  border-radius: 50%; /* Adjust the value as needed */
+ box-shadow: 0 8px 16px rgba(167, 9, 9, 0.3); /* Increased blur radius and spread */
+`;
+
+
+const BlinkingLogo = ({ onClick }) => {
+  return (
+    <BlinkingImage
+      src={chatbotimage} // Example logo
+      alt="Chatbot"
+      onClick={onClick}
+    />
+  );
+};
+
+const ChatBotComponent = () => {
+  const [showChatBot, setShowChatBot] = useState(false);
+  const chatBotRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (chatBotRef.current && !chatBotRef.current.contains(event.target)) {
+      setShowChatBot(false);
+    }
+  };
+
+  useEffect(() => {
+    if (showChatBot) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showChatBot]);
+
+  // const steps = [
+  //   {
+  //     id: "Greet",
+  //     message: "Hello, Welcome to our services",
+  //     trigger: "Ask Name",
+  //   },
+  //   {
+  //     id: "Ask Name",
+  //     message: "Please enter your name",
+  //     trigger: "waiting1",
+  //   },
+  //   {
+  //     id: "waiting1",
+  //     user: true,
+  //     trigger: "Name",
+  //   },
+  //   {
+  //     id: "Name",
+  //     message: "Hi {previousValue}, select your issue",
+  //     trigger: "issues",
+  //   },
+  //   {
+  //     id: "issues",
+  //     options: [
+  //       { value: "React", label: "React", trigger: "React" },
+  //       { value: "Angular", label: "Angular", trigger: "Angular" },
+  //     ],
+  //   },
+  //   {
+  //     id: "React",
+  //     message: "Thanks for telling your React issue",
+  //     end: true,
+  //   },
+  //   {
+  //     id: "Angular",
+  //     message: "Thanks for telling your Angular issue",
+  //     end: true,
+  //   },
+  // ];
+  const steps = [
+    {
+      id: "Greet",
+      message: "Hello, Welcome to Greenten Services",
+      trigger: "Ask Name",
+    },
+    {
+      id: "Ask Name",
+      message: "Please enter your Name",
+      trigger: "waiting1",
+    },
+    {
+      id: "waiting1",
+      user: true,
+      trigger: "Name",
+    },
+    {
+      id: "Name",
+      message: "Hi {previousValue}, select your issue",
+      trigger: "issues",
+    },
+    {
+      id: "issues",
+      options: [
+        { value: "qc", label: "QC-Report", trigger: "qc" },
+        { value: "assignment", label: "Assignment", trigger: "assignment" },
+        { value: "login", label: "Login", trigger: "login" },
+      ],
+    },
+    {
+      id: "qc",
+      options: [
+        { value: "400_completed", label: "510 Form Completed", trigger: "400_completed" },
+        { value: "400_not_completed", label: "510 Form pending", trigger: "400_not_completed" },
+      ],
+    },
+    {
+      id: "400_completed",
+      message: "Your QC report will be generated after your end-date. Till then, please wait for the result. For more queries, mail to greenhelplineservice19@gmail.com.",
+      end: true,
+    },
+    {
+      id: "400_not_completed",
+      message: "Please complete the 510 Assignment. For more queries, mail to greenhelplineservice19@gmail.com.",
+      end: true,
+    },
+    {
+      id: "assignment",
+      options: [
+    
+        { value: "assignment_completed", label: "Assignment Completed", trigger: "assignment_completed" },
+        { value: "question_in_assignment", label: "Form in showing After Completion of Assignment", trigger: "question_in_assignment" },
+      ],
+    },
+    
+    {
+      id: "assignment_completed",
+      message: "Wait for the QC report which will be displayed after your end-date in Your dashboard. For more queries, mail to greenhelplineservice19@gmail.com.",
+      end: true,
+    },
+    {
+      id: "question_in_assignment",
+      message: "Ignore Form due to server problem it shows The assignment is over. You have to wait for the QC report after 5 days. For more queries, mail to greenhelplineservice19@gmail.com.",
+      end: true,
+    },
+    {
+      id: "login",
+      options: [
+        { value: "login_problem", label: "Login Problem", trigger: "login_problem" },
+        { value: "qc_not_showing", label: "After Login QC is Not Showing", trigger: "qc_not_showing" },
+      ],
+    },
+    {
+      id: "login_problem",
+      message: "Make sure to copy-paste your user ID and password properly. Don't copy any extra spaces before or after the credentials, as this can cause login issues. For more queries, mail to greenhelplineservice19@gmail.com.",
+      end: true,
+    },
+    {
+      id: "qc_not_showing",
+      message: "Make sure your 5 days are completed. After 5 days, log out and log in again; your QC will be there. For more queries, mail to greenhelplineservice19@gmail.com.",
+      end: true,
+    }
+  ];
+  
+
+  return (
+    <>
+      {showChatBot && (
+        <Segment ref={chatBotRef} style={{ position: "fixed", bottom: "80px", right: "20px", zIndex: 1000 }}>
+          <ChatBot steps={steps} />
+        </Segment>
+      )}
+      <BlinkingLogo onClick={() => setShowChatBot(!showChatBot)} />
+    </>
+  );
+};
+
+
+
+
 
 function UserDashboard() {
   const [data, setData] = useState(0);
@@ -292,6 +493,7 @@ function UserDashboard() {
           </Link>
         </Box>
       </Box>
+      <ChatBotComponent />
     </>
   );
 }

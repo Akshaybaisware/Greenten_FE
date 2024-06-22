@@ -1,9 +1,302 @@
+// Testing full part
+// import React, { useEffect, useState, useRef } from "react";
+// import { useToast, Box, Flex, Text, Input, Button } from "@chakra-ui/react";
+// import { BiRefresh } from "react-icons/bi";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
+// import "./contentvalidation.css"
+
+// function ContentValidationfrom() {
+//   const toast = useToast();
+//   const navigate = useNavigate();
+
+//   const userId = localStorage.getItem("userId");
+
+//   const [apidata, setapidata] = useState();
+//   const [randomIndex, setRandomIndex] = useState(null); // State to store the random index
+
+//   const name = useRef();
+//   const mobile = useRef();
+//   const address = useRef();
+//   const annualRevenue = useRef();
+//   const jobFunctional = useRef();
+//   const pinCode = useRef();
+//   const refreshAssignment = async () => {
+//     try {
+//       await getdatafrom(); // Fetch new assignment data
+//       setRandomIndex(Math.floor(Math.random() * 510)); // Set new random index
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+
+//   const getdatafrom = async () => {
+//     try {
+//       const response = await axios.get(
+//         "https://greentenbe-production.up.railway.app/api/assignment/getallassignments"
+//         // {
+//         //   userId: userId,
+//         // }
+//       );
+//       console.log(response , "res")
+//       setapidata(response?.data?.assignments);
+//       setRandomIndex(Math.floor(Math.random() * 520));
+//       console.log(randomIndex , "randomIndex")
+//     } catch (error) {
+//       toast({
+//         title: "Error ",
+//         description: "Error",
+//         status: "error",
+//         duration: 3000,
+//         position: "top",
+//         isClosable: true,
+//       });
+//       console.log(error.message);
+//     }
+//   };
+
+//   const submitForm = async () => {
+//     try {
+//       const response = await axios.post(
+//         "https://greentenbe-production.up.railway.app/api/assignment/addassignment",
+//         {
+//           userId: userId,
+//         }
+//       );
+//       console.log(response, "mkninmiopn");
+//       if (response.status === 201) {
+//         toast({
+//           title: "Success",
+//           description: "Form submitted successfully",
+//           status: "success",
+//           duration: 3000,
+//           position: "top",
+//           isClosable: true,
+//         });
+//         refreshAssignment();
+//         navigate("/");
+//         // Refresh the assignment data after submission
+//       }
+//     } catch (error) {
+//       toast({
+//         title: "Error ",
+//         description: `error: ${error.message}`,
+//         status: "error",
+//         duration: 10000,
+//         position: "top",
+//         isClosable: true,
+//       });
+//       console.log(error.message);
+//     }
+
+ 
+//   };
+
+//   useEffect(() => {
+//     getdatafrom();
+//   }, []);
+
+//   return (
+//     <>
+   
+//       <Flex
+//         mt={["2rem", "0rem"]}
+//         justifyContent={"center"}
+//         gap={"2rem"}
+//         flexDirection={["column", "row"]}
+//         className="content"
+//       >
+//         <Box p="4" border="1px solid #ccc" borderRadius="md" maxW="600px">
+//           <Flex direction="column" 
+//              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic' , fontWeight:"bold" }}
+//           >
+//             <Text fontSize={["1.5rem", "2.3rem"]}>
+//               {apidata?.[randomIndex]?.name}
+//             </Text>
+//             <Text fontSize={["1.5rem", "2.3rem"]}>
+//               {apidata?.[randomIndex]?.phone}
+//             </Text>
+//             <Text fontSize={["1.5rem", "2.3rem"]}>
+//               {apidata?.[randomIndex]?.address}
+//             </Text>
+//             <Text fontSize={["1.5rem", "2.3rem"]}>
+//               {apidata?.[randomIndex]?.annualRevenue}
+//             </Text>
+//             <Text fontSize={["1.5rem", "2.3rem"]}>
+//               {apidata?.[randomIndex]?.jobFunctional}
+//             </Text>
+//             <Text fontSize={["1.5rem", "2.3rem"]}>
+//               {apidata?.[randomIndex]?.pinCode}
+//             </Text>
+//           </Flex>
+//         </Box>
+
+//         <Box p="4" border="1px solid #ccc" borderRadius="md" maxW="1000px">
+//           <Flex 
+//              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic' , fontWeight:"bold" }}
+//           width={["330px", "400px"]} direction="column">
+//             <Text>Name:</Text>
+//             <Input
+//                style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic' , fontWeight:"bold" }}
+//             ref={name} />
+//             <Text>Mobile:</Text>
+//             <Input 
+//                style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic' , fontWeight:"bold" }}
+//             ref={mobile} />
+//             <Text>Address:</Text>
+//             <Input
+//                style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic' , fontWeight:"bold" }}
+//             ref={address} />
+//             <Text>Annual Revenue:</Text>
+//             <Input 
+//                style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic' , fontWeight:"bold" }}
+//             ref={annualRevenue} />
+//             <Text>Job Functional:</Text>
+//             <Input
+//                style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic' , fontWeight:"bold" }}
+//             ref={jobFunctional} />
+//             <Text>Pin Code:</Text>
+//             <Input
+//                style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic' , fontWeight:"bold" }}
+//             ref={pinCode} />
+
+//             <Button
+//               mt={"1rem"}
+//               mb={"1rem"}
+//               onClick={submitForm}
+//               color={"white"}
+//               bg="green" // Change to the desired color scheme
+//             >
+//               Submit
+//             </Button>
+
+          
+//           </Flex>
+//         </Box>
+//       </Flex>
+//     </>
+//   );
+// }
+
+// export default ContentValidationfrom;
+
+
+// testing with chatbot
+
 import React, { useEffect, useState, useRef } from "react";
 import { useToast, Box, Flex, Text, Input, Button } from "@chakra-ui/react";
 import { BiRefresh } from "react-icons/bi";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./contentvalidation.css"
+import ChatBot from "react-simple-chatbot";
+import { Segment } from "semantic-ui-react";
+import styled, { keyframes } from "styled-components";
+import "semantic-ui-css/semantic.min.css";
+import "./contentvalidation.css";
+// import ChatbotImage from "../assets/chatbot.webp"; // Replace with the correct path to your image
+// import image from "../assets/chatbot.webp";
+// Define the blinking keyframes for the logo
+import chatbotimage from "../../assets/chatbot.webp"
+const blink = keyframes`
+  50% {
+    opacity: 0;
+  }
+`;
+
+// Create a styled component for the blinking logo
+const BlinkingImage = styled.img`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  animation: ${blink} 1s step-end infinite;
+`;
+
+const BlinkingLogo = ({ onClick }) => {
+  return (
+    <BlinkingImage
+      src={chatbotimage} // Example logo
+      alt="Chatbot"
+      onClick={onClick}
+    />
+  );
+};
+
+const ChatBotComponent = () => {
+  const [showChatBot, setShowChatBot] = useState(false);
+  const chatBotRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (chatBotRef.current && !chatBotRef.current.contains(event.target)) {
+      setShowChatBot(false);
+    }
+  };
+
+  useEffect(() => {
+    if (showChatBot) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showChatBot]);
+
+  const steps = [
+    {
+      id: "Greet",
+      message: "Hello, Welcome to our services",
+      trigger: "Ask Name",
+    },
+    {
+      id: "Ask Name",
+      message: "Please enter your name",
+      trigger: "waiting1",
+    },
+    {
+      id: "waiting1",
+      user: true,
+      trigger: "Name",
+    },
+    {
+      id: "Name",
+      message: "Hi {previousValue}, select your issue",
+      trigger: "issues",
+    },
+    {
+      id: "issues",
+      options: [
+        { value: "React", label: "React", trigger: "React" },
+        { value: "Angular", label: "Angular", trigger: "Angular" },
+      ],
+    },
+    {
+      id: "React",
+      message: "Thanks for telling your React issue",
+      end: true,
+    },
+    {
+      id: "Angular",
+      message: "Thanks for telling your Angular issue",
+      end: true,
+    },
+  ];
+
+  return (
+    <>
+      {showChatBot && (
+        <Segment ref={chatBotRef} style={{ position: "fixed", bottom: "80px", right: "20px", zIndex: 1000 }}>
+          <ChatBot steps={steps} />
+        </Segment>
+      )}
+      <BlinkingLogo onClick={() => setShowChatBot(!showChatBot)} />
+    </>
+  );
+};
 
 function ContentValidationfrom() {
   const toast = useToast();
@@ -20,6 +313,7 @@ function ContentValidationfrom() {
   const annualRevenue = useRef();
   const jobFunctional = useRef();
   const pinCode = useRef();
+
   const refreshAssignment = async () => {
     try {
       await getdatafrom(); // Fetch new assignment data
@@ -33,14 +327,11 @@ function ContentValidationfrom() {
     try {
       const response = await axios.get(
         "https://greentenbe-production.up.railway.app/api/assignment/getallassignments"
-        // {
-        //   userId: userId,
-        // }
       );
-      console.log(response , "res")
+      console.log(response, "res");
       setapidata(response?.data?.assignments);
       setRandomIndex(Math.floor(Math.random() * 520));
-      console.log(randomIndex , "randomIndex")
+      console.log(randomIndex, "randomIndex");
     } catch (error) {
       toast({
         title: "Error ",
@@ -87,9 +378,6 @@ function ContentValidationfrom() {
       });
       console.log(error.message);
     }
-
-    //navigate("/");
-    //refreshAssignment(); // Refresh the assignment data after submission
   };
 
   useEffect(() => {
@@ -98,10 +386,6 @@ function ContentValidationfrom() {
 
   return (
     <>
-      <style>
-        @import
-        url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Whisper&display=swap')
-      </style>
       <Flex
         mt={["2rem", "0rem"]}
         justifyContent={"center"}
@@ -110,49 +394,57 @@ function ContentValidationfrom() {
         className="content"
       >
         <Box p="4" border="1px solid #ccc" borderRadius="md" maxW="600px">
-          <Flex direction="column" fontFamily="'Dancing Script', cursive">
+          <Flex direction="column" style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}>
             <Text fontSize={["1.5rem", "2.3rem"]}>
-              Name: {apidata?.[randomIndex]?.name}
+              {apidata?.[randomIndex]?.name}
             </Text>
             <Text fontSize={["1.5rem", "2.3rem"]}>
-              Mobile: {apidata?.[randomIndex]?.phone}
+              {apidata?.[randomIndex]?.phone}
             </Text>
             <Text fontSize={["1.5rem", "2.3rem"]}>
-              Address: {apidata?.[randomIndex]?.address}
+              {apidata?.[randomIndex]?.address}
             </Text>
             <Text fontSize={["1.5rem", "2.3rem"]}>
-              Annual Revenue: {apidata?.[randomIndex]?.annualRevenue}
+              {apidata?.[randomIndex]?.annualRevenue}
             </Text>
             <Text fontSize={["1.5rem", "2.3rem"]}>
-              Job Functional: {apidata?.[randomIndex]?.jobFunctional}
+              {apidata?.[randomIndex]?.jobFunctional}
             </Text>
             <Text fontSize={["1.5rem", "2.3rem"]}>
-              Pin Code: {apidata?.[randomIndex]?.pinCode}
+              {apidata?.[randomIndex]?.pinCode}
             </Text>
           </Flex>
         </Box>
 
         <Box p="4" border="1px solid #ccc" borderRadius="md" maxW="1000px">
-          <Flex width={["330px", "400px"]} direction="column">
+          <Flex
+            style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+            width={["330px", "400px"]} direction="column">
             <Text>Name:</Text>
-            <Input ref={name} />
+            <Input
+              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+              ref={name} />
             <Text>Mobile:</Text>
-            <Input ref={mobile} />
+            <Input
+              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+              ref={mobile} />
             <Text>Address:</Text>
-            <Input ref={address} />
+            <Input
+              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+              ref={address} />
             <Text>Annual Revenue:</Text>
-            <Input ref={annualRevenue} />
+            <Input
+              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+              ref={annualRevenue} />
             <Text>Job Functional:</Text>
-            <Input ref={jobFunctional} />
+            <Input
+              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+              ref={jobFunctional} />
             <Text>Pin Code:</Text>
-            <Input ref={pinCode} />
+            <Input
+              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+              ref={pinCode} />
 
-            {/* <Button
-          mt={"1rem"}
-          mb={"1rem"}
-          onClick={submitForm}>Submit</Button>
-
-      <Button onClick={refreshAssignment}>Refresh</Button> */}
             <Button
               mt={"1rem"}
               mb={"1rem"}
@@ -162,542 +454,14 @@ function ContentValidationfrom() {
             >
               Submit
             </Button>
-
-            {/* <Button
-              onClick={refreshAssignment}
-              bg={"#ff4d94"}
-              leftIcon={<BiRefresh />}
-            >
-              {" "}
-
-              Reload the Data
-            </Button> */}
           </Flex>
         </Box>
       </Flex>
+      <ChatBotComponent />
     </>
   );
 }
 
 export default ContentValidationfrom;
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-
-// function ContentValidationForm() {
-//   const videoUrl = "https://drive.google.com/file/d/16AbblD1rx_7FMz5szmsGhftzAv33crsg/preview";
-//   const [questions, setQuestions] = useState([]);
-//   const [responses, setResponses] = useState([]);
-//   const [currentPage, setCurrentPage] = useState(1);
-//   const [videoNumber, setVideoNumber] = useState(1); // Initialize videonumber
-//   const questionsPerPage = 5; // Number of questions per page
-//   const userId = localStorage.getItem("userId"); // Get userId from localStorage
-//   async function fetchQuestions() {
-//     try {
-//       const response = await fetch('http://localhost:5000/api/questions/getquestions', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({ videonumber: videoNumber, userId: userId }) // Include userId and videonumber
-//       });
-//       if (!response.ok) {
-//         throw new Error('Failed to fetch questions');
-//       }
-//       const data = await response.json();
-//       // if (data.length === 0) {
-//         // No questions fetched, increment videonumber
-//         // const reloadPage = window.confirm("Your assignment for this video is complete. Click OK to reload the page.");
-//       //   if (reloadPage) {
-//       //     window.location.reload();
-//       //   }
-//       //   setVideoNumber(videoNumber + 1);
-//       //   return;
-//       // }
-//       setQuestions(data.map((question, index) => ({ ...question, index: index }))); // Include index
-//       setResponses(new Array(data.length).fill('')); // Initialize responses array
-//     } catch (error) {
-//       console.error('Error fetching questions:', error);
-//     }
-//   }
-
-//   useEffect(() => {
-
-//     fetchQuestions();
-//   }, [userId, videoNumber]);
-
-//   const handleResponseChange = (index, value) => {
-//     const newResponses = [...responses];
-//     newResponses[index] = value;
-//     setResponses(newResponses);
-//   };
-
-//   const handleSubmit = async (index, questionId) => {
-//     try {
-//       await axios.post(
-//         "http://localhost:5000/api/questions/addassignment",
-//         {
-//           userId: userId,
-//           questionId: questionId, // Include the _id of the question
-//           videonumber: videoNumber, // Include videonumber if required
-//           // Add other necessary data here based on your requirements
-//         }
-//       );
-//       console.log("mkninmiopn");
-
-//       // Remove the submitted question and response
-//       const updatedQuestions = questions.filter((question, i) => i !== index);
-//       setQuestions(updatedQuestions.map((question, index) => ({ ...question, index: index })));
-//       const updatedResponses = responses.filter((response, i) => i !== index);
-//       setResponses(updatedResponses);
-
-//       if (indexOfLastQuestion === index) {
-//         setCurrentPage(currentPage + 1);
-//       }
-
-//       if (updatedQuestions.length === 0) {
-//         const reloadPage = window.confirm("Your assignment for this video is complete. Click OK to reload the page.");
-//         if (reloadPage) {
-//           setVideoNumber(videoNumber + 1)
-//           fetchQuestions();
-//           window.location.reload();
-//         }
-//       }
-//     } catch (error) {
-//       console.error('Error submitting form:', error.message);
-//     }
-//   };
-
-
-//   const handlePageChange = (pageNumber) => {
-//     setCurrentPage(pageNumber);
-//   };
-
-//   const indexOfLastQuestion = currentPage * questionsPerPage;
-//   const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
-//   const currentQuestions = questions.slice(indexOfFirstQuestion, indexOfLastQuestion);
-
-//   return (
-//     <div>
-//       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
-//         <iframe
-//           src={videoUrl}
-//           width="800"
-//           height="450"
-//           allow="autoplay"
-//           style={{ border: 'none' }}
-//         ></iframe>
-//       </div>
-//       <div style={{ padding: '20px' }}>
-//         {currentQuestions.map((question, index) => (
-//           <div key={index} style={{ marginBottom: '20px' }}>
-//             <p>{question.question}</p>
-//             <input
-//               type="text"
-//               value={responses[indexOfFirstQuestion + index]}
-//               onChange={(e) => handleResponseChange(indexOfFirstQuestion + index, e.target.value)}
-//             />
-//             <button onClick={() => handleSubmit(question.index, question._id)} >Submit</button>
-//           </div>
-//         ))}
-//         <div style={{ marginTop: '20px' }}>
-//           {questions.length > questionsPerPage && (
-//             <div>
-//               <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
-//               <span style={{ margin: '0 10px' }}>Page {currentPage}</span>
-//               <button onClick={() => handlePageChange(currentPage + 1)} disabled={indexOfLastQuestion >= questions.length}>Next</button>
-//             </div>
-//           )}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default ContentValidationForm;
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-
-// function ContentValidationForm() {
-//   const videoUrl = ["https://drive.google.com/file/d/16AbblD1rx_7FMz5szmsGhftzAv33crsg/preview" , "https://drive.google.com/file/d/1uoYKV3SG9TKOiTwXry1pKhXayxmoRqYY/view?usp=sharing" , "https://drive.google.com/file/d/1u5tUrOFV47xSq7BJ7AGX5VVuHgc6Zip2/view?usp=sharing" , "https://drive.google.com/file/d/1EX1Z9WcXPbcIzAx1JcF52aBiLlAz3dad/view?usp=sharing" , "https://drive.google.com/file/d/1FGLOib64-s-3EBQ_ehr19Ghs5toV3A1i/view?usp=sharing"];
-//   const [questions, setQuestions] = useState([]);
-//   const [responses, setResponses] = useState([]);
-//   const [currentPage, setCurrentPage] = useState(1);
-//   const [videoNumber, setVideoNumber] = useState(1); // Initialize videonumber
-//   const [videoUrls, setVideoUrls] = useState(videoUrl[0]); // videoUrl is the array of video URLs
-
-//   const questionsPerPage = 5; // Number of questions per page
-//   const userId = localStorage.getItem("userId"); // Get userId from localStorage
-//   async function fetchQuestions() {
-//     try {
-//       const response = await fetch('http://localhost:5000/api/questions/getquestions', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({ videonumber: videoNumber, userId: userId }) // Include userId and videonumber
-//       });
-//       if (!response.ok) {
-//         throw new Error('Failed to fetch questions');
-//       }
-//       const data = await response.json();
-//       // if (data.length === 0) {
-//         // No questions fetched, increment videonumber
-//         // const reloadPage = window.confirm("Your assignment for this video is complete. Click OK to reload the page.");
-//       //   if (reloadPage) {
-//       //     window.location.reload();
-//       //   }
-//       //   setVideoNumber(videoNumber + 1);
-//       //   return;
-//       // }
-//       setQuestions(data.map((question, index) => ({ ...question, index: index }))); // Include index
-//       setResponses(new Array(data.length).fill('')); // Initialize responses array
-//     } catch (error) {
-//       console.error('Error fetching questions:', error);
-//     }
-//   }
-
-//   useEffect(() => {
-
-//     fetchQuestions();
-//   }, [userId, videoNumber]);
-
-//   const handleResponseChange = (index, value) => {
-//     const newResponses = [...responses];
-//     newResponses[index] = value;
-//     setResponses(newResponses);
-//   };
-
-//   const handleSubmit = async (index, questionId) => {
-//     try {
-//       await axios.post(
-//         "http://localhost:5000/api/questions/addassignment",
-//         {
-//           userId: userId,
-//           questionId: questionId, // Include the _id of the question
-//           videonumber: videoNumber, // Include videonumber if required
-//           // Add other necessary data here based on your requirements
-//         }
-//       );
-//       console.log("mkninmiopn");
-
-//       // Remove the submitted question and response
-//       const updatedQuestions = questions.filter((question, i) => i !== index);
-//       setQuestions(updatedQuestions.map((question, index) => ({ ...question, index: index })));
-//       const updatedResponses = responses.filter((response, i) => i !== index);
-//       setResponses(updatedResponses);
-
-//       if (indexOfLastQuestion === index) {
-//         setCurrentPage(currentPage + 1);
-//       }
-
-//       if (updatedQuestions.length === 0) {
-//         const reloadPage = window.confirm("Your assignment for this video is complete. Click OK to reload the page.");
-//         if (reloadPage) {
-//           setVideoNumber(videoNumber + 1)
-//           setVideoUrls(videoUrl[videoNumber - 1]);
-//           // fetchQuestions();
-//           // window.location.reload();
-//         }
-//       }
-//     } catch (error) {
-//       console.error('Error submitting form:', error.message);
-//     }
-//   };
-
-
-//   const handlePageChange = (pageNumber) => {
-//     setCurrentPage(pageNumber);
-//   };
-
-//   const indexOfLastQuestion = currentPage * questionsPerPage;
-//   const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
-//   const currentQuestions = questions.slice(indexOfFirstQuestion, indexOfLastQuestion);
-
-//   return (
-//     <div>
-//       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
-//         <iframe
-//           src={videoUrls}
-//           width="800"
-//           height="450"
-//           allow="autoplay"
-//           style={{ border: 'none' }}
-//         ></iframe>
-//       </div>
-//       <div style={{ padding: '20px' }}>
-//         {currentQuestions.map((question, index) => (
-//           <div key={index} style={{ marginBottom: '20px' }}>
-//             <p>{question.question}</p>
-//             <input
-//               type="text"
-//               value={responses[indexOfFirstQuestion + index]}
-//               onChange={(e) => handleResponseChange(indexOfFirstQuestion + index, e.target.value)}
-//             />
-//             <button onClick={() => handleSubmit(question.index, question._id)} >Submit</button>
-//           </div>
-//         ))}
-//         <div style={{ marginTop: '20px' }}>
-//           {questions.length > questionsPerPage && (
-//             <div>
-//               <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
-//               <span style={{ margin: '0 10px' }}>Page {currentPage}</span>
-//               <button onClick={() => handlePageChange(currentPage + 1)} disabled={indexOfLastQuestion >= questions.length}>Next</button>
-//             </div>
-//           )}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default ContentValidationForm;
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import { Center, Flex } from '@chakra-ui/react';
-
-// function ContentValidationForm() {
-//   const videoUrls = [
-//     "https://drive.google.com/file/d/16AbblD1rx_7FMz5szmsGhftzAv33crsg/preview",
-//     "https://drive.google.com/file/d/1uoYKV3SG9TKOiTwXry1pKhXayxmoRqYY/preview",
-//     "https://drive.google.com/file/d/1u5tUrOFV47xSq7BJ7AGX5VVuHgc6Zip2/preview",
-//     "https://drive.google.com/file/d/1EX1Z9WcXPbcIzAx1JcF52aBiLlAz3dad/preview",
-//     "https://drive.google.com/file/d/1FGLOib64-s-3EBQ_ehr19Ghs5toV3A1i/preview"
-//   ];
-//   const [questions, setQuestions] = useState([]);
-//   const [responses, setResponses] = useState([]);
-//   const [currentPage, setCurrentPage] = useState(1);
-//   const [videoNumber, setVideoNumber] = useState(1);
-//   const [currentVideoUrl, setCurrentVideoUrl] = useState(0);// Use videoUrls for the array of video URLs
-
-//   const [submitbuttonclick , setSubmitbuttomclick] = useState(false);
-
-//   const questionsPerPage = 5; // Number of questions per page
-//   const userId = localStorage.getItem("userId"); // Get userId from localStorage
-//   const useremail = localStorage.getItem("email");
-
-//   async function fetchQuestions(videoNumber) {
-//     try {
-//       const response = await fetch(
-//         'https://greentenbe-production.up.railway.app/api/questions/getquestions',
-//         {
-//           method: 'POST',
-//           headers: {
-//             'Content-Type': 'application/json',
-//           },
-//           body: JSON.stringify({ videonumber: videoNumber, userId: userId }), // Include userId and videonumber
-//         }
-//       );
-//       if (!response.ok) {
-//         throw new Error('Failed to fetch questions');
-//       }
-//       const data = await response.json();
-//       if (data.length === 0) {
-//         // No questions fetched, increment videonumber
-//         const reloadPage = window.confirm(
-//           'Your assignment for this video is complete. Click OK to move to the next video.'
-//         );
-//         if (reloadPage) {
-//           const newVideoNumber = videoNumber + 1;
-//           setVideoNumber(newVideoNumber);
-//           setCurrentVideoUrl(videoUrls[newVideoNumber - 1]);
-//           fetchQuestions(newVideoNumber); // Fetch new questions for the next video
-//         }
-//         return;
-//       }
-//       setQuestions(
-//         data.map((question, index) => ({ ...question, index: index }))
-//       ); // Include index
-//       setResponses(new Array(data.length).fill('')); // Initialize responses array
-//     } catch (error) {
-//       console.error('Error fetching questions:', error);
-//     }
-//   }
-
-//   useEffect(() => {
-//     fetchQuestions();
-//   }, [userId, videoNumber]);
-
-//   const handleResponseChange = (index, value) => {
-//     const newResponses = [...responses];
-//     newResponses[index] = value;
-//     setResponses(newResponses);
-//   };
-
-//   const handleSubmit = async (index, questionId) => {
-//     setSubmitbuttomclick(true);
-//     try {
-//       await axios.post(
-//         "https://greentenbe-production.up.railway.app/api/questions/addassignment",
-//         {
-//           userId: userId,
-//           questionId: questionId, // Include the _id of the question
-//           videonumber: videoNumber, // Include videonumber if required
-//           // Add other necessary data here based on your requirements
-//         }
-//       );
-//       console.log("Assignment submitted");
-
-//       // Remove the submitted question and response
-//       const updatedQuestions = questions.filter((question, i) => i !== index);
-//       setQuestions(updatedQuestions.map((question, index) => ({ ...question, index: index })));
-//       const updatedResponses = responses.filter((response, i) => i !== index);
-//       setResponses(updatedResponses);
-
-
-
-//       if (updatedQuestions.length === 0) {
-//         const reloadPage = window.confirm("Your assignment for this video is complete. Click OK to move to the next video.");
-//         if (reloadPage) {
-//           const newVideoNumber = videoNumber + 1;
-// setVideoNumber(newVideoNumber);
-// setCurrentVideoUrl(videoUrls[newVideoNumber - 1]);
-// fetchQuestions(newVideoNumber);
-//         }
-//       }
-//     } catch (error) {
-//       console.error('Error submitting form:', error.message);
-//     }finally{
-//       setSubmitbuttomclick(false);
-//     }
-//   };
-
-//   const handlePageChange = (pageNumber) => {
-//     setCurrentPage(pageNumber);
-//   };
-
-//   const updateVidenumber = async() =>{
-//     try{
-//       const res = await axios.post("http://localhost:5000/api/questions/updatevideocount",
-//         {
-//           videonumber : videoNumber,
-//           userId : userId
-//         }
-//       );
-//       console.log(res , "updated video number");
-//     }catch(error){
-//       console.log(error.message);
-
-//     }
-//   }
-
-//   useEffect(() => {
-//     const getuserdetails = async () => {
-//       try {
-//         const res = await axios.post(
-//           "https://greentenbe-production.up.railway.app/api/user/getuserdetailsbymail",
-//           { email: useremail }
-//         );
-//         console.log(res.data.response.videoNumber, "userdetails");
-//         const initialVideoNumber = res.data.response.videoNumber;
-//         setVideoNumber(initialVideoNumber);
-//         setCurrentVideoUrl(videoUrls[initialVideoNumber - 1]);
-//         fetchQuestions(initialVideoNumber); // Fetch questions after setting the initial video number
-//         await updateVidenumber(initialVideoNumber + 1);
-//       } catch (error) {
-//         console.log(error.message);
-//       }
-//     };
-//     if(useremail) {
-//       getuserdetails(); // Fetch user details to get the initial video number
-//     }
-//   }, [useremail
-//   ]);
-
-//   const indexOfLastQuestion = currentPage * questionsPerPage;
-//   const indexOfFirstQuestion = indexOfLastQuestion - questionsPerPage;
-//   const currentQuestions = questions.slice(indexOfFirstQuestion, indexOfLastQuestion);
-//   const submittedcount = localStorage.getItem("usersubmitedforms");
-//   const enddate = localStorage.getItem("userend");
-//   console.log(enddate , "enddate");
-
-//   return (
-//     <>
-//     { submittedcount === "400" ?
-//   <Center>
-
-//     You will get your qc report after {enddate.slice(0,10)}
-//     </Center>
-//     :
-
-
-//     <div>
-//         <style>
-//          @import
-//        url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Whisper&display=swap')
-//       </style>
-//       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh'  , marginTop:"5%"}}>
-//         <iframe
-//           src={currentVideoUrl}
-//           width="800"
-//           height="450"
-//           allow="autoplay"
-//           style={{ border: 'none' }}
-//         ></iframe>
-//       </div>
-//       <div style={{ padding: '20px'  , justifyContent:"center" , alignItems:"center"}}>
-//         {currentQuestions.map((question, index) => (
-//           <div key={index} style={{ marginBottom: '20px', fontFamily: "'Dancing Script', cursive" , fontWeight:"1000" }}
-//           >
-//             <p style={{fontSize:"1.2rem"}} >{question.question}</p>
-//             <input
-//             height={"1.2rem"}
-//              style={{ border: "1px solid green" ,  height:"2rem" }}
-//               type="text"
-//               value={responses[indexOfFirstQuestion + index]}
-//               onChange={(e) => handleResponseChange(indexOfFirstQuestion + index, e.target.value)}
-//             />
-//             <button
-//       disabled={submitbuttonclick}
-
-
-//             style={{
-//               color:"white",
-//               marginLeft: "1rem",
-//               backgroundColor: submitbuttonclick ? "gray" :  "#21a34e",
-//               borderRadius: "10px",  // Border radius
-//               padding: "0.5rem 1rem",  // Padding for better appearance
-//               border: "1px solid #ccc",  // Optional border for better contrast
-//               cursor: submitbuttonclick ? 'not-allowed' : 'pointer',
-
-//             }}
-//             onClick={() => handleSubmit(indexOfFirstQuestion + index, question._id)}>Submit</button>
-//           </div>
-//         ))}
-//         <div style={{ marginTop: '20px' , display:"flex" , alignContent:"center" , justifyContent:"center" }}>
-//           {questions.length > questionsPerPage && (
-//             <div  style={{
-//               color:"white",
-//               // marginLeft: "1rem",
-//               backgroundColor: "#4a4ec6",  // Light background color
-//               borderRadius: "10px",  // Border radius
-//               padding: "0.5rem 1rem",  // Padding for better appearance
-//               border: "1px solid #ccc"  // Optional border for better contrast
-//             }}>
-//               <button  onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>Previous</button>
-//               <span style={{ margin: '0 10px' }}>Page {currentPage}</span>
-//               <button
-
-//               onClick={() => handlePageChange(currentPage + 1)} disabled={indexOfLastQuestion >= questions.length}>Next</button>
-//             </div>
-//           )}
-//         </div>
-//       </div>
-//     </div>
-
-//   }
-//   </>
-//   );
-// }
-
-// export default ContentValidationForm;
-
-
-
 
 

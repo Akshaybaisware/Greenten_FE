@@ -194,8 +194,8 @@ const StampPaper = () => {
             <br />
             <br />
             2.1 REMUNERATION: - - For the form filling service rendered by the
-            client. The Clients shall beentitled to payments of price 40Rs.
-            (INR) Max perform for the salary may vary from 22500/- INR The
+            client. The Clients shall beentitled to payments of price 41Rs.
+            (INR) Max perform for the salary may vary from 209010/- INR The
             Client shall raise the invoice within 4 days after the successful
             completion of the project. The contractor will pay each project's
             amount within a maximum of 48 HRS, from the date of issue of the
@@ -217,7 +217,7 @@ const StampPaper = () => {
             Working Days for the date andon completion of quality check shall
             issue a Quality report. Both parties agree to assure the highest
             Quality of End service. Following Cycle for accuracy will be
-            followed. cut off - 43 (in total) Above 90% @50/- INR perform. if
+            followed. cut off - 43 (in total) Above 80% @41/- INR perform. if
             below cut off or id is terminated then the client is supposed to
             clear the Registration Amount (6800/-) to the company.
             <br />

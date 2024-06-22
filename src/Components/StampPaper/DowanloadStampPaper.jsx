@@ -1031,7 +1031,7 @@ B)	The contractor is agreeable to provide such service to the client on the term
               <br />
               <br />
               2.	CLIENT REMUNERATION<br/><br/>
-2.1	REMUNERATION: - - For the form filling service rendered by the client. The Clients shall beentitled to payments of price 40Rs. (INR) Max perform for the salary may vary from 22500/- INR The Client shall raise the invoice within 4 days after the successful completion of the project. The contractor will pay each project's amount within a maximum of 48 HRS, from the date of issue of the quality check report. the invoice can be raised by Email and by a report on the working website. Q.C. Report will be provided within 24-72 Working hours from the date of submission
+2.1	REMUNERATION: - - For the form filling service rendered by the client. The Clients shall beentitled to payments of price 41Rs. (INR) Max perform for the salary may vary from 20910/- INR The Client shall raise the invoice within 4 days after the successful completion of the project. The contractor will pay each project's amount within a maximum of 41 HRS, from the date of issue of the quality check report. the invoice can be raised by Email and by a report on the working website. Q.C. Report will be provided within 24-72 Working hours from the date of submission
 
               <br />
               <br /> 2.2	Billing: - - contractor will provide a workload of Question Forms which the client shall complete thework within 4 days under the given criteria of this agreement. This Agreement has been signed for one system. The contractor will make the payment for the billing within 1 INTERNATIONAL<br/><br/> WORKING DAY from the date of raising the project subject to the quality check report.
