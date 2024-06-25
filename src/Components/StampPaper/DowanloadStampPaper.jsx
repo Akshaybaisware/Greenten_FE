@@ -998,12 +998,8 @@ const StampPaperView = () => {
            THE FIRST PART OF THIS AGREEMENT IS Greenten SERVICE. THAT REGISTERED AT SHOP NO 168-169 SHAMBHAJI COMPLEX RING ROAD BIKANER RAJASTHAN 334007
               <br />
               <br />
-              THE SECOND PART OF THIS AGREEMENT IS PRANAV ULHAS CHAUDHRARY THAT LIVE AT AS
-ID PROOF OF THE INDIAN GOVERNMENT
-(CLIENT ADDRESS)
-S/O ULHAS CHAUDHRARY SOMNIWAS SOCIETY FLAT NO 8 I T COLONY ROAD OPP SHIVSENA
-SHAKHA VADAVALI SECTION AMBEMATH THANE MH-421501
-
+              THE SECOND PART OF THIS AGREEMENT IS Greenten Services , SHAM BABA APARTMENT OFFICE
+              2024 POSTMASTER POST OFFICE ANTI ROAD BIKANE RAJASTHAN ,334007
               <br />
               <br />
        
@@ -1114,7 +1110,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
               4.2	No modification of the term of this AGREEMENT shall be valid unless it is in writing and signedby both parties.
              
               <br />4.3	Force majeure: If the rendition of the form filling services is humoured.63 due to Earthquake,flood, Tempest, Civil Riots or Act of God then the Business Associate shall be absolved of its obligation hereunder till normally is restored after the cessation of the aforementioned
-            <br/>   contingencies. the client solves likewise be absolved if a rendition of the services is hampered due to a strike called by the data entry operators engaged by the client, violence or political turbulence or for any other reasons of a similar nature, which is beyond the control of the client. If you want to terminate your agreement after your first work, you need to pay 6(4900*6) times the agreement amount as per company policies.
+            <br/>   contingencies. the client solves likewise be absolved if a rendition of the services is hampered due to a strike called by the data entry operators engaged by the client, violence or political turbulence or for any other reasons of a similar nature, which is beyond the control of the client. If you want to terminate your agreement after your first work, you need to pay 68000 *12  times the agreement amount as per company policies.
               <br />
             </Text>
           </Box>

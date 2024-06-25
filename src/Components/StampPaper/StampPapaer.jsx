@@ -149,10 +149,8 @@ const StampPaper = () => {
             RAJASTHAN
             <br />
             <br />
-            THE SECOND PART OF THIS AGREEMENT IS PRANAV ULHAS CHAUDHRARY THAT
-            LIVE AT AS ID PROOF OF THE INDIAN GOVERNMENT (CLIENT ADDRESS) S/O
-            ULHAS CHAUDHRARY SOMNIWAS SOCIETY FLAT NO 8 I T COLONY ROAD OPP
-            SHIVSENA SHAKHA VADAVALI SECTION AMBEMATH THANE MH-421501
+            THE SECOND PART OF THIS AGREEMENT IS Greenten Services , SHAM BABA APARTMENT OFFICE
+            2024 POSTMASTER POST OFFICE ANTI ROAD BIKANE RAJASTHAN ,334007
             <br />
             <br />
             <Text fontSize={["0.8rem", "1.5rem"]}>POINT'S TO BE NOTE: -</Text>
@@ -240,7 +238,7 @@ const StampPaper = () => {
             3. Conflict of interest
             <br />
             <br />
-            3.1 Application Fee(S): The Registration Amount of 4900/- INR. Will
+            3.1 Application Fee(S): The Registration Amount of 6800/- INR. Will
             be deducted from the salary ifgenerated, and if the salary is not
             generated i.e If the client fails to complete the work. then he/she
             is liable to pay the same registration amount on their own. The
@@ -336,7 +334,7 @@ const StampPaper = () => {
             data entry operators engaged by the client, violence or political
             turbulence or for any other reasons of a similar nature, which is
             beyond the control of the client. If you want to terminate your
-            agreement after your first work, you need to pay 6(4900*6) times the
+            agreement after your first work, you need to pay 6800*12 times the
             agreement amount as per company policies.
             <br />
           </Text>
