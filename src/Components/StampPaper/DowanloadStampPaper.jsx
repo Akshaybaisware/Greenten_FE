@@ -992,7 +992,7 @@ const StampPaperView = () => {
              FREELANCING AGREEMENT
               <br />
               <br />
-              THIS GENERAL GREENTEN SERVICE AGREEMENT (THE AGREEMENT) DATED THIS AS OF GOVERNMENT FOR 2023 To 2024.
+              THIS GENERAL GREENTEN SERVICE AGREEMENT (THE AGREEMENT) DATED THIS AS OF GOVERNMENT FOR 2024 To 2025.
               <br />
               <br />
            THE FIRST PART OF THIS AGREEMENT IS Greenten SERVICE. THAT REGISTERED AT SHOP NO 168-169 SHAMBHAJI COMPLEX RING ROAD BIKANER RAJASTHAN 334007
@@ -1034,7 +1034,7 @@ B)	The contractor is agreeable to provide such service to the client on the term
 2.1	REMUNERATION: - - For the form filling service rendered by the client. The Clients shall beentitled to payments of price 41Rs. (INR) Max perform for the salary may vary from 20910/- INR The Client shall raise the invoice within 4 days after the successful completion of the project. The contractor will pay each project's amount within a maximum of 41 HRS, from the date of issue of the quality check report. the invoice can be raised by Email and by a report on the working website. Q.C. Report will be provided within 24-72 Working hours from the date of submission
 
               <br />
-              <br /> 2.2	Billing: - - contractor will provide a workload of Question Forms which the client shall complete thework within 4 days under the given criteria of this agreement. This Agreement has been signed for one system. The contractor will make the payment for the billing within 1 INTERNATIONAL<br/><br/> WORKING DAY from the date of raising the project subject to the quality check report.
+              <br /> 2.2	Billing: - - contractor will provide a workload of Question Forms which the client shall complete thework within 5 days under the given criteria of this agreement. This Agreement has been signed for one system. The contractor will make the payment for the billing within 1 INTERNATIONAL<br/><br/> WORKING DAY from the date of raising the project subject to the quality check report.
               <br />
               <br />
               2.3	Accuracy: - contractor will provide Adequate feedback within 4 Working Days for the date andon completion of quality check shall issue a Quality report. Both parties agree to assure the highest Quality of End service. Following Cycle for accuracy will be followed. cut off  - 43 (in total) Above 90% @50/- INR perform. if below cut off or id is terminated then the client is supposed to clear the Registration Amount (6800/-) to the company.
@@ -1067,18 +1067,18 @@ ID. If the software portal or the server of the company detects that there are m
 Attempts/multiple IP Addresses of the account Modules .and The ID will get Terminated Without Any Intimation and the client needs to clear the server maintenance charge up to 6800/- INR. (Refundable Amount After Successfully done the work**) For That Particular Project As Per This Agreement.
 
               <br />
-              <br />3.3	TAT (Turn Around Time): The Second Party Has 4 Days (Including Holidays) To Complete the
+              <br />3.3	TAT (Turn Around Time): The Second Party Has 5 Days (Including Holidays) To Complete the
 New Work and Second Party Has to Send It To First Party Shall Give An Accuracy Report Within 1-2 Working days For The New Work, After Submission As Per Technical Specification Which Is Included In this Agreement With Accuracy Parameters.
 
               <br />
               <br />
-              3.4	Client will Execute The data Processing Work provided by the contractor through experiencedpersons in such a manner to carry out the work efficiently at a minimum of 90% for our files.
+              3.4	Client will Execute The data Processing Work provided by the contractor through experiencedpersons in such a manner to carry out the work efficiently at a minimum of 80% for our files.
               <br />
               <br />
               3.5	Contractor Agree to provide Formats and Other Information for Processing The job To Client Atthe time of Providing the Data and The Clint Agree with the format And Other information which is being processed to the particular.
               <br />
               <br />
-              3.6	Client will Execute The data Processing Work provided by the contractor through experiencedpersons in such a manner to carry out the work efficiently at a minimum of 90% for our files.
+              3.6	Client will Execute The data Processing Work provided by the contractor through experiencedpersons in such a manner to carry out the work efficiently at a minimum of 80% for our files.
               <br />
               <br />
               3.7	This Agreement Represent The business agreement and operation understanding between theparties and shall remain in effect for six months for the date of execution hereof 

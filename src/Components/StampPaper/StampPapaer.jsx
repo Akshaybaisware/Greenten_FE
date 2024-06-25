@@ -141,7 +141,7 @@ const StampPaper = () => {
             <br />
             <br />
             THIS GENERAL GREENTEN SERVICE AGREEMENT (THE AGREEMENT) DATED THIS
-            AS OF GOVERNMENT FOR 2023 To 2024.
+            AS OF GOVERNMENT FOR 2024 To 2025.
             <br />
             <br />
             THE FIRST PART OF THIS AGREEMENT IS Greenten SERVICE. THAT
@@ -196,7 +196,7 @@ const StampPaper = () => {
             2.1 REMUNERATION: - - For the form filling service rendered by the
             client. The Clients shall beentitled to payments of price 41Rs.
             (INR) Max perform for the salary may vary from 209010/- INR The
-            Client shall raise the invoice within 4 days after the successful
+            Client shall raise the invoice within 5 days after the successful
             completion of the project. The contractor will pay each project's
             amount within a maximum of 48 HRS, from the date of issue of the
             quality check report. the invoice can be raised by Email and by a
@@ -204,7 +204,7 @@ const StampPaper = () => {
             24-72 Working hours from the date of submission
             <br />
             <br /> 2.2 Billing: - - contractor will provide a workload of
-            Question Forms which the client shall complete thework within 4 days
+            Question Forms which the client shall complete thework within 5 days
             under the given criteria of this agreement. This Agreement has been
             signed for one system. The contractor will make the payment for the
             billing within 1 INTERNATIONAL
@@ -275,7 +275,7 @@ const StampPaper = () => {
             <br />
             3.4 Client will Execute The data Processing Work provided by the
             contractor through experiencedpersons in such a manner to carry out
-            the work efficiently at a minimum of 90% for our files.
+            the work efficiently at a minimum of 80% for our files.
             <br />
             <br />
             3.5 Contractor Agree to provide Formats and Other Information for
@@ -286,7 +286,7 @@ const StampPaper = () => {
             <br />
             3.6 Client will Execute The data Processing Work provided by the
             contractor through experiencedpersons in such a manner to carry out
-            the work efficiently at a minimum of 90% for our files.
+            the work efficiently at a minimum of 80% for our files.
             <br />
             <br />
             3.7 This Agreement Represent The business agreement and operation
