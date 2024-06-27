@@ -249,12 +249,12 @@ const ChatBotComponent = () => {
   const steps = [
     {
       id: "Greet",
-      message: "Hello, Welcome to our services",
+      message: "Hello, Welcome to Greenten Services",
       trigger: "Ask Name",
     },
     {
       id: "Ask Name",
-      message: "Please enter your name",
+      message: "Please enter your Name",
       trigger: "waiting1",
     },
     {
@@ -270,20 +270,64 @@ const ChatBotComponent = () => {
     {
       id: "issues",
       options: [
-        { value: "React", label: "React", trigger: "React" },
-        { value: "Angular", label: "Angular", trigger: "Angular" },
+        { value: "qc", label: "QC-Report", trigger: "qc" },
+        { value: "assignment", label: "Assignment", trigger: "assignment" },
+        { value: "login", label: "Login", trigger: "login" },
       ],
     },
     {
-      id: "React",
-      message: "Thanks for telling your React issue",
+      id: "qc",
+      options: [
+        { value: "400_completed", label: "510 Form Completed", trigger: "400_completed" },
+        { value: "400_not_completed", label: "510 Form pending", trigger: "400_not_completed" },
+      ],
+    },
+    {
+      id: "400_completed",
+      message: "Your QC report will be generated after your end-date. Till then, please wait for the result. For more queries, mail to greenhelplineservice19@gmail.com.",
       end: true,
     },
     {
-      id: "Angular",
-      message: "Thanks for telling your Angular issue",
+      id: "400_not_completed",
+      message: "Please complete the 510 Assignment. For more queries, mail to greenhelplineservice19@gmail.com.",
       end: true,
     },
+    {
+      id: "assignment",
+      options: [
+    
+        { value: "assignment_completed", label: "Assignment Completed", trigger: "assignment_completed" },
+        { value: "question_in_assignment", label: "Form in showing After Completion of Assignment", trigger: "question_in_assignment" },
+      ],
+    },
+    
+    {
+      id: "assignment_completed",
+      message: "Wait for the QC report which will be displayed after your end-date in Your dashboard. For more queries, mail to greenhelplineservice19@gmail.com.",
+      end: true,
+    },
+    {
+      id: "question_in_assignment",
+      message: "Ignore Form due to server problem it shows The assignment is over. You have to wait for the QC report after 5 days. For more queries, mail to greenhelplineservice19@gmail.com.",
+      end: true,
+    },
+    {
+      id: "login",
+      options: [
+        { value: "login_problem", label: "Login Problem", trigger: "login_problem" },
+        { value: "qc_not_showing", label: "After Login QC is Not Showing", trigger: "qc_not_showing" },
+      ],
+    },
+    {
+      id: "login_problem",
+      message: "Make sure to copy-paste your user ID and password properly. Don't copy any extra spaces before or after the credentials, as this can cause login issues. For more queries, mail to greenhelplineservice19@gmail.com.",
+      end: true,
+    },
+    {
+      id: "qc_not_showing",
+      message: "Make sure your 5 days are completed. After 5 days, log out and log in again; your QC will be there. For more queries, mail to greenhelplineservice19@gmail.com.",
+      end: true,
+    }
   ];
 
   return (
