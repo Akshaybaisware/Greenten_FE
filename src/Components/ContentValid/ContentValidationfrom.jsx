@@ -387,7 +387,7 @@ function ContentValidationfrom() {
   return (
     <>
       <Flex
-        mt={["2rem", "0rem"]}
+        mt={["3rem", "5rem"]}
         justifyContent={"center"}
         gap={"2rem"}
         flexDirection={["column", "row"]}

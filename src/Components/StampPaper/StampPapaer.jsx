@@ -149,8 +149,9 @@ const StampPaper = () => {
             RAJASTHAN
             <br />
             <br />
-            THE SECOND PART OF THIS AGREEMENT IS Greenten Services , SHAM BABA APARTMENT OFFICE
-            2024 POSTMASTER POST OFFICE ANTI ROAD BIKANE RAJASTHAN ,334007
+            THE SECOND PART OF THIS AGREEMENT SUBJECTED TO THE CLIENT WHICH 
+            HAS FOLLOWING DETAILS MENTIONED IN THE BOTTOM PART OF THE STAMPPAPER
+            
             <br />
             <br />
             <Text fontSize={["0.8rem", "1.5rem"]}>POINT'S TO BE NOTE: -</Text>
@@ -193,7 +194,7 @@ const StampPaper = () => {
             <br />
             2.1 REMUNERATION: - - For the form filling service rendered by the
             client. The Clients shall beentitled to payments of price 41Rs.
-            (INR) Max perform for the salary may vary from 209010/- INR The
+            (INR) Max perform for the salary may vary from 20910/- INR The
             Client shall raise the invoice within 5 days after the successful
             completion of the project. The contractor will pay each project's
             amount within a maximum of 48 HRS, from the date of issue of the
@@ -264,7 +265,7 @@ const StampPaper = () => {
             Project As Per This Agreement.
             <br />
             <br />
-            3.3 TAT (Turn Around Time): The Second Party Has 4 Days (Including
+            3.3 TAT (Turn Around Time): The Second Party Has 5 Days (Including
             Holidays) To Complete the New Work and Second Party Has to Send It
             To First Party Shall Give An Accuracy Report Within 1-2 Working days
             For The New Work, After Submission As Per Technical Specification
@@ -334,7 +335,7 @@ const StampPaper = () => {
             data entry operators engaged by the client, violence or political
             turbulence or for any other reasons of a similar nature, which is
             beyond the control of the client. If you want to terminate your
-            agreement after your first work, you need to pay 6800*12 times the
+            agreement after your first work, you need to pay 6800*11 times the
             agreement amount as per company policies.
             <br />
           </Text>
@@ -524,8 +525,8 @@ const StampPaper = () => {
           <Text ml={["1rem", "3rem"]} fontWeight={"500"}>
             Name : Greenten Service <br />
             Email : greenhelplineservice19@gmail.com <br />
-            Address : block number: 23 Hanuman Nagar Ajmer Road
-            S.O, Jaipur, 302006
+            Adress: Sham Baba Apartment Office Number 20/21
+            Postmaster Post Office Road Bikaner Rajasthan ,334007
           </Text>
         </Box>
 

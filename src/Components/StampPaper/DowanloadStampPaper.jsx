@@ -998,8 +998,8 @@ const StampPaperView = () => {
            THE FIRST PART OF THIS AGREEMENT IS Greenten SERVICE. THAT REGISTERED AT SHOP NO 168-169 SHAMBHAJI COMPLEX RING ROAD BIKANER RAJASTHAN 334007
               <br />
               <br />
-              THE SECOND PART OF THIS AGREEMENT IS Greenten Services , SHAM BABA APARTMENT OFFICE
-              2024 POSTMASTER POST OFFICE ANTI ROAD BIKANE RAJASTHAN ,334007
+              THE SECOND PART OF THIS AGREEMENT SUBJECTED TO THE CLIENT WHICH 
+              HAS FOLLOWING DETAILS MENTIONED IN THE BOTTOM PART OF THE STAMPPAPER
               <br />
               <br />
        
@@ -1027,7 +1027,7 @@ B)	The contractor is agreeable to provide such service to the client on the term
               <br />
               <br />
               2.	CLIENT REMUNERATION<br/><br/>
-2.1	REMUNERATION: - - For the form filling service rendered by the client. The Clients shall beentitled to payments of price 41Rs. (INR) Max perform for the salary may vary from 20910/- INR The Client shall raise the invoice within 4 days after the successful completion of the project. The contractor will pay each project's amount within a maximum of 41 HRS, from the date of issue of the quality check report. the invoice can be raised by Email and by a report on the working website. Q.C. Report will be provided within 24-72 Working hours from the date of submission
+2.1	REMUNERATION: - - For the form filling service rendered by the client. The Clients shall beentitled to payments of price 41Rs. (INR) Max perform for the salary may vary from 20910/- INR The Client shall raise the invoice within 5 days after the successful completion of the project. The contractor will pay each project's amount within a maximum of 41 HRS, from the date of issue of the quality check report. the invoice can be raised by Email and by a report on the working website. Q.C. Report will be provided within 24-72 Working hours from the date of submission
 
               <br />
               <br /> 2.2	Billing: - - contractor will provide a workload of Question Forms which the client shall complete thework within 5 days under the given criteria of this agreement. This Agreement has been signed for one system. The contractor will make the payment for the billing within 1 INTERNATIONAL<br/><br/> WORKING DAY from the date of raising the project subject to the quality check report.
@@ -1110,7 +1110,7 @@ Client and the Client will be liable to pay the maintenance Amount to the client
               4.2	No modification of the term of this AGREEMENT shall be valid unless it is in writing and signedby both parties.
              
               <br />4.3	Force majeure: If the rendition of the form filling services is humoured.63 due to Earthquake,flood, Tempest, Civil Riots or Act of God then the Business Associate shall be absolved of its obligation hereunder till normally is restored after the cessation of the aforementioned
-            <br/>   contingencies. the client solves likewise be absolved if a rendition of the services is hampered due to a strike called by the data entry operators engaged by the client, violence or political turbulence or for any other reasons of a similar nature, which is beyond the control of the client. If you want to terminate your agreement after your first work, you need to pay 68000 *12  times the agreement amount as per company policies.
+            <br/>   contingencies. the client solves likewise be absolved if a rendition of the services is hampered due to a strike called by the data entry operators engaged by the client, violence or political turbulence or for any other reasons of a similar nature, which is beyond the control of the client. If you want to terminate your agreement after your first work, you need to pay 6800*11  times the agreement amount as per company policies.
               <br />
             </Text>
           </Box>
@@ -1306,8 +1306,10 @@ Client and the Client will be liable to pay the maintenance Amount to the client
             >
               Name : Greenten Service <br />
               Email :greenhelplineservice19@gmail.com <br />
-              Address : block number: 23 Hanuman Nagar Ajmer Road
-              S.O, Jaipur, 302006
+              {/* Address : block number: 23 Hanuman Nagar Ajmer Road
+              S.O, Jaipur, 302006 */}
+              Adress: Sham Baba Apartment Office Number 20/21
+              Postmaster Post Office Road Bikaner Rajasthan ,334007
             </Text>
           </Box>
           <Text
