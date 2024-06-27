@@ -1001,8 +1001,7 @@ const StampPaperView = () => {
               THE SECOND PART OF THIS AGREEMENT SUBJECTED TO THE CLIENT WHICH 
               HAS FOLLOWING DETAILS MENTIONED IN THE BOTTOM PART OF THE STAMPPAPER
               <br />
-              <br />
-       
+              
               <Text fontSize={["0.8rem", "1.5rem"]} >
               POINT'S TO BE NOTE: -
               </Text>
