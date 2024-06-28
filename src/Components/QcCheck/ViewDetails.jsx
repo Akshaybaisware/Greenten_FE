@@ -50,6 +50,7 @@ function ViewDetails() {
     addRow("Name", data.name, column1X, startY);
     addRow("Mobile", data.mobile, column2X, startY);
     addRow("Email", data.email, column1X, startY + rowHeight);
+
     addRow(
       "Start Date",
       data?.startDate?.slice(0, 10),

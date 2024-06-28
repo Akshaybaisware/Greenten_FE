@@ -207,42 +207,37 @@ const downloadReport = async (data) => {
 
     startY = addRow("Name", user?.name, column1X, startY);
     startY = addRow("Mobile", user?.mobile, column2X, startY - rowHeight); // Adjust y for column continuity
-    startY = addRow("Email", user?.email, column1X, startY);
+    startY = addRow("Adress", user?.address, column1X, startY); 
+    startY = addRow("Email", user?.email, column2X, startY - rowHeight);
     startY = addRow(
       "Start Date",
       user?.startDate?.slice(0, 10),
-      column2X,
-      startY - rowHeight
+      column1X, startY
     );
     startY = addRow(
       "End Date",
       user?.endDate?.slice(0, 10),
-      column1X,
-      startY
+      column2X, startY - rowHeight
     );
     startY = addRow(
       "Total Forms",
       user?.totalAssignmentLimit,
-      column2X,
-      startY - rowHeight
+      column1X, startY
     );
     startY = addRow(
       "Filled Forms",
       user?.submittedAssignmentCount,
-      column1X,
-      startY
+      column2X, startY - rowHeight
     );
     startY = addRow(
       "Correct Forms",
       user?.correctAssignmentCount,
-      column2X,
-      startY - rowHeight
+      column1X, startY
     );
     startY = addRow(
       "Incorrect Forms",
       user?.incorrectAssignmentCount || "0",
-      column1X,
-      startY
+      column2X, startY - rowHeight
     );
 
     if (startY > pageHeight - 40) {
