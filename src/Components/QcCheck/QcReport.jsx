@@ -208,7 +208,7 @@ const downloadReport = async (data) => {
     startY = addRow("Name", user?.name, column1X, startY);
     startY = addRow("Mobile", user?.mobile, column2X, startY - rowHeight); // Adjust y for column continuity
     startY = addRow("Adress", user?.address, column1X, startY); 
-    startY = addRow("Email", user?.email, column2X, startY - rowHeight);
+    startY = addRow("Email", user?.email, column1X, startY);
     startY = addRow(
       "Start Date",
       user?.startDate?.slice(0, 10),
