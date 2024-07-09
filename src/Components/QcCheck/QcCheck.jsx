@@ -4,8 +4,10 @@ import { Box, Center, Input, VStack ,Text, Button } from "@chakra-ui/react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import axios from "axios";
 import DataTable from "react-data-table-component";
+import { motion } from "framer-motion";
 
 function QcCheck() {
+ 
   const location = useLocation();
   console.log(location , "location");
   const state = location.state;
@@ -372,107 +374,289 @@ function QcCheck() {
     getAllAssignments();
   }, []);
 
-  return (
-//     <div>
-//       <div
-//         style={{
-//           fontSize: "2rem",
-//           textAlign: "center",
-//           fontWeight: "700",
+//   return (
+// //     <div>
+// //       <div
+// //         style={{
+// //           fontSize: "2rem",
+// //           textAlign: "center",
+// //           fontWeight: "700",
 
-//           margin: "1rem",
+// //           margin: "1rem",
+// //         }}
+// //       >
+// //         <Center
+// //           style={{
+
+// //             display: "inline",
+// //             padding: "5px",
+// //             margin: "5px",
+// //           }}
+// //         >
+// //         <span style={{color:"red"}}> Greenten</span> Services and Enterprises
+// //         <u/>
+// //         </Center>
+// //         {ifnotFilledanyFrom ? (
+// //           <>
+// //             <Center style={{ color: "black" }}>
+// //               Sorry You have not Filled All Question
+// //             </Center>
+// //             <Center style={{ color: "red" }}>Sorry Your QC is Failed!</Center>
+// //           </>
+// //         ) : (
+// //           <>
+// //             <Button
+// //               style={{
+// //                 background:"#b4d080",
+// //                 color:"#410207",
+// //                 fontSize: "1.2rem",
+// //                 padding: "1rem",
+// //               }}
+// //             >
+// //               QC Report - {correctPercentage.toFixed(2)}% Accuracy
+// //             </Button>
+// //             <Text   style={{
+// //               fontSize:"1rem",
+// //                 color:"#859c0f",}}>
+// //               Name : { location ? state.user.name : localStorage.getItem("username")}
+
+// //             </Text>
+// //             <Text  style={{
+// //                  fontSize:"1rem",
+// //                  color:"#859c0f",}}>
+
+// //               Mobile No : { location ? state.user.mobile : localStorage.getItem("usermobilenumber")}
+
+// //             </Text>
+// //             <Text  style={{
+// //                  fontSize:"1rem",
+// //                 color:"#859c0f",}}>
+
+// //               Email : {location ? state.user.email : localStorage.getItem("useremail")}
+// //             </Text>
+
+// //             <Text  style={{
+// //                  fontSize:"1rem",
+// //                 color:"#859c0f",}}>
+
+// //               Address : {location ? state.user.address : localStorage.getItem("useraddress")}
+// //             </Text>
+
+// //             <Center>
+// //               <ResponsiveContainer width="80%" height={400}>
+// //                 <PieChart>
+// //                   <Pie
+// //                     data={data}
+// //                     dataKey="value"
+// //                     nameKey="name"
+// //                     cx="50%"
+// //                     cy="40%"
+// //                     outerRadius={100}
+// //                     fill="#8884d8"
+// //                     label
+// //                   >
+// //                     {data.map((entry, index) => (
+// //                       <Cell
+// //                         key={`cell-${index}`}
+// //                         style={{ fontSize: "1.2rem" }}
+// //                         fill={COLORS[index % COLORS.length]}
+// //                       />
+// //                     ))}
+// //                   </Pie>
+// //                   <Tooltip content={renderTooltip} />
+// //                 </PieChart>
+// //               </ResponsiveContainer>
+// //             </Center>
+
+// //             <Center fontSize={["1.3rem"]} style={{ color: "red"  }}>Sorry Your QC is Failed!</Center>
+// //             <hr
+// //               style={{ backgroundColor: "gray", height: "2px", margin: "5px" }}
+// //             />
+// //             <Center fontSize={["1.3rem"]} >Incorrect question: {stateincorrrect}</Center>
+
+// //             <div style={{ margin: "20px" }}>
+// //         <DataTable
+// //           columns={columns}
+// //           data={incorrectAssignments}
+// //           pagination
+// //           customStyles={{
+// //             headCells: {
+// //               style: {
+// //                 color: "red",
+// //               },
+// //             },
+
+// //           }}
+// //         />
+// //       </div>
+// //           </>
+// //         )}
+// //       </div>
+// //       {/* <VStack spacing={4} align="stretch" p={4}>
+// //         {questions.map((question, index) => (
+// //           <Box fontSize={"2rem"} key={index}>
+// //             <p style={{ color: "black" }}>{question}</p>
+
+// //             const answers = rawAnswers.map((answer, index) => (
+// //             <Input
+// //               key={index}
+// //               width={["250px", "300px"]}
+// //               borderColor="red.500"
+// //               value={answer}
+// //               readOnly
+// //             />
+// //             ));
+// //           </Box>
+// //         ))}
+// //       </VStack> */}
+// //       {/* <VStack spacing={4} align="stretch" p={4}>
+// //   {questions.map((question, index) => (
+// //     <Box fontSize={"1.2rem"} key={index}>
+// //       <p style={{ color: "black" }}>{question}</p>
+// //       <Input
+// //         width={["250px", "300px"]}
+// //         borderColor="red.500"
+// //         fontSize={["1.3rem" , "1.5rem"]}
+// //         value={rawAnswers[index]}
+// //         readOnly
+// //       />
+// //     </Box>
+// //   ))}
+// // </VStack> */}
+// //     </div>
+// {/* <Box style={{
+//   fontSize: "2rem",
+//   textAlign: "center",
+//   fontWeight: "700",
+//   color: "blue",
+//   margin: "1rem"
+// }}>
+// {submittedAssignmentCount < 510 ? (
+//     <>
+//       <Center
+//         style={{
+//           color: "red",
+//           background: "#0d0db9",
+//           display: "inline",
+//           padding: "5px",
+//           margin: "5px",
 //         }}
 //       >
-//         <Center
-//           style={{
+//         Greenten Services
+//       </Center>
+//       <Box style={{ textAlign: 'center' }}>
+//         <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
+//           Name: {location ? state.user.name : localStorage.getItem("username")}
+//         </Text>
+//         <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
+//           Mobile No: {location ? state.user.mobile : localStorage.getItem("usermobilenumber")}
+//         </Text>
+//         <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
+//           Email : {location ? state.user.email : localStorage.getItem("useremail")}
+//         </Text>
+//         <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
+//           Address: {location ? state.user.address : localStorage.getItem("useraddress")}
+//         </Text>
+//       </Box>
 
-//             display: "inline",
-//             padding: "5px",
-//             margin: "5px",
-//           }}
-//         >
-//         <span style={{color:"red"}}> Greenten</span> Services and Enterprises
-//         <u/>
-//         </Center>
-//         {ifnotFilledanyFrom ? (
-//           <>
-//             <Center style={{ color: "black" }}>
-//               Sorry You have not Filled All Question
-//             </Center>
-//             <Center style={{ color: "red" }}>Sorry Your QC is Failed!</Center>
-//           </>
-//         ) : (
-//           <>
-//             <Button
-//               style={{
-//                 background:"#b4d080",
-//                 color:"#410207",
-//                 fontSize: "1.2rem",
-//                 padding: "1rem",
-//               }}
+//       <Center>
+//         <ResponsiveContainer width="100%" height={400}>
+//           <PieChart>
+//             <Pie
+//               data={data1}
+//               dataKey="value"
+//               nameKey="name"
+//               cx="50%"
+//               cy="50%"
+//               outerRadius={100}
+//               fill={COLORS_STATIC[0]}
+//               label
 //             >
-//               QC Report - {correctPercentage.toFixed(2)}% Accuracy
-//             </Button>
-//             <Text   style={{
-//               fontSize:"1rem",
-//                 color:"#859c0f",}}>
-//               Name : { location ? state.user.name : localStorage.getItem("username")}
+//               {data1.map((entry, index) => (
+//                 <Cell key={`cell-${index}`} style={{ fontSize: "1.2rem" }} fill={COLORS_STATIC[index % COLORS_STATIC.length]} />
+//               ))}
+//             </Pie>
+//             <Tooltip />
+//           </PieChart>
+//         </ResponsiveContainer>
+//       </Center>
 
-//             </Text>
-//             <Text  style={{
-//                  fontSize:"1rem",
-//                  color:"#859c0f",}}>
+//       <Center style={{ color: "black" }}>
+//         Sorry You have not Filled any Form
+//       </Center>
+//       <Center style={{ color: "red" }}>Sorry Your QC is Failed!</Center>
+//     </>
+//   ) : (
+//     <Box
+//       style={{
+//         fontSize: "2rem",
+//         textAlign: "center",
+//         fontWeight: "700",
+//         color: "blue",
+//         margin: "1rem"
+//       }}
+//     >
+//       <Center
+//         style={{
+//           color: "red",
+//           background: "#0d0db9",
+//           display: "inline",
+//           padding: "5px",
+//           margin: "5px",
+//         }}
+//       >
+//         Greenten Services
+//       </Center>
 
-//               Mobile No : { location ? state.user.mobile : localStorage.getItem("usermobilenumber")}
+//       <Center style={{
+//         fontSize: "1.5rem",
+//         padding: "1rem"
+//       }}>
+//         QC Report - {correctPercentage.toFixed(2)}% Accuracy
+//       </Center>
 
-//             </Text>
-//             <Text  style={{
-//                  fontSize:"1rem",
-//                 color:"#859c0f",}}>
+//       <Box style={{ textAlign: 'center' }}>
+//         <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
+//           Name: {location ? state.user.name : localStorage.getItem("username")}
+//         </Text>
+//         <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
+//           Mobile No: {location ? state.user.mobile : localStorage.getItem("usermobilenumber")}
+//         </Text>
+//         <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
+//           Email: {location ? state.user.email : localStorage.getItem("useremail")}
+//         </Text>
+//         <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
+//           Address: {location ? state.user.address : localStorage.getItem("useraddress")}
+//         </Text>
+//       </Box>
 
-//               Email : {location ? state.user.email : localStorage.getItem("useremail")}
-//             </Text>
+//       <Center>
+//         <ResponsiveContainer width="100%" height={400}>
+//           <PieChart>
+//             <Pie
+//               data={data}
+//               dataKey="value"
+//               nameKey="name"
+//               cx="50%"
+//               cy="50%"
+//               outerRadius={100}
+//               fill="#8884d8"
+//               label
+//             >
+//               {data.map((entry, index) => (
+//                 <Cell key={`cell-${index}`} style={{ fontSize: "1.2rem" }} fill={COLORS[index % COLORS.length]} />
+//               ))}
+//             </Pie>
+//             <Tooltip />
+//           </PieChart>
+//         </ResponsiveContainer>
+//       </Center>
 
-//             <Text  style={{
-//                  fontSize:"1rem",
-//                 color:"#859c0f",}}>
+//       <Center style={{ color: "red" }}>Sorry Your QC is Failed!</Center>
+//       <hr style={{ backgroundColor: "gray", height: "2px", margin: "5px" }} />
+//       <Center>Incorrect Form: {stateincorrrect}</Center>
 
-//               Address : {location ? state.user.address : localStorage.getItem("useraddress")}
-//             </Text>
-
-//             <Center>
-//               <ResponsiveContainer width="80%" height={400}>
-//                 <PieChart>
-//                   <Pie
-//                     data={data}
-//                     dataKey="value"
-//                     nameKey="name"
-//                     cx="50%"
-//                     cy="40%"
-//                     outerRadius={100}
-//                     fill="#8884d8"
-//                     label
-//                   >
-//                     {data.map((entry, index) => (
-//                       <Cell
-//                         key={`cell-${index}`}
-//                         style={{ fontSize: "1.2rem" }}
-//                         fill={COLORS[index % COLORS.length]}
-//                       />
-//                     ))}
-//                   </Pie>
-//                   <Tooltip content={renderTooltip} />
-//                 </PieChart>
-//               </ResponsiveContainer>
-//             </Center>
-
-//             <Center fontSize={["1.3rem"]} style={{ color: "red"  }}>Sorry Your QC is Failed!</Center>
-//             <hr
-//               style={{ backgroundColor: "gray", height: "2px", margin: "5px" }}
-//             />
-//             <Center fontSize={["1.3rem"]} >Incorrect question: {stateincorrrect}</Center>
-
-//             <div style={{ margin: "20px" }}>
+//       <Box style={{ margin: "20px" }}>
 //         <DataTable
 //           columns={columns}
 //           data={incorrectAssignments}
@@ -483,195 +667,37 @@ function QcCheck() {
 //                 color: "red",
 //               },
 //             },
-
 //           }}
 //         />
-//       </div>
-//           </>
-//         )}
-//       </div>
-//       {/* <VStack spacing={4} align="stretch" p={4}>
-//         {questions.map((question, index) => (
-//           <Box fontSize={"2rem"} key={index}>
-//             <p style={{ color: "black" }}>{question}</p>
-
-//             const answers = rawAnswers.map((answer, index) => (
-//             <Input
-//               key={index}
-//               width={["250px", "300px"]}
-//               borderColor="red.500"
-//               value={answer}
-//               readOnly
-//             />
-//             ));
-//           </Box>
-//         ))}
-//       </VStack> */}
-//       {/* <VStack spacing={4} align="stretch" p={4}>
-//   {questions.map((question, index) => (
-//     <Box fontSize={"1.2rem"} key={index}>
-//       <p style={{ color: "black" }}>{question}</p>
-//       <Input
-//         width={["250px", "300px"]}
-//         borderColor="red.500"
-//         fontSize={["1.3rem" , "1.5rem"]}
-//         value={rawAnswers[index]}
-//         readOnly
-//       />
+//       </Box>
 //     </Box>
-//   ))}
-// </VStack> */}
-//     </div>
-<Box style={{
-  fontSize: "2rem",
-  textAlign: "center",
-  fontWeight: "700",
-  color: "blue",
-  margin: "1rem"
-}}>
-{submittedAssignmentCount < 510 ? (
-    <>
-      <Center
-        style={{
-          color: "red",
-          background: "#0d0db9",
-          display: "inline",
-          padding: "5px",
-          margin: "5px",
-        }}
+//   )}
+// </Box> */}
+
+//   );
+return (
+  <div>
+        <div style={{
+      fontSize: "2rem",
+      textAlign: 'center', paddingTop: '100px', fontWeight: "700", color: "gray"
+    }}>
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2 }}
       >
-        Greenten Services
-      </Center>
-      <Box style={{ textAlign: 'center' }}>
-        <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
-          Name: {location ? state.user.name : localStorage.getItem("username")}
-        </Text>
-        <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
-          Mobile No: {location ? state.user.mobile : localStorage.getItem("usermobilenumber")}
-        </Text>
-        <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
-          Email : {location ? state.user.email : localStorage.getItem("useremail")}
-        </Text>
-        <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
-          Address: {location ? state.user.address : localStorage.getItem("useraddress")}
-        </Text>
-      </Box>
-
-      <Center>
-        <ResponsiveContainer width="100%" height={400}>
-          <PieChart>
-            <Pie
-              data={data1}
-              dataKey="value"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={100}
-              fill={COLORS_STATIC[0]}
-              label
-            >
-              {data1.map((entry, index) => (
-                <Cell key={`cell-${index}`} style={{ fontSize: "1.2rem" }} fill={COLORS_STATIC[index % COLORS_STATIC.length]} />
-              ))}
-            </Pie>
-            <Tooltip />
-          </PieChart>
-        </ResponsiveContainer>
-      </Center>
-
-      <Center style={{ color: "black" }}>
-        Sorry You have not Filled any Form
-      </Center>
-      <Center style={{ color: "red" }}>Sorry Your QC is Failed!</Center>
-    </>
-  ) : (
-    <Box
-      style={{
-        fontSize: "2rem",
-        textAlign: "center",
-        fontWeight: "700",
-        color: "blue",
-        margin: "1rem"
-      }}
-    >
-      <Center
-        style={{
-          color: "red",
-          background: "#0d0db9",
-          display: "inline",
-          padding: "5px",
-          margin: "5px",
-        }}
+        Evaluation in Progress!
+      </motion.h1>
+      <motion.p
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2 }}
       >
-        Greenten Services
-      </Center>
-
-      <Center style={{
-        fontSize: "1.5rem",
-        padding: "1rem"
-      }}>
-        QC Report - {correctPercentage.toFixed(2)}% Accuracy
-      </Center>
-
-      <Box style={{ textAlign: 'center' }}>
-        <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
-          Name: {location ? state.user.name : localStorage.getItem("username")}
-        </Text>
-        <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
-          Mobile No: {location ? state.user.mobile : localStorage.getItem("usermobilenumber")}
-        </Text>
-        <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
-          Email: {location ? state.user.email : localStorage.getItem("useremail")}
-        </Text>
-        <Text style={{ fontSize: "1rem", color: "#859c0f" }}>
-          Address: {location ? state.user.address : localStorage.getItem("useraddress")}
-        </Text>
-      </Box>
-
-      <Center>
-        <ResponsiveContainer width="100%" height={400}>
-          <PieChart>
-            <Pie
-              data={data}
-              dataKey="value"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={100}
-              fill="#8884d8"
-              label
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} style={{ fontSize: "1.2rem" }} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-            <Tooltip />
-          </PieChart>
-        </ResponsiveContainer>
-      </Center>
-
-      <Center style={{ color: "red" }}>Sorry Your QC is Failed!</Center>
-      <hr style={{ backgroundColor: "gray", height: "2px", margin: "5px" }} />
-      <Center>Incorrect Form: {stateincorrrect}</Center>
-
-      <Box style={{ margin: "20px" }}>
-        <DataTable
-          columns={columns}
-          data={incorrectAssignments}
-          pagination
-          customStyles={{
-            headCells: {
-              style: {
-                color: "red",
-              },
-            },
-          }}
-        />
-      </Box>
-    </Box>
-  )}
-</Box>
-  );
+       QC Check Going on...!
+      </motion.p>
+    </div>
+  </div>
+)
 }
 
 export default QcCheck;
