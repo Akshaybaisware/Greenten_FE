@@ -451,6 +451,11 @@ function ContentValidationfrom() {
 
   return (
     <>
+    <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Whisper&display=swap')
+      </style>
+
       <Flex
         mt={["3rem", "5rem"]}
         justifyContent={"center"}
@@ -459,7 +464,7 @@ function ContentValidationfrom() {
         className="content"
       >
         <Box p="4" border="1px solid #ccc" borderRadius="md" maxW="600px">
-          <Flex direction="column" style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}>
+        <Flex direction="column" fontFamily="'Dancing Script', cursive">
             <Text fontSize={["1.5rem", "2.3rem"]}>
               {apidata?.[randomIndex]?.name}
             </Text>
@@ -483,31 +488,31 @@ function ContentValidationfrom() {
 
         <Box p="4" border="1px solid #ccc" borderRadius="md" maxW="1000px">
           <Flex
-            style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+             fontFamily="'Dancing Script', cursive" // Set the input font family
             width={["330px", "400px"]} direction="column">
             <Text>Name:</Text>
             <Input
-              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+              fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={name} />
             <Text>Mobile:</Text>
             <Input
-              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+             fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={mobile} />
             <Text>Address:</Text>
             <Input
-              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+              fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={address} />
             <Text>Annual Revenue:</Text>
             <Input
-              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+             fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={annualRevenue} />
             <Text>Job Functional:</Text>
             <Input
-              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+             fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={jobFunctional} />
             <Text>Pin Code:</Text>
             <Input
-              style={{ fontFamily: 'BILLY ARGEL FONT', fontStyle: 'italic', fontWeight: "bold" }}
+              fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={pinCode} />
 
             <Button
