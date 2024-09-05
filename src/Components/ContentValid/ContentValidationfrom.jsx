@@ -496,7 +496,7 @@ function ContentValidationfrom() {
         p="4" border="3px solid #b77373" borderRadius="md" maxW="1000px">
           <Flex
         
-             fontFamily="'Dancing Script', cursive" // Set the input font family
+             fontFamily="'Dancing Script', cursive" // Set the input font family 
             width={["330px", "600px"]} direction="column">
             <Text>Name:</Text>
             <Input
@@ -518,7 +518,7 @@ function ContentValidationfrom() {
             <Input
              fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={jobFunctional} />
-            <Text>Licence No:</Text>
+            <Text>IP:</Text>
             <Input
               fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={pinCode} />
