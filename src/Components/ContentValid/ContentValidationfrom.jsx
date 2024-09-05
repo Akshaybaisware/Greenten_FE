@@ -395,8 +395,8 @@ function ContentValidationfrom() {
       );
       console.log(response, "res");
       setapidata(response?.data?.assignments);
-      // setRandomIndex(Math.floor(Math.random() * 520));
-      setRandomIndex(Math.floor(Math.random() * 1));
+      setRandomIndex(Math.floor(Math.random() * 520));
+     
       console.log(randomIndex, "randomIndex");
     } catch (error) {
       toast({
@@ -458,13 +458,17 @@ function ContentValidationfrom() {
       </style>
 
       <Flex
+     
         mt={["3rem", "5rem"]}
-        justifyContent={"center"}
+         justifyContent={"center"}
         gap={"2rem"}
-        flexDirection={["column", "row"]}
+        flexDirection={["column", "column"]}
         className="content"
       >
-        <Box p="4" border="1px solid #ccc" borderRadius="md" maxW="600px">
+        <Box 
+        marginLeft={["0rem" , "10rem"]}
+        justifyContent={"center"}
+        p="4" border="3px solid #a47979" borderRadius="md" maxW="600px">
         <Flex direction="column" fontFamily="'Dancing Script', cursive">
             <Text fontSize={["1.5rem", "2.3rem"]}>
               {apidata?.[randomIndex]?.name}
@@ -487,10 +491,13 @@ function ContentValidationfrom() {
           </Flex>
         </Box>
 
-        <Box p="4" border="1px solid #ccc" borderRadius="md" maxW="1000px">
+        <Box 
+          marginLeft={["0rem" , "10rem"]}
+        p="4" border="3px solid #b77373" borderRadius="md" maxW="1000px">
           <Flex
+        
              fontFamily="'Dancing Script', cursive" // Set the input font family
-            width={["330px", "400px"]} direction="column">
+            width={["330px", "600px"]} direction="column">
             <Text>Name:</Text>
             <Input
               fontFamily="'Dancing Script', cursive" // Set the input font family
@@ -507,11 +514,11 @@ function ContentValidationfrom() {
             <Input
              fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={annualRevenue} />
-            <Text>Job Functional:</Text>
+            <Text>Email:</Text>
             <Input
              fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={jobFunctional} />
-            <Text>Pin Code:</Text>
+            <Text>Licence No:</Text>
             <Input
               fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={pinCode} />
