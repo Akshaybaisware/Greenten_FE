@@ -1,9 +1,22 @@
-.content {
+/* .content {
     user-select: none;
     -webkit-user-select: none;
     /* Safari */
-    -moz-user-select: none;
+    /* -moz-user-select: none; */
     /* Firefox */
-    -ms-user-select: none;
+    /* -ms-user-select: none; */
     /* IE10+ */
+/* } */ */
+
+.content{
+    // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 400
+
+.playwrite-cu-<uniquifier> {
+  font-family: "Playwrite CU", cursive;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
 }

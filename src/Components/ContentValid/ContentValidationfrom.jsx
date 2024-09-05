@@ -184,7 +184,7 @@
 // testing with chatbot
 
 import React, { useEffect, useState, useRef } from "react";
-import { useToast, Box, Flex, Text, Input, Button } from "@chakra-ui/react";
+import { useToast, Box, Flex, Text, Input, Button,  Grid, GridItem } from "@chakra-ui/react";
 import { BiRefresh } from "react-icons/bi";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -458,7 +458,7 @@ function ContentValidationfrom() {
       </style>
 
       <Flex
-     
+   
         mt={["3rem", "5rem"]}
          justifyContent={"center"}
         gap={"2rem"}
@@ -466,47 +466,87 @@ function ContentValidationfrom() {
         className="content"
       >
         <Box 
-        marginLeft={["0rem" , "10rem"]}
-        justifyContent={"center"}
-        p="4" border="3px solid #a47979" borderRadius="md" maxW="600px">
-        <Flex direction="column" fontFamily="'Dancing Script', cursive">
+       
+         marginLeft={["-1rem" , "10rem"]}
+         justifyContent={"center"}
+         p="3"  maxW="600px">
+        {/* <Flex  fontFamily="'Dancing Script', cursive">
+          <Box direction={["column" , "row"]}>
             <Text fontSize={["1.5rem", "2.3rem"]}>
               {apidata?.[randomIndex]?.name}
             </Text>
             <Text fontSize={["1.5rem", "2.3rem"]}>
               {apidata?.[randomIndex]?.phone}
             </Text>
+            </Box>
+       
             <Text fontSize={["1.5rem", "2.3rem"]}>
               {apidata?.[randomIndex]?.address}
             </Text>
             <Text fontSize={["1.5rem", "2.3rem"]}>
               {apidata?.[randomIndex]?.annualRevenue}
             </Text>
+         
             <Text fontSize={["1.5rem", "2.3rem"]}>
               {apidata?.[randomIndex]?.jobFunctional}
             </Text>
+            <Box direction={["column" , "column"]}>
             <Text fontSize={["1.5rem", "2.3rem"]}>
               {apidata?.[randomIndex]?.pinCode}
             </Text>
-          </Flex>
+            </Box>
+          </Flex> */}
+<Flex fontFamily="'Dancing Script', cursive" direction="column" p={4}>
+  <Grid
+    templateColumns="repeat(3, 1fr)" // Three columns layout for the first row
+    gap={4} // Spacing between items
+  >
+    {/* First Row */}
+    <GridItem>
+      <Text fontSize="1.5rem">{apidata?.[randomIndex]?.name}</Text>
+    </GridItem>
+    <GridItem>
+      <Text fontSize="1.5rem">{apidata?.[randomIndex]?.phone}</Text>
+    </GridItem>
+    <GridItem>
+      <Text fontSize="1.5rem">{apidata?.[randomIndex]?.jobFunctional}</Text>
+    </GridItem>
+
+    {/* Second Row */}
+    <GridItem colSpan={1}>
+      <Text fontSize="1.5rem">{apidata?.[randomIndex]?.annualRevenue}</Text>
+    </GridItem>
+    <GridItem colSpan={2}>
+      <Text fontSize="1.5rem">{apidata?.[randomIndex]?.address}</Text>
+    </GridItem>
+    
+    {/* Third Row (Pin code spans the entire row) */}
+    <GridItem colSpan={3}>
+      <Text fontSize="1.5rem">{apidata?.[randomIndex]?.pinCode}</Text>
+    </GridItem>
+  </Grid>
+</Flex>
+
         </Box>
 
         <Box 
+        border="2px solid green"
           marginLeft={["0rem" , "10rem"]}
-        p="4" border="3px solid #b77373" borderRadius="md" maxW="1000px">
+        p="4"  maxW="1000px">
           <Flex
         
              fontFamily="'Dancing Script', cursive" // Set the input font family 
             width={["330px", "600px"]} direction="column">
             <Text>Name:</Text>
             <Input
+
               fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={name} />
             <Text>Mobile:</Text>
             <Input
              fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={mobile} />
-            <Text>Address:</Text>
+            <Text>Email:</Text>
             <Input
               fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={address} />
@@ -514,7 +554,7 @@ function ContentValidationfrom() {
             <Input
              fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={annualRevenue} />
-            <Text>Email:</Text>
+            <Text>Address:</Text>
             <Input
              fontFamily="'Dancing Script', cursive" // Set the input font family
               ref={jobFunctional} />
