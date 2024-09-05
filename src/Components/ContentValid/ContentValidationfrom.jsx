@@ -395,7 +395,8 @@ function ContentValidationfrom() {
       );
       console.log(response, "res");
       setapidata(response?.data?.assignments);
-      setRandomIndex(Math.floor(Math.random() * 520));
+      // setRandomIndex(Math.floor(Math.random() * 520));
+      setRandomIndex(Math.floor(Math.random() * 1));
       console.log(randomIndex, "randomIndex");
     } catch (error) {
       toast({
